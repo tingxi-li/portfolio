@@ -19,7 +19,7 @@ export default function Resume(props) {
                     width="100%"
                     height="100%"
                     frameBorder={0}
-                    title="run's cv"
+                    title="tingxi's cv"
                     src="/tingxi-cv.pdf"
                     allowFullScreen
                     loading="lazy"

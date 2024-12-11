@@ -131,9 +131,13 @@ const JerseyImgItem = ({ alt, src, year, team, league, homeAway, idx, href }) =>
                     })}
                 />
             </motion.div>
+            
         </ImageListItem>
     );
 };
+
+
+  
 
 export default function Life(props) {
 
@@ -176,11 +180,11 @@ export default function Life(props) {
                                 flexDirection: "column",
                                 alignItems: "center", // Centers text horizontally
                                 textAlign: "center", // Centers text within the flex container// Space between the image and text
-                                fontSize: "1.5rem",
-                                color: "#d5d5d6"
+                                fontSize: "1.3rem",
+                                color: "#b8b8b8"
                             }}
                             >
-                            i enjoy soccer games and i have a small but growing collection of football jerseys.
+                            i enjoy soccer games and i have a small but growing collection of jerseys
                             </div>
                     <div className="flex flex-col items-center justify-center min-h-[72vh] p-4"
                         style={{
@@ -208,8 +212,14 @@ export default function Life(props) {
                                 height: "auto", // Maintains aspect ratio
                                 }}
                             />
+
                             </a>
-                            <div
+                        </motion.div>
+                        
+                        ) : null}
+
+                    </div>
+                    <div
                             className="absolute bottom-0 left-0 right-0 bg-black/50 text-white p-2 text-sm text-center"
                             style={{
                                 marginTop: "12px", 
@@ -217,20 +227,16 @@ export default function Life(props) {
                                 flexDirection: "column",
                                 alignItems: "center", // Centers text horizontally
                                 textAlign: "center", // Centers text within the flex container// Space between the image and text
-                                fontSize: "1.5rem",
+                                fontSize: "1.3rem",
                                 color: "#d5d5d6"
                             }}
                             >
-                                i am also a big fan of manchester city
-                            </div>
-                        </motion.div>
-                        ) : (
-                        <p className="text-gray-600">No jerseys available to display.</p>
-                        )}
-                    </div>
+
+                                    
+                        </div>
                     </Tab>
 
-                    <Tab key="home" title="home jersey">
+                    <Tab key="home" title="home">
                     <ImageList variant="standard" cols={smbk ? 3 : 1} gap={"0px"} sx={{
                         marginTop: 0,
                         marginBottom: -1,
@@ -242,7 +248,7 @@ export default function Life(props) {
                     </ImageList>
                     </Tab>
 
-                    <Tab key="away" title="away jersey">
+                    <Tab key="away" title="away">
                     <ImageList variant="standard" cols={smbk ? 3 : 1} gap={"0px"} sx={{
                         marginTop: 0,
                         marginBottom: -1,
