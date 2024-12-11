@@ -1,5 +1,5 @@
 import { Box, Link, Stack } from "@mui/material";
-import TypeTitle from "components/TypeText";
+import TypeTitle from "../TypeText";
 import data from "./WorkData.json"
 import { useScroll, useTransform, motion } from "framer-motion";
 import { useRef } from "react";

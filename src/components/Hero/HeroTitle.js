@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { styled } from "@mui/material/styles";
 import { Link, Typography } from "@mui/material";
-import { titleFont } from "theme";
+import { titleFont } from "../../theme";
 
 // Word wrapper
 const Wrapper = (props) => {

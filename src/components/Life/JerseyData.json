@@ -1,0 +1,98 @@
+[
+  {
+    "src": "https://ik.imagekit.io/tingxi/jersies/DSC_1146.JPG?updatedAt=1733904058076",
+    "alt": "manchester city 22/23 home",
+    "year": "2022-2023",
+    "team": "manchester city",
+    "league": "premier league",
+    "homeAway": "home"
+  },
+  {
+    "src": "https://ik.imagekit.io/tingxi/jersies/DSC_1140.JPG?updatedAt=1733904057811",
+    "alt": "argentina 22/23 home",
+    "year": "2022-2023",
+    "team": "argentina",
+    "league": "national team",
+    "homeAway": "home"
+  },
+  {
+    "src": "https://ik.imagekit.io/tingxi/jersies/DSC_1135.JPG?updatedAt=1733904063061",
+    "alt": "netherlands 22/23 home",
+    "year": "2022-2023",
+    "team": "netherlands",
+    "league": "national team",
+    "homeAway": "home"
+  },
+  {
+    "src": "https://ik.imagekit.io/tingxi/jersies/DSC_1143.JPG?updatedAt=1733904057747",
+    "alt": "bayern munich 22/23 home",
+    "year": "2021-2022",
+    "team": "bayern munich",
+    "league": "bundesliga",
+    "homeAway": "away"
+  }, 
+  {
+    "src": "https://ik.imagekit.io/tingxi/jersies/DSC_1142.JPG?updatedAt=1733904058281",
+    "alt": "chelsea 22/23 home",
+    "year": "2022-2023",
+    "team": "chelsea",
+    "league": "premier league",
+    "homeAway": "away"
+  }, 
+  {
+    "src": "https://ik.imagekit.io/tingxi/jersies/DSC_1144.JPG?updatedAt=1733904058293",
+    "alt": "paris saint germain 22/23 home",
+    "year": "2022-2023",
+    "team": "paris saint germain",
+    "league": "ligue 1",
+    "homeAway": "home"
+  },
+  {
+    "src": "https://ik.imagekit.io/tingxi/jersies/DSC_1136.JPG?updatedAt=1733904063245",
+    "alt": "barcelona 22/23 away",
+    "year": "2022-2023",
+    "team": "barcelona",
+    "league": "laliga",
+    "homeAway": "away"
+  },
+  {
+    "src": "  https://ik.imagekit.io/tingxi/jersies/DSC_1145.JPG?updatedAt=1733904056108",
+    "alt": "paris saint germain 22/23 away",
+    "year": "2022-2023",
+    "team": "paris saint germain",
+    "league": "ligue 1",
+    "homeAway": "away"
+  },
+  {
+    "src": "https://ik.imagekit.io/tingxi/jersies/DSC_1141.JPG?updatedAt=1733904056802",
+    "alt": "manchester united 22/23 home",
+    "year": "2022-2023",
+    "team": "manchester united",
+    "league": "premier league",
+    "homeAway": "home"
+  },
+  {
+    "src": "https://ik.imagekit.io/tingxi/jersies/DSC_1138.JPG?updatedAt=1733904056932",
+    "alt": "tottenham hotspur 22/23 away",
+    "year": "2022-2023",
+    "team": "tottenham hotspur",
+    "league": "premier league",
+    "homeAway": "away"
+  },
+  {
+    "src": "https://ik.imagekit.io/tingxi/jersies/DSC_1137.JPG?updatedAt=1733904062670",
+    "alt": "liverpool 22/23 away",
+    "year": "2022-2023",
+    "team": "liverpool",
+    "league": "premier league",
+    "homeAway": "away"
+  },
+  {
+    "src": "https://ik.imagekit.io/tingxi/mancitylogo.png?updatedAt=1733916608965",
+    "alt": "n/a",
+    "year": "n/a",
+    "team": "citylogo",
+    "league": "n/a",
+    "homeAway": "n/a"
+  }
+]

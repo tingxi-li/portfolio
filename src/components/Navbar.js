@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import SchoolIcon from '@mui/icons-material/School';
-import { titleFont } from "theme";
+import { titleFont } from "../theme";
 
 const NavBox = styled((props) => (
     <Toolbar component="nav" disableGutters {...props} />
@@ -23,7 +23,7 @@ const NavAvatar = styled((props) => (
             anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
             variant="dot"
             component={Link}
-            href="mailto:itsrunhuang@outlook.com"
+            href="mailto:tingxi.li@utdallas.edu"
             {...props}
         >
             <Avatar sx={(theme) => ({
@@ -37,7 +37,7 @@ const NavAvatar = styled((props) => (
                     width: "3.6rem",
                     height: "3.6rem",
                 },
-            })}>R</Avatar>
+            })}>TL</Avatar>
         </Badge>
     </Tooltip>
 ))(({ theme }) => ({
@@ -118,8 +118,8 @@ const NavIcon = styled((props) => (
     },
 }));
 
-const links = [{ title: "/work", href: "#work" }, { title: "/life", href: "#life" }, { title: "/vitae", href: "/Run_Vita.pdf" }];
-const icons = [{ icon: <LinkedInIcon />, href: "https://www.linkedin.com/in/runhuangii/" }, { icon: <SchoolIcon />, href: "https://scholar.google.com/citations?user=v9vsJ64AAAAJ" }, { icon: <GitHubIcon />, href: "https://github.com/itsrun" }];
+const links = [{ title: "/work", href: "#work" }, { title: "/life", href: "#life" }, { title: "/vitae", href: "/tingxi-cv.pdf" }];
+const icons = [{ icon: <LinkedInIcon />, href: "https://www.linkedin.com/in/tingxi-li-352a45297/" }, { icon: <SchoolIcon />, href: "https://scholar.google.com/" }, { icon: <GitHubIcon />, href: "https://github.com/tingxi-li" }];
 
 export default function Navbar(props) {
     return (

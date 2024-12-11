@@ -3,7 +3,7 @@ name: Deploy to Live Channel
 on:
   push:
     branches:
-      - master
+      - home
     # Optionally configure to run only for specific files. For example:
     # paths:
     # - "website/**"
@@ -19,5 +19,5 @@ jobs:
         with:
           repoToken: "${{ secrets.GITHUB_TOKEN }}"
           firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
-          projectId: run-cv
+          projectId: tingxi-portfolio
           channelId: live

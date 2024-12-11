@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import TypeTitle from "components/TypeText";
+import TypeTitle from "../TypeText";
 import { Fragment } from "react";
 
 export default function Resume(props) {
@@ -20,7 +20,7 @@ export default function Resume(props) {
                     height="100%"
                     frameBorder={0}
                     title="run's cv"
-                    src="/Run_Vita.pdf"
+                    src="/tingxi-cv.pdf"
                     allowFullScreen
                     loading="lazy"
                 />

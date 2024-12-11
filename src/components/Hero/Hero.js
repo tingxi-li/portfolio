@@ -69,8 +69,8 @@ export default function Hero() {
         <HeroBox>
             <HeroAvatarComp />
             <HeroTitleBox>
-                <HeroTitle type="heading1" text="hi there, i'm run ;)" />
-                <HeroTitle type="heading2" href="mailto:runhuang@usc.edu" text="黃潤 | runhuang [at] usc [dot] edu" />
+                <HeroTitle type="heading1" text="Howdy! This is tingxi [:-)" />
+                <HeroTitle type="heading2" href="mailto:tingxi.li@utdallas.edu" text="李 亭熹     |     tingxi [dot] li [at] utdallas [dot] edu" />
             </HeroTitleBox>
             <HeroTerminal commands={data.commands} />
             {data.interest.map(({ name, ...props }) => (

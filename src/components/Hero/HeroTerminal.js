@@ -59,7 +59,7 @@ export default function HeroTerminal({ commands }) {
             window.close();
         } else if (cmdKey === "get -cv") {
             const tempLink = document.createElement("a");
-            tempLink.download = tempLink.href = `Run_Vita.pdf`;
+            tempLink.download = tempLink.href = `tingxi-cv.pdf`;
             document.body.appendChild(tempLink);
             tempLink.click();
             document.body.removeChild(tempLink);
@@ -77,7 +77,7 @@ export default function HeroTerminal({ commands }) {
                 <Terminal name="terminal" onInput={onInput}>
                     <TerminalOutput>type to ask me something! ('<Link onClick={onClickHelp} sx={{ "&:hover": { cursor: "pointer" } }}>help</Link>' for all supported commands)</TerminalOutput>
                     <TerminalInput>who -r -u</TerminalInput>
-                    <TerminalOutput>i'm a 1st year phd student in computer science at the university of southern california (usc), advised by <Link alt="rini's homepage" href="https://soutirini.com/">prof. souti chattopadhyay</Link>. i received my bachelor's degree at fudan university (復旦大學), where i was very fortunate to be mentored by <Link alt="yang chen's homepage" href="https://chenyang03.wordpress.com/">prof. yang chen</Link>.</TerminalOutput>
+                    <TerminalOutput>i'm a 1st year phd student in computer science at the university of texas at dallas (ut dallas), advised by <Link alt="wei's homepage" href="https://youngwei.com/">prof. wei yang</Link>. before that, i was an undergrad at dalian university of technology (大連理工大學), and a visiting student at technical university of munich (technische universität münchen).</TerminalOutput>
                     {cmd.map((cmd, idx) => {
                         return (
                             <Fragment key={idx}>

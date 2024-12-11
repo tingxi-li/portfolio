@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import Tooltip from "components/Tooltip";
-import TypeTitle from "components/TypeText";
+import Tooltip from "../Tooltip";
+import TypeTitle from "../TypeText";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 

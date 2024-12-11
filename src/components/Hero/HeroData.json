@@ -1,16 +1,16 @@
 {
     "interest": [
         {
-            "name": "human-computer interaction",
-            "description": "",
+            "name": "ai security",
+            "description": "attacks and defenses related to the accuracy and efficiency of deep learning models",
             "angle": 60,
             "x": "calc(-100% - max(min(9.6vw, 12rem), 5.4rem))",
             "y": "max(min(14.4vw, 20rem), 16rem)",
             "placement": "top"
         },
         {
-            "name": "world wide web",
-            "description": "social media, web accessibility, and internet measurement",
+            "name": "software engineering",
+            "description": "",
             "vertical": "end",
             "angle": 120,
             "x": "calc(-100% - max(min(9.6vw, 9.6rem), 2.4rem))",
@@ -18,8 +18,8 @@
             "placement": "bottom"
         },
         {
-            "name": "intelligent user interfaces",
-            "description": "",
+            "name": "language models",
+            "description": "Language Models & Code Models",
             "reverse": true,
             "angle": -60,
             "x": "max(min(8.8vw, 12rem), 4.8rem)",
@@ -27,8 +27,8 @@
             "placement": "top"
         },
         {
-            "name": "information diffusion",
-            "description": "explore how cutting-edge academic research diffuses into the industry and touches our daily lives",
+            "name": "ai for science",
+            "description": "'ai + x' interdiciplinary research",
             "reverse": true,
             "vertical": "end",
             "angle": -110,
@@ -38,12 +38,11 @@
         }
     ],
     "commands": {
-        "what -u -do": "i'm broadly interested in human-computer interaction and the web. recently, i'm studying how academic findings should be communicated to non-academic audiences.",
-        "what -u -into": "after work, i unwind with spotify. i'm a huge fan of LE SSERAFIM, zeph, Fujii Kaze, and Charli XCX. after 6pm i'm either on hyrule or pelican town :/",
-        "what -next": "i'm continuing my research at the university of southern california (usc).",
-        "wget -cv": "a (likely outdated) copy of my cv has been downloaded. Otherwise, please visit https://iamhuang.run/Run_Vita.pdf",
-        "wget -src": "i built this website using react, material ui, framer motion, and d3.js. the source code can be accessed from https://github.com/itsrun/portfolio.",
-        "get -in -touch": "email: runhuang@usc.edu\\nlinkedin: https://www.linkedin.com/in/runhuangii/",
+        "what -u -do": "i'm broadly interested in security, especially ai security. recently, I am studying how efficiency attacks influence deep learning systems and exploring mitigation strategies.",
+        "what -u -into": "hiking / hearthstone / soccer games ",
+        "what -next": "i'm continuing my research at the university of texas at dallas (ut dallas).",
+        "wget -cv": "a (likely outdated) copy of my cv has been downloaded.",
+        "wget -src": "this website was initially designed and built by one of my best friends, run huang. all credit goes to -> https://github.com/itsrun/portfolio.",
         "rm -rf": "o_O?"
     }
 }
