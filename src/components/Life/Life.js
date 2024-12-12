@@ -73,6 +73,7 @@ const LifeImgItem = ({ alt, src, place, idx, href }) => {
                         ".MuiImageListItemBar-subtitle": {
                             fontSize: "0.9em",
                             color: "#cacaca",
+                            
                         },
                     })}
                 />
