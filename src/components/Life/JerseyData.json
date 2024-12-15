@@ -86,13 +86,5 @@
     "team": "liverpool",
     "league": "premier league",
     "homeAway": "away"
-  },
-  {
-    "src": "https://ik.imagekit.io/tingxi/mancitylogo.png?updatedAt=1733916608965",
-    "alt": "n/a",
-    "year": "n/a",
-    "team": "citylogo",
-    "league": "n/a",
-    "homeAway": "n/a"
   }
 ]

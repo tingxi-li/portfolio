@@ -10,6 +10,7 @@ import LazyImage from "../Lazy/LazyImage";
 import { motion, useScroll, useTransform } from "framer-motion";
 import CameraIcon from '@mui/icons-material/Camera';
 import React from 'react';
+import {JerseyImgItem, filterJerseysByAwayHome, LogoImgItem} from "./Jersey"
 const { Tab, AddButton } = Chrome;
 
 const BrowserContainer = styled(Box)(({ theme }) => ({
@@ -82,63 +83,57 @@ const LifeImgItem = ({ alt, src, place, idx, href }) => {
     );
 };
 
-const filterJerseysByAwayHome = (data, type) => {
-    if (!Array.isArray(data)) return [];
-    return data.filter(jersey => jersey['homeAway'] === type);
-};
 
-const JerseyImgItem = ({ alt, src, year, team, league, homeAway, idx, href }) => {
-    const itemRef = useRef();
-    const { scrollYProgress } = useScroll({
-        target: itemRef,
-        offset: ["start end", "end end"],
-    });
+// const JerseyImgItem = ({ alt, src, year, team, league, homeAway, idx, href }) => {
+//     const itemRef = useRef();
+//     const { scrollYProgress } = useScroll({
+//         target: itemRef,
+//         offset: ["start end", "end end"],
+//     });
 
-    const margin = 368 - 16 * idx;
+//     const margin = 368 - 16 * idx;
 
-    const y = useTransform(scrollYProgress, [0, 1], [margin, 0]);
-    const opacity = useTransform(scrollYProgress, [0, 0.4, 1], [0, 0.1, 1]);
+//     const y = useTransform(scrollYProgress, [0, 1], [margin, 0]);
+//     const opacity = useTransform(scrollYProgress, [0, 0.4, 1], [0, 0.1, 1]);
 
-    return (
-        <ImageListItem key={alt} sx={{ overflow: "hidden" }} ref={itemRef}>
-            <motion.div whileHover={{ scale: 1.2 }} style={{ y, opacity, borderRadius: "1.6rem", overflow: "visible" }}>
-                <a href={href || src}>
-                    <LazyImage src={src} alt={alt} margin={margin + 128} trim={1} width="100%" />
-                </a>
-                <ImageListItemBar
-                    title={alt}
-                    subtitle={`@${league}`}
-                    actionIcon={
-                        <IconButton href={src} sx={{ marginTop: 0.5 }}>
-                            {/* <CameraIcon /> */}
-                        </IconButton>
-                    }
-                    position="below"
-                    sx={(theme) => ({
-                        display: "flex", // Enables flexbox for centering
-                        flexDirection: "column",
-                        alignItems: "center", // Centers text horizontally
-                        textAlign: "center", // Centers text within the flex container
-                        fontSize: "1.2rem", // Adjusts overall font size
-                        gap: "4px", // Adds spacing between title and subtitle
-                        ".MuiImageListItemBar-title": {
-                            fontSize: "1em",
-                            lineHeight: 1.4,
-                        },
-                        ".MuiImageListItemBar-subtitle": {
-                            fontSize: "0.9em",
-                            color: "#cacaca",
-                        },
-                    })}
-                />
-            </motion.div>
+//     return (
+//         <ImageListItem key={alt} sx={{ overflow: "hidden" }} ref={itemRef}>
+//             <motion.div whileHover={{ scale: 1.2 }} style={{ y, opacity, borderRadius: "1.6rem", overflow: "visible" }}>
+//                 <a href={href || src}>
+//                     <LazyImage src={src} alt={alt} margin={margin + 128} trim={1} width="100%" />
+//                 </a>
+//                 <ImageListItemBar
+//                     title={alt}
+//                     subtitle={`@${league}`}
+//                     actionIcon={
+//                         <IconButton href={src} sx={{ marginTop: 0.5 }}>
+//                             {/* <CameraIcon /> */}
+//                         </IconButton>
+//                     }
+//                     position="below"
+//                     sx={(theme) => ({
+//                         display: "flex", // Enables flexbox for centering
+//                         flexDirection: "column",
+//                         alignItems: "center", // Centers text horizontally
+//                         textAlign: "center", // Centers text within the flex container
+//                         fontSize: "1.2rem", // Adjusts overall font size
+//                         gap: "4px", // Adds spacing between title and subtitle
+//                         ".MuiImageListItemBar-title": {
+//                             fontSize: "1em",
+//                             lineHeight: 1.4,
+//                         },
+//                         ".MuiImageListItemBar-subtitle": {
+//                             fontSize: "0.9em",
+//                             color: "#cacaca",
+//                         },
+//                     })}
+//                 />
+//             </motion.div>
             
-        </ImageListItem>
-    );
-};
+//         </ImageListItem>
+//     );
+// };
 
-
-  
 
 export default function Life(props) {
 
@@ -149,7 +144,6 @@ export default function Life(props) {
 
     const citylogo = jerseyData.find(jersey => jersey.team === 'citylogo');
   
-
 
     return (
         <Fragment>
@@ -190,10 +184,11 @@ export default function Life(props) {
                     <div className="flex flex-col items-center justify-center min-h-[72vh] p-4"
                         style={{
                             margin: "16px auto", // Adds vertical spacing and centers the container
-                            maxWidth: "150px",  // Limits the maximum width of the container
+                            maxWidth: "600px",  // Limits the maximum width of the container
                             }}
                         >
-                        {citylogo ? (
+                            
+                        {/* {citylogo ? (
                         <motion.div
                             whileHover={{ scale: 1.1 }} // Hover scaling effect
                             className="relative flex justify-center items-center rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
@@ -217,7 +212,13 @@ export default function Life(props) {
                             </a>
                         </motion.div>
                         
-                        ) : null}
+                        ) : null} */}
+
+                    <div>
+                        <LogoImgItem src="https://ik.imagekit.io/tingxi/mancitylogo.png?updatedAt=1733916608965" 
+                                     alt = "&nbsp;blue &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; moon"
+                        />
+                    </div>
 
                     </div>
                     <div
