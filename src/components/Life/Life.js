@@ -140,10 +140,7 @@ export default function Life(props) {
     const smbk = useMediaQuery("(min-width: 480px)");
     
     const homeJerseys = filterJerseysByAwayHome(jerseyData, 'home');
-    const awayJerseys = filterJerseysByAwayHome(jerseyData, 'away');
-
-    const citylogo = jerseyData.find(jersey => jersey.team === 'citylogo');
-  
+    const awayJerseys = filterJerseysByAwayHome(jerseyData, 'away');  
 
     return (
         <Fragment>
