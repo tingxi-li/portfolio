@@ -276,7 +276,9 @@ export default function Life(props) {
                 fontSize: "1.2rem",
                 color: "#aaa",
             }}>
-                Love documenting my life with a phone or camera while traveling, researching, and even during moments at home.            </Typography>
+                Love documenting my life with cameras. <br />
+                📷 Lumix S5 / Nikon D7000 / Pentax sp F
+                </Typography>
             <ImageList variant="masonry" cols={smbk ? 2 : 1} gap={"max(3.2rem, 6.4vw)"} sx={{
                 marginTop: 8,
                 marginBottom: 5,
