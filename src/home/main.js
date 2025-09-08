@@ -145,7 +145,7 @@ export default function Main() {
 
       <p className="heading">My Reading List</p>
 
-      <p className="normal-text" style={{color: "#666666", fontSize: "18px"}}>i want to express my sincere thankfulness to my advisor, those great names and peers whose words or research works that inspired, motivated, and guided me throughout my academic journey.</p>
+      <p className="normal-text" style={{color: "#666666", fontSize: "18px"}}>i want to express my sincere thanks to my advisor, as well as to the researchers and peers whose words and work inspired, motivated, and guided me throughout my academic journey.</p>
 
       <ul className="cards">
         <li className="card-item has-links">
