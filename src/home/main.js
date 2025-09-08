@@ -26,6 +26,8 @@ export default function Main() {
         </span>
       </div>
 
+      <p className="addressline" style={{ marginLeft: "8px"}}>[ˈtɪŋɕi li] 李 亭熹</p>
+
       <ContactRow />
 
       <p className="heading">Bio</p>

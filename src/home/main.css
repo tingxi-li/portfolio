@@ -13,6 +13,7 @@
 
 
 .myname {
+  margin-top: 20px;
   font-family: 'Ephidona', sans-serif;
   font-size: 80px;
   color: #333333;
@@ -23,6 +24,7 @@
 
 /* Name + headshot row (isolated) */
 .name-row {
+  margin-top: 0px;
   display: flex;
   align-items: center;
   gap: 16px;            /* spacing between name and photo */
@@ -76,8 +78,8 @@
 }
 
 .addressline {
-  font-family: 'Ephidona', sans-serif;
-  font-size: 20px;
+  font-family: 'charter', sans-serif;
+  font-size: 18px;
   color: #333333;
   text-align: left;
   margin-top: 0px;
