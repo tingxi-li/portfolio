@@ -165,7 +165,7 @@ export default function Main() {
 
       <ul className="cards">
         <li className="card-item has-links">
-          <h3 className="card-title">PhD Grinding</h3>
+          <h3 className="card-title">The Ph.D. Grind</h3>
           <div className="card-meta">
             <span className="card-tag">Book</span>
             <span className="card-tag">Jul. 2012</span>
