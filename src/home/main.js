@@ -152,7 +152,7 @@ export default function Main() {
           <h3 className="card-title">Your and your research</h3>
           <div className="card-meta">
             <span className="card-tag">Talk</span>
-            <span className="card-tag">Mar. 1986</span>
+            <span className="card-tag">Mar 1986</span>
           </div>
           <p className="card-description">
             Richard Hamming
@@ -168,7 +168,7 @@ export default function Main() {
           <h3 className="card-title">The Ph.D. Grind</h3>
           <div className="card-meta">
             <span className="card-tag">Book</span>
-            <span className="card-tag">Jul. 2012</span>
+            <span className="card-tag">Jul 2012</span>
           </div>
           <p className="card-description">
             Philip Guo
