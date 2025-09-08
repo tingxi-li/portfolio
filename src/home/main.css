@@ -431,8 +431,37 @@
   font-size: 18px;
 }
 
+/* Optional links area on the right, same style as publications link tags */
+.cards .card-links {
+  grid-column: 2;
+  grid-row: 2;
+  display: flex;
+  gap: 8px;
+  align-self: start;
+  justify-self: end;
+}
+.cards .card-link {
+  font-size: var(--pub-link-size);
+  color: #555;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid #e87500;
+  padding: 4px 10px;
+  border-radius: 6px;
+  transition: color .2s ease, border-color .2s ease, background .2s ease;
+}
+.cards .card-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: #fff9f2;
+}
+
+/* When a card has links, keep description on the left only */
+.cards .card-item.has-links .card-description { grid-column: 1; }
+
 @media (max-width: 640px) {
   .cards .card-item { grid-template-columns: 1fr; }
   /* on small screens, let tags flow below title on the left */
   .cards .card-meta { grid-column: 1; grid-row: auto; justify-self: start; }
+  .cards .card-links { grid-column: 1; grid-row: auto; justify-self: start; margin-top: 6px; }
 }

@@ -143,7 +143,41 @@ export default function Main() {
       <p className="normal-text" style={{color: "#666666", fontSize: "18px"}}>Languages: Mandarin, Cantonese, English</p>
 
 
+      <p className="heading">My Reading List</p>
 
+      <p className="normal-text" style={{color: "#666666", fontSize: "18px"}}>i want to express my sincere thankfulness to my advisor, those great names and peers whose words or research works that inspired, motivated, and guided me throughout my academic journey.</p>
+
+      <ul className="cards">
+        <li className="card-item has-links">
+          <h3 className="card-title">Your and your research</h3>
+          <div className="card-meta">
+            <span className="card-tag">Talk</span>
+            <span className="card-tag">Mar. 1986</span>
+          </div>
+          <p className="card-description">
+            Richard Hamming
+          </p>
+          <div className="card-links">
+            <a className="card-link" href="https://www.cs.virginia.edu/~robins/YouAndYourResearch.html" target="_blank" rel="noopener noreferrer">Link</a>
+          </div>
+        </li>
+      </ul>
+
+      <ul className="cards">
+        <li className="card-item has-links">
+          <h3 className="card-title">PhD Grinding</h3>
+          <div className="card-meta">
+            <span className="card-tag">Book</span>
+            <span className="card-tag">Jul. 2012</span>
+          </div>
+          <p className="card-description">
+            Philip Guo
+          </p>
+          <div className="card-links">
+            <a className="card-link" href="http://linyun.info/phd-grinding.pdf" target="_blank" rel="noopener noreferrer">Link</a>
+          </div>
+        </li>
+      </ul>
 
     </div>
   );
