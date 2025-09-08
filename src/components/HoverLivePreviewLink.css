@@ -1,5 +1,5 @@
 .hover-live-link {
-  --link-color: #333;
+  --link-color: #247856;
   --link-hover: #e87500 ;
   --underline-base: #5fe0b7;
   --underline-active: #e87500;
@@ -14,6 +14,8 @@
   --grad-time: .85s;
   --spin-speed: 1.1s;
   --border-thick: 2px;
+  --underline-offset: 1px;      /* 下划线距文字的偏移（向下） */
+  --underline-thickness: 1.5px;    /* 下划线粗细 */
 
   position: relative;
   display: inline-block;
@@ -21,6 +23,7 @@
   text-decoration: none;
   font-weight: 500;
   transition: color var(--timing) ease;
+  font-style: italic;
 }
 
 /* .hover-live-link:hover { color: var(--link-hover); } */
@@ -29,6 +32,8 @@
   position: relative;
   display: inline-block;          /* 避免多行导致的重排影响 */
   contain: paint;                 /* 隔离绘制，减少关联重绘 */
+  /* 为下移的下划线预留空间，避免被剪裁 */
+  padding-bottom: calc(var(--underline-offset) + var(--underline-thickness));
   line-height: 1;                 /* 紧贴文本，避免行高带来的大间距 */
   background-image: linear-gradient(90deg, var(--grad-1), var(--grad-2), var(--grad-3));
   background-size: 200% 100%;
@@ -40,8 +45,8 @@
 .hover-live-link .link-text::before {
   content: "";
   position: absolute;
-  left: 0; right: 0; bottom: 0px;
-  height: 1px;
+  left: 0; right: 0; bottom: 0;
+  height: var(--underline-thickness);
   background: var(--underline-base);
   z-index: 1;
   pointer-events: none;
@@ -50,7 +55,7 @@
   content: "";
   position: absolute;
   left: 0; right: 0; bottom: 0;
-  height: 1px;
+  height: var(--underline-thickness);
   background: var(--underline-active);
   transform: scaleX(0);
   transform-origin: left;

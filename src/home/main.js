@@ -43,7 +43,7 @@ export default function Main() {
       <p className="heading">Research Interests</p>
 
       <p className="normal-text">
-        i am broadly interested in artificial intelligence and software engineering, particularly at the intersection of the two. more specifically, i focus on enhancing the efficiency and robustness of deep learning systems against malicious inputs, as well as leveraging large language models for software testing.
+        i am broadly interested in <span style={{color: "#247856", fontStyle: "italic"}}>artificial intelligence</span> and <span style={{color: "#247856", fontStyle: "italic"}}>software engineering</span>, particularly at the intersection of the two. more specifically, i focus on enhancing the efficiency and robustness of deep learning systems against malicious inputs, as well as leveraging large language models for software testing.
       </p>
 
       <p className="normal-text-highlight">i am actively seeking internship opportunities starting in summer 2026.</p>
@@ -54,7 +54,7 @@ export default function Main() {
         <p className="normal-text" style={{fontSize: "24px"}}>
           The University of Texas at Dallas
         </p>
-        <p className="normal-text accent-underline" style={{fontStyle: "italic" , fontSize: "20px"}}>
+        <p className="normal-text accent-underline" style={{color: "#247856", fontStyle: "italic" , fontSize: "20px"}}>
           Doctor of Philosophy, 2024 - present
         </p>
       </div>
@@ -63,7 +63,7 @@ export default function Main() {
         <p className="normal-text" style={{fontSize: "24px"}}>
           Dalian University of Technology
         </p>
-        <p className="normal-text accent-underline" style={{fontStyle: "italic" , fontSize: "20px"}}>
+        <p className="normal-text accent-underline" style={{color: "#247856", fontStyle: "italic" , fontSize: "20px"}}>
           Bachelor of Science, 2019 - 2024
         </p>
       </div>
@@ -72,7 +72,7 @@ export default function Main() {
         <p className="normal-text" style={{fontSize: "24px"}}>
           Technical University of Munich
         </p>
-        <p className="normal-text accent-underline" style={{fontStyle: "italic" , fontSize: "20px"}}>
+        <p className="normal-text accent-underline" style={{color: "#247856", fontStyle: "italic" , fontSize: "20px"}}>
           Visiting Student, 2022 - 2022
         </p>
       </div>
@@ -93,7 +93,7 @@ export default function Main() {
             <span className="card-tag">May 2024 – Aug 2024</span>
           </div>
           <p className="card-description">
-            refactored c++ code, tested the refactored code to ensure compilation and functionality, and wrote documentation.
+            refactor c++ code, test the refactored code to ensure compilation and functionality, and write documentation.
           </p>
         </li>
 
