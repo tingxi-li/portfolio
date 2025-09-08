@@ -149,7 +149,7 @@ export default function Main() {
 
       <ul className="cards">
         <li className="card-item has-links">
-          <h3 className="card-title">Your and your research</h3>
+          <h3 className="card-title">You and your research</h3>
           <div className="card-meta">
             <span className="card-tag">Talk</span>
             <span className="card-tag">Mar 1986</span>
