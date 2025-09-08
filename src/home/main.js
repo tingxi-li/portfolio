@@ -21,8 +21,11 @@ export default function Main() {
     <div className="main">
       <div className="name-row">
         <p className="myname">Tingxi Li</p>
-        <span className="myphoto-wrap">
-          <img className="myphoto" src="/myphoto.ico" alt="Tingxi Li" />
+        <span className="myphoto-wrap" aria-label="profile photo flipping like a coin">
+          <div className="coin-3d" role="img" aria-label="Tingxi Li">
+            <img className="coin-face coin-front" src="/myphoto.ico" alt="" />
+            <img className="coin-face coin-back" src="/favicon.ico" alt="" onError={(e) => { e.currentTarget.src = '/myphoto.ico'; }} />
+          </div>
         </span>
       </div>
 
