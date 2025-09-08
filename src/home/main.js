@@ -150,7 +150,7 @@ function ContactRow() {
   const PHONE = "+1 (123) 456-7890"; 
   const LINKEDIN = "https://www.linkedin.com/in/tingxi-l-352a45297/"; 
   const SCHOLAR = "https://scholar.google.com/citations?user=a_XpeY0AAAAJ&hl=en";  
-  const CV = "/cv.pdf"; // 将你的简历PDF放在 public/cv.pdf 或替换此链接
+  const CV = "/cv.pdf"; 
 
   const [emailCopied, setEmailCopied] = useState(false);
   const [phoneCopied, setPhoneCopied] = useState(false);
