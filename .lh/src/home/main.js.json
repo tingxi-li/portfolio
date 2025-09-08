@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 186,
+            "activePatchIndex": 190,
             "patches": [
                 {
                     "date": 1757237959010,
@@ -752,6 +752,22 @@
                 {
                     "date": 1757308807636,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n   return (\n     <div className=\"main\">\n       <div className=\"name-row\">\n         <p className=\"myname\">Tingxi Li</p>\n-        <img className=\"myphoto\" src=\"../public/favicon.ico\" alt=\"Tingxi Li\" />\n+        <img className=\"myphoto\" src=\"/favicon.ico\" alt=\"Tingxi Li\" />\n       </div>\n \n       {/* <p className=\"addressline\">800 W Campbell Rd, Richardson, TX 75080</p> */}\n \n"
+                },
+                {
+                    "date": 1757310038678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,13 +23,13 @@\n   return (\n     <div className=\"main\">\n       <div className=\"name-row\">\n         <p className=\"myname\">Tingxi Li</p>\n-        <img className=\"myphoto\" src=\"/favicon.ico\" alt=\"Tingxi Li\" />\n+        <span className=\"myphoto-wrap\">\n+          <img className=\"myphoto\" src=\"/favicon.ico\" alt=\"Tingxi Li\" />\n+        </span>\n       </div>\n \n-      {/* <p className=\"addressline\">800 W Campbell Rd, Richardson, TX 75080</p> */}\n-\n       <ContactRow />\n \n       <p className=\"heading\">Bio</p>\n \n"
+                },
+                {
+                    "date": 1757310604301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import React, { useState } from \"react\";\n import \"./main.css\";\n import Publications from \"./Publications\";\n-import { Link } from \"@mui/material\";\n import FancyPreviewLink from \"../components/FancyPreviewLink\";\n import HoverLivePreviewLink from \"../components/HoverLivePreviewLink\";\n import { color } from \"framer-motion\";\n \n@@ -147,8 +146,9 @@\n   const EMAIL = \"tingxi.li@utdallas.edu\";\n   const PHONE = \"+1 (123) 456-7890\"; \n   const LINKEDIN = \"https://www.linkedin.com/in/tingxi-l-352a45297/\"; \n   const SCHOLAR = \"https://scholar.google.com/citations?user=a_XpeY0AAAAJ&hl=en\";  \n+  const CV = \"/cv.pdf\"; // 将你的简历PDF放在 public/cv.pdf 或替换此链接\n \n   const [emailCopied, setEmailCopied] = useState(false);\n   const [phoneCopied, setPhoneCopied] = useState(false);\n \n@@ -195,8 +195,23 @@\n             {phoneCopied && <span className=\"copied\">Copied</span>}\n           </button>\n         ) : null}\n \n+        {CV ? (\n+          <a className=\"contact-btn\" href={CV} target=\"_blank\" rel=\"noopener noreferrer\" title=\"CV / Resume\">\n+            <svg className=\"icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n+              <defs>\n+                <linearGradient id=\"contact-grad\" x1=\"0%\" y1=\"0%\" x2=\"100%\" y2=\"0%\">\n+                  <stop offset=\"0%\" style={{ stopColor: 'var(--grad-1)' }} />\n+                  <stop offset=\"50%\" style={{ stopColor: 'var(--grad-2)' }} />\n+                  <stop offset=\"100%\" style={{ stopColor: 'var(--grad-3)' }} />\n+                </linearGradient>\n+              </defs>\n+              <path fill=\"url(#contact-grad)\" d=\"M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6Zm0 2.5L18.5 9H14V4.5ZM8 12h8v1.5H8V12Zm0 4h8v1.5H8V16Z\" />\n+            </svg>\n+          </a>\n+        ) : null}\n+\n         {LINKEDIN ? (\n           <a className=\"contact-btn\" href={LINKEDIN} target=\"_blank\" rel=\"noopener noreferrer\" title=\"LinkedIn\">\n             <svg className=\"icon\" viewBox=\"0 0 24 24\" aria-hidden=\"true\">\n               <defs>\n"
+                },
+                {
+                    "date": 1757310609597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import React, { useState } from \"react\";\n import \"./main.css\";\n import Publications from \"./Publications\";\n-import FancyPreviewLink from \"../components/FancyPreviewLink\";\n import HoverLivePreviewLink from \"../components/HoverLivePreviewLink\";\n import { color } from \"framer-motion\";\n \n const pubs1 = [\n"
+                },
+                {
+                    "date": 1757311039964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n import React, { useState } from \"react\";\n import \"./main.css\";\n import Publications from \"./Publications\";\n import HoverLivePreviewLink from \"../components/HoverLivePreviewLink\";\n-import { color } from \"framer-motion\";\n \n const pubs1 = [\n { title: \"Efficiency Attack and Defences Towards Deep Learning Systems\",\n authors: [\"Ravishka Rathnasuriya\", \"Tingxi Li\", \"Zexin Xu\", \"Zihe Song\", \"Jun Ren\", \"Mirazul Haque\", \"Simin Chen\", \"Wei Yang\"], venue: \"Usenix Sec\", year: \"2025\",\n@@ -22,9 +21,9 @@\n     <div className=\"main\">\n       <div className=\"name-row\">\n         <p className=\"myname\">Tingxi Li</p>\n         <span className=\"myphoto-wrap\">\n-          <img className=\"myphoto\" src=\"/favicon.ico\" alt=\"Tingxi Li\" />\n+          <img className=\"myphoto\" src=\"/myphoto.ico\" alt=\"Tingxi Li\" />\n         </span>\n       </div>\n \n       <ContactRow />\n"
                 }
             ],
             "date": 1757237959010,

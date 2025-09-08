@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 10,
+            "activePatchIndex": 11,
             "patches": [
                 {
                     "date": 1756310543219,
@@ -48,6 +48,10 @@
                 {
                     "date": 1757237941058,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,8 @@\n import ReactDOM from \"react-dom/client\";\n import App from \"./App\";\n import \"./index.css\"; // <- REQUIRED: make sure this line exists\n \n-import \"./home/main.js\"; // <- REQUIRED: make sure this line exists\n+import Main from \"./home/main\";\n \n const root = ReactDOM.createRoot(document.getElementById(\"root\"));\n root.render(<App />);\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1757310127548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,9 @@\n // /src/index.js\n import React from \"react\";\n import ReactDOM from \"react-dom/client\";\n-import App from \"./App\";\n import \"./index.css\"; // <- REQUIRED: make sure this line exists\n \n import Main from \"./home/main\";\n \n const root = ReactDOM.createRoot(document.getElementById(\"root\"));\n-root.render(<App />);\n\\ No newline at end of file\n+root.render(<Main />);\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1756310543219,

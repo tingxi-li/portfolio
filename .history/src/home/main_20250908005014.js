@@ -22,7 +22,7 @@ export default function Main() {
       <div className="name-row">
         <p className="myname">Tingxi Li</p>
         <span className="myphoto-wrap">
-          <img className="myphoto" src="/myphoto.ico" alt="Tingxi Li" />
+          <img className="myphoto" src="/favicon.ico" alt="Tingxi Li" />
         </span>
       </div>
 

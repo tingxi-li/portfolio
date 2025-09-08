@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "./main.css";
 import Publications from "./Publications";
+import { Link } from "@mui/material";
+import FancyPreviewLink from "../components/FancyPreviewLink";
 import HoverLivePreviewLink from "../components/HoverLivePreviewLink";
+import { color } from "framer-motion";
 
 const pubs1 = [
 { title: "Efficiency Attack and Defences Towards Deep Learning Systems",
@@ -22,7 +25,7 @@ export default function Main() {
       <div className="name-row">
         <p className="myname">Tingxi Li</p>
         <span className="myphoto-wrap">
-          <img className="myphoto" src="/myphoto.ico" alt="Tingxi Li" />
+          <img className="myphoto" src="/favicon.ico" alt="Tingxi Li" />
         </span>
       </div>
 
@@ -145,7 +148,6 @@ function ContactRow() {
   const PHONE = "+1 (123) 456-7890"; 
   const LINKEDIN = "https://www.linkedin.com/in/tingxi-l-352a45297/"; 
   const SCHOLAR = "https://scholar.google.com/citations?user=a_XpeY0AAAAJ&hl=en";  
-  const CV = "/cv.pdf"; // 将你的简历PDF放在 public/cv.pdf 或替换此链接
 
   const [emailCopied, setEmailCopied] = useState(false);
   const [phoneCopied, setPhoneCopied] = useState(false);
@@ -192,21 +194,6 @@ function ContactRow() {
             </svg>
             {phoneCopied && <span className="copied">Copied</span>}
           </button>
-        ) : null}
-
-        {CV ? (
-          <a className="contact-btn" href={CV} target="_blank" rel="noopener noreferrer" title="CV / Resume">
-            <svg className="icon" viewBox="0 0 24 24" aria-hidden="true">
-              <defs>
-                <linearGradient id="contact-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" style={{ stopColor: 'var(--grad-1)' }} />
-                  <stop offset="50%" style={{ stopColor: 'var(--grad-2)' }} />
-                  <stop offset="100%" style={{ stopColor: 'var(--grad-3)' }} />
-                </linearGradient>
-              </defs>
-              <path fill="url(#contact-grad)" d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6Zm0 2.5L18.5 9H14V4.5ZM8 12h8v1.5H8V12Zm0 4h8v1.5H8V16Z" />
-            </svg>
-          </a>
         ) : null}
 
         {LINKEDIN ? (
