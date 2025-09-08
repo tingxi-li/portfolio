@@ -36,9 +36,8 @@ export default function Main() {
       <p className="heading">Bio</p>
 
       <p className="normal-text">
-        i'm a <s>1st</s> 2nd year phd student in computer science at <HoverLivePreviewLink href="https://www.utdallas.edu/" text="ut dallas" placement="right" ></HoverLivePreviewLink>, advised by <HoverLivePreviewLink href="https://youngwei.com/" text="prof. wei yang"></HoverLivePreviewLink>. 
-        prior to that, i earned my bachelor's degree at <HoverLivePreviewLink href="https://en.dlut.edu.cn/" text="dalian university of 
-        technology"></HoverLivePreviewLink>, and was a visiting student at <HoverLivePreviewLink href="https://www.tum.de/en" text="technical university of munich" fallbackImg="/previews/tum_preview.webp"></HoverLivePreviewLink>.</p>
+        i'm a <s>1st</s> 2nd year phd student in computer science at <span style={{color: "#247856", fontStyle: "italic"}}>ut dallas</span>, advised by <HoverLivePreviewLink href="https://youngwei.com/" text="prof. wei yang"></HoverLivePreviewLink>. 
+        prior to that, i earned my bachelor's degree at <span style={{color: "#247856", fontStyle: "italic"}}>dalian university of technology</span>, and was a visiting student at <span style={{color: "#247856", fontStyle: "italic"}}>technical university of munich</span>.</p>
 
       <p className="heading">Research Interests</p>
 
