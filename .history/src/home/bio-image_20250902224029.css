@@ -1,0 +1,11 @@
+
+.bio-image {
+  width: 175px;
+  height: 175px;
+  border-radius: 80px;
+  object-fit: cover;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

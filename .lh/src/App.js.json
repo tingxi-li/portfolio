@@ -1,0 +1,126 @@
+{
+    "sourceFile": "src/App.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 27,
+            "patches": [
+                {
+                    "date": 1756310323641,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1756778709076,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,7 @@\n-import React from \"react\";\n-import Header from \"./components/Header\";\n-import Footer from \"./components/Footer\";\n-import Home from \"./pages/Home\";\n-// 如需多页：import Archive from \"./pages/Archive\";\n-\n export default function App() {\n   return (\n-    <div className=\"site\">\n-      <Header />\n-      <main className=\"main\">\n-        <Home />\n-        {/* <Archive />  // 需要时再挂 */}\n-      </main>\n-      <Footer />\n+    <div style={{ height: \"100vh\", backgroundColor: \"#3498db\" }}>\n+      {/* Blank page with blue background */}\n     </div>\n   );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756779144713,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n export default function App() {\n   return (\n-    <div style={{ height: \"100vh\", backgroundColor: \"#3498db\" }}>\n+    <div style={{ height: \"100vh\", backgroundColor: \"#F7F7F2\" }}>\n       {/* Blank page with blue background */}\n     </div>\n   );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756779548246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n export default function App() {\n   return (\n-    <div style={{ height: \"100vh\", backgroundColor: \"#F7F7F2\" }}>\n-      {/* Blank page with blue background */}\n+    <div style={{ height: \"100vh\", backgroundColor: \"#EDEDE2\" }}>\n+      {/* Blank page with light gray background */}\n     </div>\n   );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756779608245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n export default function App() {\n   return (\n-    <div style={{ height: \"100vh\", backgroundColor: \"#EDEDE2\" }}>\n+    <div style={{ height: \"100vh\", backgroundColor: \"#EBEBDE\" }}>\n       {/* Blank page with light gray background */}\n     </div>\n   );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756779929950,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n export default function App() {\n   return (\n-    <div style={{ height: \"100vh\", backgroundColor: \"#EBEBDE\" }}>\n-      {/* Blank page with light gray background */}\n+    <div className=\"glow\">\n+      {/* Page has a background color + glowing edges */}\n     </div>\n   );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756780290280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n+// /src/App.js\n export default function App() {\n   return (\n     <div className=\"glow\">\n-      {/* Page has a background color + glowing edges */}\n+      {/* content optional */}\n     </div>\n   );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756780567864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,69 @@\n // /src/App.js\n export default function App() {\n   return (\n     <div className=\"glow\">\n-      {/* content optional */}\n+      {/* optional content */}\n     </div>\n   );\n\\ No newline at end of file\n-}\n+}\n+\n+// /src/index.js\n+import React from \"react\";\n+import ReactDOM from \"react-dom/client\";\n+import App from \"./App\";\n+import \"./index.css\";\n+\n+const root = ReactDOM.createRoot(document.getElementById(\"root\"));\n+root.render(<App />);\n+\n+/* /src/index.css */\n+html, body, #root { height: 100%; margin: 0; }\n+\n+/* Strong defaults so it's visible */\n+:root{\n+  --bg: 12 14 24;            /* dark background */\n+  --glow: 0, 200, 255;       /* comma-separated RGB for rgba() */\n+  --alpha: 0.55;             /* intensity */\n+  --size: 52vmin;            /* radius */\n+  --blur: 48px;              /* softness */\n+}\n+\n+.glow{\n+  position: relative;\n+  min-height: 100vh;\n+  background: rgb(var(--bg));\n+  isolation: isolate;\n+}\n+\n+/* Keep children above glow */\n+.glow > * { position: relative; z-index: 1; }\n+\n+/* Edge + corner glow (8 radial gradients) */\n+.glow::before{\n+  content: \"\";\n+  position: fixed;           /* pin to viewport */\n+  inset: -12vmax;            /* extend for softness */\n+  pointer-events: none;\n+  z-index: 0;                /* above .glow background */\n+  filter: blur(var(--blur));\n+  opacity: 1;\n+  background:\n+    radial-gradient(var(--size) var(--size) at 0%   0%,   rgba(var(--glow), var(--alpha)) 0%, rgba(var(--glow), 0) 60%),\n+    radial-gradient(var(--size) var(--size) at 100% 0%,   rgba(var(--glow), var(--alpha)) 0%, rgba(var(--glow), 0) 60%),\n+    radial-gradient(var(--size) var(--size) at 0%   100%, rgba(var(--glow), var(--alpha)) 0%, rgba(var(--glow), 0) 60%),\n+    radial-gradient(var(--size) var(--size) at 100% 100%, rgba(var(--glow), var(--alpha)) 0%, rgba(var(--glow), 0) 60%),\n+    radial-gradient(var(--size) var(--size) at 50%  0%,   rgba(var(--glow), var(--alpha)) 0%, rgba(var(--glow), 0) 60%),\n+    radial-gradient(var(--size) var(--size) at 50%  100%, rgba(var(--glow), var(--alpha)) 0%, rgba(var(--glow), 0) 60%),\n+    radial-gradient(var(--size) var(--size) at 0%   50%,  rgba(var(--glow), var(--alpha)) 0%, rgba(var(--glow), 0) 60%),\n+    radial-gradient(var(--size) var(--size) at 100% 50%,  rgba(var(--glow), var(--alpha)) 0%, rgba(var(--glow), 0) 60%);\n+}\n+\n+/* Optional: quick visibility test – center dot. Remove later.\n+.glow::after{\n+  content: \\\"\\\";\n+  position: fixed;\n+  inset: 0;\n+  background: radial-gradient(20vmin 20vmin at 50% 50%, rgba(var(--glow), 0.9), rgba(var(--glow), 0) 60%);\n+  pointer-events: none;\n+  z-index: 0;\n+} */\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756780574168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,69 +1,8 @@\n // /src/App.js\n export default function App() {\n   return (\n     <div className=\"glow\">\n-      {/* optional content */}\n+      {/* content optional */}\n     </div>\n   );\n-}\n-\n-// /src/index.js\n-import React from \"react\";\n-import ReactDOM from \"react-dom/client\";\n-import App from \"./App\";\n-import \"./index.css\";\n-\n-const root = ReactDOM.createRoot(document.getElementById(\"root\"));\n-root.render(<App />);\n-\n-/* /src/index.css */\n-html, body, #root { height: 100%; margin: 0; }\n-\n-/* Strong defaults so it's visible */\n-:root{\n-  --bg: 12 14 24;            /* dark background */\n-  --glow: 0, 200, 255;       /* comma-separated RGB for rgba() */\n-  --alpha: 0.55;             /* intensity */\n-  --size: 52vmin;            /* radius */\n-  --blur: 48px;              /* softness */\n-}\n-\n-.glow{\n-  position: relative;\n-  min-height: 100vh;\n-  background: rgb(var(--bg));\n-  isolation: isolate;\n-}\n-\n-/* Keep children above glow */\n-.glow > * { position: relative; z-index: 1; }\n-\n-/* Edge + corner glow (8 radial gradients) */\n-.glow::before{\n-  content: \"\";\n-  position: fixed;           /* pin to viewport */\n-  inset: -12vmax;            /* extend for softness */\n-  pointer-events: none;\n-  z-index: 0;                /* above .glow background */\n-  filter: blur(var(--blur));\n-  opacity: 1;\n-  background:\n-    radial-gradient(var(--size) var(--size) at 0%   0%,   rgba(var(--glow), var(--alpha)) 0%, rgba(var(--glow), 0) 60%),\n-    radial-gradient(var(--size) var(--size) at 100% 0%,   rgba(var(--glow), var(--alpha)) 0%, rgba(var(--glow), 0) 60%),\n-    radial-gradient(var(--size) var(--size) at 0%   100%, rgba(var(--glow), var(--alpha)) 0%, rgba(var(--glow), 0) 60%),\n-    radial-gradient(var(--size) var(--size) at 100% 100%, rgba(var(--glow), var(--alpha)) 0%, rgba(var(--glow), 0) 60%),\n-    radial-gradient(var(--size) var(--size) at 50%  0%,   rgba(var(--glow), var(--alpha)) 0%, rgba(var(--glow), 0) 60%),\n-    radial-gradient(var(--size) var(--size) at 50%  100%, rgba(var(--glow), var(--alpha)) 0%, rgba(var(--glow), 0) 60%),\n-    radial-gradient(var(--size) var(--size) at 0%   50%,  rgba(var(--glow), var(--alpha)) 0%, rgba(var(--glow), 0) 60%),\n-    radial-gradient(var(--size) var(--size) at 100% 50%,  rgba(var(--glow), var(--alpha)) 0%, rgba(var(--glow), 0) 60%);\n-}\n-\n-/* Optional: quick visibility test – center dot. Remove later.\n-.glow::after{\n-  content: \\\"\\\";\n-  position: fixed;\n-  inset: 0;\n-  background: radial-gradient(20vmin 20vmin at 50% 50%, rgba(var(--glow), 0.9), rgba(var(--glow), 0) 60%);\n-  pointer-events: none;\n-  z-index: 0;\n\\ No newline at end of file\n-} */\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756784144219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n // /src/App.js\n+import \"navi/navibar\"; // <- REQUIRED: make sure this line exists\n export default function App() {\n   return (\n     <div className=\"glow\">\n       {/* content optional */}\n"
+                },
+                {
+                    "date": 1756784155578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n // /src/App.js\n-import \"navi/navibar\"; // <- REQUIRED: make sure this line exists\n+import \"./navi/navibar\"; // <- REQUIRED: make sure this line exists\n export default function App() {\n   return (\n     <div className=\"glow\">\n       {/* content optional */}\n"
+                },
+                {
+                    "date": 1756784220372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n // /src/App.js\n-import \"./navi/navibar\"; // <- REQUIRED: make sure this line exists\n+import \"./navbar/navbar\"; // <- REQUIRED: make sure this line exists\n export default function App() {\n   return (\n     <div className=\"glow\">\n       {/* content optional */}\n"
+                },
+                {
+                    "date": 1756784295953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n // /src/App.js\n-import \"./navbar/navbar\"; // <- REQUIRED: make sure this line exists\n+import \"./nav/navbar\"; // <- REQUIRED: make sure this line exists\n export default function App() {\n   return (\n     <div className=\"glow\">\n-      {/* content optional */}\n+      <NavBar />\n     </div>\n   );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756784350413,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n // /src/App.js\n-import \"./nav/navbar\"; // <- REQUIRED: make sure this line exists\n+import NavBar from \"./nav/navbar\";\n export default function App() {\n   return (\n     <div className=\"glow\">\n       <NavBar />\n"
+                },
+                {
+                    "date": 1756788453983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n // /src/App.js\n import NavBar from \"./nav/navbar\";\n+import Bio from \"./home/bio\";\n export default function App() {\n   return (\n     <div className=\"glow\">\n       <NavBar />\n"
+                },
+                {
+                    "date": 1756788465600,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,11 @@\n export default function App() {\n   return (\n     <div className=\"glow\">\n       <NavBar />\n+      <Bio\n+        imageSrc=\"https://via.placeholder.com/100\"\n+        text=\"Hello, I'm a software developer.\"\n+      />\n     </div>\n   );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756788482664,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,11 +4,8 @@\n export default function App() {\n   return (\n     <div className=\"glow\">\n       <NavBar />\n-      <Bio\n-        imageSrc=\"https://via.placeholder.com/100\"\n-        text=\"Hello, I'm a software developer.\"\n-      />\n+      <Bio/>\n     </div>\n   );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756793086047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,6 @@\n // /src/App.js\n import NavBar from \"./nav/navbar\";\n-import Bio from \"./home/bio\";\n export default function App() {\n   return (\n     <div className=\"glow\">\n       <NavBar />\n"
+                },
+                {
+                    "date": 1756793099081,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,7 @@\n export default function App() {\n   return (\n     <div className=\"glow\">\n       <NavBar />\n-      <Bio/>\n     </div>\n   );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756793914914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n // /src/App.js\n import NavBar from \"./nav/navbar\";\n+import Bio from \"./home/bio\";\n export default function App() {\n   return (\n     <div className=\"glow\">\n       <NavBar />\n+      <Bio/>\n     </div>\n   );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756868837970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,51 @@\n // /src/App.js\n import NavBar from \"./nav/navbar\";\n import Bio from \"./home/bio\";\n-export default function App() {\n+// export default function App() {\n+//   return (\n+//     <div className=\"glow\">\n+//       <NavBar />\n+//       <Bio/>\n+//     </div>\n+//   );\n\\ No newline at end of file\n+// }\n+\n+// src/App.js\n+\n+import './index.css';\n+\n+function App() {\n   return (\n-    <div className=\"glow\">\n+    <>\n       <NavBar />\n-      <Bio/>\n-    </div>\n+      <Bio />\n+    </>\n+    // Use a fragment or a main container div\n+    <>\n+      {/* 1. DEFINE THE SVG FILTER (it will be hidden) */}\n+      <svg style={{ position: 'absolute', width: 0, height: 0 }}>\n+        <defs>\n+          <filter id=\"suede-texture\">\n+            <feTurbulence type=\"fractalNoise\" baseFrequency=\"0.05\" numOctaves=\"3\" result=\"noise\" />\n+            <feDiffuseLighting in=\"noise\" lighting-color=\"#ffffff\" surfaceScale=\"5\" result=\"light\">\n+              <feDistantLight azimuth=\"225\" elevation=\"60\" />\n+            </feDiffuseLighting>\n+            <feComposite in=\"light\" in2=\"noise\" operator=\"arithmetic\" k1=\"1\" k2=\"1\" k3=\"1\" k4=\"0\" result=\"composite\" />\n+            <feBlend in=\"SourceGraphic\" in2=\"composite\" mode=\"multiply\" />\n+          </filter>\n+        </defs>\n+      </svg>\n+\n+      {/* 2. CREATE A DEDICATED BACKGROUND ELEMENT */}\n+      <div className=\"suede-background\"></div>\n+\n+      {/* 3. YOUR APP'S CONTENT GOES HERE */}\n+      <div className=\"content\">\n+        <h1>Suede Texture Background</h1>\n+        <p>This text is not affected by the filter.</p>\n+      </div>\n+    </>\n   );\n-}\n+}\n+\n+export default App;\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756868852499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,26 +1,23 @@\n // /src/App.js\n import NavBar from \"./nav/navbar\";\n import Bio from \"./home/bio\";\n-// export default function App() {\n-//   return (\n-//     <div className=\"glow\">\n-//       <NavBar />\n-//       <Bio/>\n-//     </div>\n-//   );\n-// }\n+export default function App() {\n+  return (\n+    <div className=\"glow\">\n+      <NavBar />\n+      <Bio/>\n+    </div>\n+  );\n+}\n \n // src/App.js\n \n import './index.css';\n \n function App() {\n   return (\n-    <>\n-      <NavBar />\n-      <Bio />\n-    </>\n+    \n     // Use a fragment or a main container div\n     <>\n       {/* 1. DEFINE THE SVG FILTER (it will be hidden) */}\n       <svg style={{ position: 'absolute', width: 0, height: 0 }}>\n"
+                },
+                {
+                    "date": 1756868858181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,7 @@\n // /src/App.js\n import NavBar from \"./nav/navbar\";\n import Bio from \"./home/bio\";\n-export default function App() {\n-  return (\n-    <div className=\"glow\">\n-      <NavBar />\n-      <Bio/>\n-    </div>\n-  );\n-}\n \n // src/App.js\n \n import './index.css';\n"
+                },
+                {
+                    "date": 1756868942564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,18 +1,13 @@\n-// /src/App.js\n+// src/App.js\n import NavBar from \"./nav/navbar\";\n import Bio from \"./home/bio\";\n-\n-// src/App.js\n-\n import './index.css';\n \n function App() {\n   return (\n-    \n-    // Use a fragment or a main container div\n     <>\n-      {/* 1. DEFINE THE SVG FILTER (it will be hidden) */}\n+      {/* 1. DEFINE THE SVG FILTER */}\n       <svg style={{ position: 'absolute', width: 0, height: 0 }}>\n         <defs>\n           <filter id=\"suede-texture\">\n             <feTurbulence type=\"fractalNoise\" baseFrequency=\"0.05\" numOctaves=\"3\" result=\"noise\" />\n@@ -24,15 +19,15 @@\n           </filter>\n         </defs>\n       </svg>\n \n-      {/* 2. CREATE A DEDICATED BACKGROUND ELEMENT */}\n+      {/* 2. BACKGROUND */}\n       <div className=\"suede-background\"></div>\n \n-      {/* 3. YOUR APP'S CONTENT GOES HERE */}\n+      {/* 3. MAIN CONTENT */}\n       <div className=\"content\">\n-        <h1>Suede Texture Background</h1>\n-        <p>This text is not affected by the filter.</p>\n+        <NavBar />\n+        <Bio />\n       </div>\n     </>\n   );\n }\n"
+                },
+                {
+                    "date": 1756871405044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,14 @@\n // src/App.js\n import NavBar from \"./nav/navbar\";\n import Bio from \"./home/bio\";\n+import BioImage from \"./home/bio-image\";\n import './index.css';\n \n function App() {\n   return (\n     <>\n+      <BioImage />\n       {/* 1. DEFINE THE SVG FILTER */}\n       <svg style={{ position: 'absolute', width: 0, height: 0 }}>\n         <defs>\n           <filter id=\"suede-texture\">\n"
+                },
+                {
+                    "date": 1756871411164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \n function App() {\n   return (\n     <>\n-      <BioImage />\n+      \n       {/* 1. DEFINE THE SVG FILTER */}\n       <svg style={{ position: 'absolute', width: 0, height: 0 }}>\n         <defs>\n           <filter id=\"suede-texture\">\n@@ -28,8 +28,9 @@\n       {/* 3. MAIN CONTENT */}\n       <div className=\"content\">\n         <NavBar />\n         <Bio />\n+        <BioImage />\n       </div>\n     </>\n   );\n }\n"
+                },
+                {
+                    "date": 1757232033750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,31 +7,8 @@\n function App() {\n   return (\n     <>\n       \n-      {/* 1. DEFINE THE SVG FILTER */}\n-      <svg style={{ position: 'absolute', width: 0, height: 0 }}>\n-        <defs>\n-          <filter id=\"suede-texture\">\n-            <feTurbulence type=\"fractalNoise\" baseFrequency=\"0.05\" numOctaves=\"3\" result=\"noise\" />\n-            <feDiffuseLighting in=\"noise\" lighting-color=\"#ffffff\" surfaceScale=\"5\" result=\"light\">\n-              <feDistantLight azimuth=\"225\" elevation=\"60\" />\n-            </feDiffuseLighting>\n-            <feComposite in=\"light\" in2=\"noise\" operator=\"arithmetic\" k1=\"1\" k2=\"1\" k3=\"1\" k4=\"0\" result=\"composite\" />\n-            <feBlend in=\"SourceGraphic\" in2=\"composite\" mode=\"multiply\" />\n-          </filter>\n-        </defs>\n-      </svg>\n-\n-      {/* 2. BACKGROUND */}\n-      <div className=\"suede-background\"></div>\n-\n-      {/* 3. MAIN CONTENT */}\n-      <div className=\"content\">\n-        <NavBar />\n-        <Bio />\n-        <BioImage />\n-      </div>\n     </>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1757232039813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,6 @@\n // src/App.js\n-import NavBar from \"./nav/navbar\";\n-import Bio from \"./home/bio\";\n-import BioImage from \"./home/bio-image\";\n+\n import './index.css';\n \n function App() {\n   return (\n"
+                }
+            ],
+            "date": 1756310323641,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\nimport Header from \"./components/Header\";\nimport Footer from \"./components/Footer\";\nimport Home from \"./pages/Home\";\n// 如需多页：import Archive from \"./pages/Archive\";\n\nexport default function App() {\n  return (\n    <div className=\"site\">\n      <Header />\n      <main className=\"main\">\n        <Home />\n        {/* <Archive />  // 需要时再挂 */}\n      </main>\n      <Footer />\n    </div>\n  );\n}"
+        }
+    ]
+}

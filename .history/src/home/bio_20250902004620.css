@@ -1,0 +1,33 @@
+
+
+/* Rounded box that uses the SAME glow as .glow::before */
+.rounded-box {
+  position: relative;
+  isolation: isolate; /* keep blending scoped to this box only */
+}
+
+/* Ensure the box content stays above the glow */
+.rounded-box > * { position: relative; z-index: 1; }
+
+/* EXACT glow: same layers/sizes/variables, just positioned absolutely for the box */
+.rounded-box::before{
+  content: "";
+  position: absolute;        /* scoped to the box (not fixed) */
+  inset: -12vmax;            /* extend past edges for softness — same as page */
+  pointer-events: none;
+  z-index: 0;                /* under the content */
+  border-radius: inherit;
+  filter: blur(var(--blur));
+  opacity: 1;
+  background:
+    /* Corners */
+    radial-gradient(var(--size-corner-top-left) var(--size-corner-top-left) at 0% 0%, rgba(var(--glow-top-left), var(--alpha-corner-top-left)) 0%, rgba(var(--glow-top-left), 0) 60%),
+    radial-gradient(var(--size-corner-top-right) var(--size-corner-top-right) at 100% 0%, rgba(var(--glow-top-right), var(--alpha-corner-top-right)) 0%, rgba(var(--glow-top-right), 0) 60%),
+    radial-gradient(var(--size-corner-bottom-left) var(--size-corner-bottom-left) at 0% 100%, rgba(var(--glow-bottom-left), var(--alpha-corner-bottom-left)) 0%, rgba(var(--glow-bottom-left), 0) 60%),
+    radial-gradient(var(--size-corner-bottom-right) var(--size-corner-bottom-right) at 100% 100%, rgba(var(--glow-bottom-right), var(--alpha-corner-bottom-right)) 0%, rgba(var(--glow-bottom-right), 0) 60%),
+    /* Edges */
+    radial-gradient(var(--size-edge-top) var(--size-edge-top) at 50% 0%, rgba(var(--glow-top), var(--alpha-edge-top)) 0%, rgba(var(--glow-top), 0) 60%),
+    radial-gradient(var(--size-edge-bottom) var(--size-edge-bottom) at 50% 100%, rgba(var(--glow-bottom), var(--alpha-edge-bottom)) 0%, rgba(var(--glow-bottom), 0) 60%),
+    radial-gradient(var(--size-edge-left) var(--size-edge-left) at 0% 50%, rgba(var(--glow-left), var(--alpha-edge-left)) 0%, rgba(var(--glow-left), 0) 60%),
+    radial-gradient(var(--size-edge-right) var(--size-edge-right) at 100% 50%, rgba(var(--glow-right), var(--alpha-edge-right)) 0%, rgba(var(--glow-right), 0) 60%);
+}

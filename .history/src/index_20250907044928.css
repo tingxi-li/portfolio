@@ -1,0 +1,34 @@
+@font-face {
+  font-family: 'Ephidona';
+  src: url('/public/Ephidona.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* index.css */
+
+
+body {
+  font-family: 'Ephidona', sans-serif;
+}
+
+
+.content {
+  max-width: 60%;
+}
+
+.myname {
+  font-family: 'Ephidona', sans-serif;
+  font-size: 60px;
+  color: #333333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.myname-chinese {
+  font-family: 'Ephidona', sans-serif;
+  font-size: 30px;
+  color: #333333;
+  text-align: center;
+  margin-top: -30px;
+}

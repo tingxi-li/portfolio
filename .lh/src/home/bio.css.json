@@ -1,0 +1,494 @@
+{
+    "sourceFile": "src/home/bio.css",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 119,
+            "patches": [
+                {
+                    "date": 1756788392866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1756788770052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n   border-radius: 20px;\n   background-color: rgba(255, 255, 255, 0.9);\n   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n   max-width: 500px;\n+  height: auto;\n   gap: 16px;\n }\n \n .rounded-box__image {\n"
+                },
+                {
+                    "date": 1756789775634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n .rounded-box {\n+    margin: auto;\n   display: flex;\n   align-items: center;\n   justify-content: flex-start;\n   padding: 16px;\n"
+                },
+                {
+                    "date": 1756789786164,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .rounded-box {\n-    margin: auto;\n+  margin: auto;\n   display: flex;\n   align-items: center;\n   justify-content: flex-start;\n   padding: 16px;\n"
+                },
+                {
+                    "date": 1756789811100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n .rounded-box {\n+  top: 20px;\n   margin: auto;\n   display: flex;\n   align-items: center;\n   justify-content: flex-start;\n"
+                },
+                {
+                    "date": 1756789817264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .rounded-box {\n-  top: 20px;\n+  top: 80px;\n   margin: auto;\n   display: flex;\n   align-items: center;\n   justify-content: flex-start;\n"
+                },
+                {
+                    "date": 1756789837940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .rounded-box {\n-  top: 80px;\n+  top: 60px;\n   margin: auto;\n   display: flex;\n   align-items: center;\n   justify-content: flex-start;\n"
+                },
+                {
+                    "date": 1756789843920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .rounded-box {\n-  top: 60px;\n+  top: 40px;\n   margin: auto;\n   display: flex;\n   align-items: center;\n   justify-content: flex-start;\n"
+                },
+                {
+                    "date": 1756790402750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,30 @@\n   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n   max-width: 500px;\n   height: auto;\n   gap: 16px;\n+  position: relative;\n+  isolation: isolate;\n+  z-index: 1;\n }\n \n+/* Glow effect for rounded box */\n+.rounded-box::before {\n+  content: \"\";\n+  position: absolute;\n+  inset: -20px; /* extend beyond edges for softness */\n+  pointer-events: none;\n+  z-index: 0;\n+  border-radius: inherit;\n+  filter: blur(var(--blur));\n+  opacity: 1;\n+  background:\n+    radial-gradient(80% 80% at 0% 0%, rgba(var(--glow-top-left), var(--alpha-corner-top-left)) 0%, rgba(var(--glow-top-left), 0) 60%),\n+    radial-gradient(80% 80% at 100% 0%, rgba(var(--glow-top-right), var(--alpha-corner-top-right)) 0%, rgba(var(--glow-top-right), 0) 60%),\n+    radial-gradient(80% 80% at 0% 100%, rgba(var(--glow-bottom-left), var(--alpha-corner-bottom-left)) 0%, rgba(var(--glow-bottom-left), 0) 60%),\n+    radial-gradient(80% 80% at 100% 100%, rgba(var(--glow-bottom-right), var(--alpha-corner-bottom-right)) 0%, rgba(var(--glow-bottom-right), 0) 60%);\n+}\n+\n .rounded-box__image {\n   border-radius: 10px;\n   transition: all 0.3s ease;\n }\n"
+                },
+                {
+                    "date": 1756790429741,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,30 +11,10 @@\n   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n   max-width: 500px;\n   height: auto;\n   gap: 16px;\n-  position: relative;\n-  isolation: isolate;\n-  z-index: 1;\n }\n \n-/* Glow effect for rounded box */\n-.rounded-box::before {\n-  content: \"\";\n-  position: absolute;\n-  inset: -20px; /* extend beyond edges for softness */\n-  pointer-events: none;\n-  z-index: 0;\n-  border-radius: inherit;\n-  filter: blur(var(--blur));\n-  opacity: 1;\n-  background:\n-    radial-gradient(80% 80% at 0% 0%, rgba(var(--glow-top-left), var(--alpha-corner-top-left)) 0%, rgba(var(--glow-top-left), 0) 60%),\n-    radial-gradient(80% 80% at 100% 0%, rgba(var(--glow-top-right), var(--alpha-corner-top-right)) 0%, rgba(var(--glow-top-right), 0) 60%),\n-    radial-gradient(80% 80% at 0% 100%, rgba(var(--glow-bottom-left), var(--alpha-corner-bottom-left)) 0%, rgba(var(--glow-bottom-left), 0) 60%),\n-    radial-gradient(80% 80% at 100% 100%, rgba(var(--glow-bottom-right), var(--alpha-corner-bottom-right)) 0%, rgba(var(--glow-bottom-right), 0) 60%);\n-}\n-\n .rounded-box__image {\n   border-radius: 10px;\n   transition: all 0.3s ease;\n }\n"
+                },
+                {
+                    "date": 1756790449283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .rounded-box {\n   top: 40px;\n-  margin: auto;\n+  margin: 50%;\n   display: flex;\n   align-items: center;\n   justify-content: flex-start;\n   padding: 16px;\n"
+                },
+                {
+                    "date": 1756790455280,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .rounded-box {\n   top: 40px;\n-  margin: 50%;\n+  margin: auto;\n   display: flex;\n   align-items: center;\n   justify-content: flex-start;\n   padding: 16px;\n"
+                },
+                {
+                    "date": 1756790467246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .rounded-box {\n   top: 40px;\n-  margin: auto;\n+  margin: 40%;\n   display: flex;\n   align-items: center;\n   justify-content: flex-start;\n   padding: 16px;\n"
+                },
+                {
+                    "date": 1756790473353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .rounded-box {\n   top: 40px;\n-  margin: 40%;\n+  margin: auto;\n   display: flex;\n   align-items: center;\n   justify-content: flex-start;\n   padding: 16px;\n"
+                },
+                {
+                    "date": 1756790483489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n .rounded-box {\n   top: 40px;\n   margin: auto;\n+  width: 80%;\n   display: flex;\n   align-items: center;\n   justify-content: flex-start;\n   padding: 16px;\n"
+                },
+                {
+                    "date": 1756790515264,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,17 @@\n .rounded-box {\n   top: 40px;\n   margin: auto;\n-  width: 80%;\n   display: flex;\n   align-items: center;\n   justify-content: flex-start;\n   padding: 16px;\n   border: 1px solid rgba(0, 0, 0, 0.1);\n   border-radius: 20px;\n   background-color: rgba(255, 255, 255, 0.9);\n   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n-  max-width: 500px;\n+  /* max-width: 500px; */\n+  width: 90%;\n   height: auto;\n   gap: 16px;\n }\n \n"
+                },
+                {
+                    "date": 1756790527204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   background-color: rgba(255, 255, 255, 0.9);\n   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n   /* max-width: 500px; */\n   width: 90%;\n-  height: auto;\n+  height: 100px;\n   gap: 16px;\n }\n \n .rounded-box__image {\n"
+                },
+                {
+                    "date": 1756790534486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   background-color: rgba(255, 255, 255, 0.9);\n   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n   /* max-width: 500px; */\n   width: 90%;\n-  height: 100px;\n+  height: 500px;\n   gap: 16px;\n }\n \n .rounded-box__image {\n"
+                },
+                {
+                    "date": 1756790644201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .rounded-box {\n-  top: 40px;\n+  top: 80px;\n   margin: auto;\n   display: flex;\n   align-items: center;\n   justify-content: flex-start;\n"
+                },
+                {
+                    "date": 1756790665689,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,27 +1,69 @@\n-.rounded-box {\n-  top: 80px;\n-  margin: auto;\n-  display: flex;\n-  align-items: center;\n-  justify-content: flex-start;\n-  padding: 16px;\n-  border: 1px solid rgba(0, 0, 0, 0.1);\n-  border-radius: 20px;\n-  background-color: rgba(255, 255, 255, 0.9);\n-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n-  /* max-width: 500px; */\n-  width: 90%;\n-  height: 500px;\n-  gap: 16px;\n+\n+:root{\n+  --bg: 237, 229, 221;\n+\n+  /* individual glow colors */\n+  --glow-top-left: 237, 229, 221;\n+  --glow-top-right: 237, 229, 221;\n+  --glow-bottom-left: 0, 0, 0;\n+  --glow-bottom-right: 237, 229, 221;\n+\n+  --glow-top: 237, 229, 221;\n+  --glow-bottom: 237, 229, 221;\n+  --glow-left: 237, 196, 130;\n+  --glow-right: 128, 128, 128;\n+\n+  /* per-position sizes and alpha */\n+  --size-edge-top: 150vmin;\n+  --size-edge-bottom: 150vmin;\n+  --size-edge-left: 150vmin;\n+  --size-edge-right: 150vmin;\n+  --alpha-edge-top: 0.9;\n+  --alpha-edge-bottom: 0.9;\n+  --alpha-edge-left: 0.9;\n+  --alpha-edge-right: 0.8;\n+\n+  --size-corner-top-left: 100vmin;\n+  --size-corner-top-right: 100vmin;\n+  --size-corner-bottom-left: 125vmin;\n+  --size-corner-bottom-right: 100vmin;\n+  --alpha-corner-top-left: 0.9;\n+  --alpha-corner-top-right: 0.9;\n+  --alpha-corner-bottom-left: 0.8;\n+  --alpha-corner-bottom-right: 0.9;\n+\n+  --alpha: 0.9;\n+  --blur: 60px;\n }\n \n-.rounded-box__image {\n-  border-radius: 10px;\n-  transition: all 0.3s ease;\n+.glow{\n+  position: relative;\n+  min-height: 100vh;\n+  background: rgb(var(--bg));\n+  isolation: isolate;        /* keep blending scoped */\n }\n \n-.rounded-box__text {\n-  font-family: monospace;\n-  font-size: 1rem;\n-  color: #333;\n+/* Keep any children above the glow */\n+.glow > * { position: relative; z-index: 1; }\n+\n+/* Edge + corner glow */\n+.glow::before{\n+  content: \"\";\n+  position: fixed;           /* pin to viewport */\n+  inset: -12vmax;            /* extend past edges for softness */\n+  pointer-events: none;\n+  z-index: 0;                /* above background, below content */\n+  filter: blur(var(--blur));\n+  opacity: 1;\n+  background:\n+    /* Corners */\n+    radial-gradient(var(--size-corner-top-left) var(--size-corner-top-left) at 0% 0%, rgba(var(--glow-top-left), var(--alpha-corner-top-left)) 0%, rgba(var(--glow-top-left), 0) 60%),\n+    radial-gradient(var(--size-corner-top-right) var(--size-corner-top-right) at 100% 0%, rgba(var(--glow-top-right), var(--alpha-corner-top-right)) 0%, rgba(var(--glow-top-right), 0) 60%),\n+    radial-gradient(var(--size-corner-bottom-left) var(--size-corner-bottom-left) at 0% 100%, rgba(var(--glow-bottom-left), var(--alpha-corner-bottom-left)) 0%, rgba(var(--glow-bottom-left), 0) 60%),\n+    radial-gradient(var(--size-corner-bottom-right) var(--size-corner-bottom-right) at 100% 100%, rgba(var(--glow-bottom-right), var(--alpha-corner-bottom-right)) 0%, rgba(var(--glow-bottom-right), 0) 60%),\n+    /* Edges */\n+    radial-gradient(var(--size-edge-top) var(--size-edge-top) at 50% 0%, rgba(var(--glow-top), var(--alpha-edge-top)) 0%, rgba(var(--glow-top), 0) 60%),\n+    radial-gradient(var(--size-edge-bottom) var(--size-edge-bottom) at 50% 100%, rgba(var(--glow-bottom), var(--alpha-edge-bottom)) 0%, rgba(var(--glow-bottom), 0) 60%),\n+    radial-gradient(var(--size-edge-left) var(--size-edge-left) at 0% 50%, rgba(var(--glow-left), var(--alpha-edge-left)) 0%, rgba(var(--glow-left), 0) 60%),\n+    radial-gradient(var(--size-edge-right) var(--size-edge-right) at 100% 50%, rgba(var(--glow-right), var(--alpha-edge-right)) 0%, rgba(var(--glow-right), 0) 60%);\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756790693880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,69 +0,0 @@\n-\n-:root{\n-  --bg: 237, 229, 221;\n-\n-  /* individual glow colors */\n-  --glow-top-left: 237, 229, 221;\n-  --glow-top-right: 237, 229, 221;\n-  --glow-bottom-left: 0, 0, 0;\n-  --glow-bottom-right: 237, 229, 221;\n-\n-  --glow-top: 237, 229, 221;\n-  --glow-bottom: 237, 229, 221;\n-  --glow-left: 237, 196, 130;\n-  --glow-right: 128, 128, 128;\n-\n-  /* per-position sizes and alpha */\n-  --size-edge-top: 150vmin;\n-  --size-edge-bottom: 150vmin;\n-  --size-edge-left: 150vmin;\n-  --size-edge-right: 150vmin;\n-  --alpha-edge-top: 0.9;\n-  --alpha-edge-bottom: 0.9;\n-  --alpha-edge-left: 0.9;\n-  --alpha-edge-right: 0.8;\n-\n-  --size-corner-top-left: 100vmin;\n-  --size-corner-top-right: 100vmin;\n-  --size-corner-bottom-left: 125vmin;\n-  --size-corner-bottom-right: 100vmin;\n-  --alpha-corner-top-left: 0.9;\n-  --alpha-corner-top-right: 0.9;\n-  --alpha-corner-bottom-left: 0.8;\n-  --alpha-corner-bottom-right: 0.9;\n-\n-  --alpha: 0.9;\n-  --blur: 60px;\n-}\n-\n-.glow{\n-  position: relative;\n-  min-height: 100vh;\n-  background: rgb(var(--bg));\n-  isolation: isolate;        /* keep blending scoped */\n-}\n-\n-/* Keep any children above the glow */\n-.glow > * { position: relative; z-index: 1; }\n-\n-/* Edge + corner glow */\n-.glow::before{\n-  content: \"\";\n-  position: fixed;           /* pin to viewport */\n-  inset: -12vmax;            /* extend past edges for softness */\n-  pointer-events: none;\n-  z-index: 0;                /* above background, below content */\n-  filter: blur(var(--blur));\n-  opacity: 1;\n-  background:\n-    /* Corners */\n-    radial-gradient(var(--size-corner-top-left) var(--size-corner-top-left) at 0% 0%, rgba(var(--glow-top-left), var(--alpha-corner-top-left)) 0%, rgba(var(--glow-top-left), 0) 60%),\n-    radial-gradient(var(--size-corner-top-right) var(--size-corner-top-right) at 100% 0%, rgba(var(--glow-top-right), var(--alpha-corner-top-right)) 0%, rgba(var(--glow-top-right), 0) 60%),\n-    radial-gradient(var(--size-corner-bottom-left) var(--size-corner-bottom-left) at 0% 100%, rgba(var(--glow-bottom-left), var(--alpha-corner-bottom-left)) 0%, rgba(var(--glow-bottom-left), 0) 60%),\n-    radial-gradient(var(--size-corner-bottom-right) var(--size-corner-bottom-right) at 100% 100%, rgba(var(--glow-bottom-right), var(--alpha-corner-bottom-right)) 0%, rgba(var(--glow-bottom-right), 0) 60%),\n-    /* Edges */\n-    radial-gradient(var(--size-edge-top) var(--size-edge-top) at 50% 0%, rgba(var(--glow-top), var(--alpha-edge-top)) 0%, rgba(var(--glow-top), 0) 60%),\n-    radial-gradient(var(--size-edge-bottom) var(--size-edge-bottom) at 50% 100%, rgba(var(--glow-bottom), var(--alpha-edge-bottom)) 0%, rgba(var(--glow-bottom), 0) 60%),\n-    radial-gradient(var(--size-edge-left) var(--size-edge-left) at 0% 50%, rgba(var(--glow-left), var(--alpha-edge-left)) 0%, rgba(var(--glow-left), 0) 60%),\n-    radial-gradient(var(--size-edge-right) var(--size-edge-right) at 100% 50%, rgba(var(--glow-right), var(--alpha-edge-right)) 0%, rgba(var(--glow-right), 0) 60%);\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756790984557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,34 @@\n+\n+\n+\n+/* Glow effect for each rounded box – corners + edges (mirrors .glow::before) */\n+.rounded-box::before {\n+  content: \"\";\n+  position: absolute;\n+  inset: -20px; /* extend beyond edges for softness */\n+  pointer-events: none;\n+  z-index: 0;\n+  border-radius: inherit;\n+  filter: blur(var(--blur));\n+  opacity: 1;\n+  /* Use percentage-based radii so it scales with the box size */\n+  background:\n+    /* Corners */\n+    radial-gradient(70% 70% at 0% 0%,     rgba(var(--glow-top-left), var(--alpha-corner-top-left)) 0%, rgba(var(--glow-top-left), 0) 60%),\n+    radial-gradient(70% 70% at 100% 0%,   rgba(var(--glow-top-right), var(--alpha-corner-top-right)) 0%, rgba(var(--glow-top-right), 0) 60%),\n+    radial-gradient(70% 70% at 0% 100%,   rgba(var(--glow-bottom-left), var(--alpha-corner-bottom-left)) 0%, rgba(var(--glow-bottom-left), 0) 60%),\n+    radial-gradient(70% 70% at 100% 100%, rgba(var(--glow-bottom-right), var(--alpha-corner-bottom-right)) 0%, rgba(var(--glow-bottom-right), 0) 60%),\n+    /* Edges */\n+    radial-gradient(60% 50% at 50% 0%,    rgba(var(--glow-top), var(--alpha-edge-top)) 0%, rgba(var(--glow-top), 0) 60%),\n+    radial-gradient(60% 50% at 50% 100%,  rgba(var(--glow-bottom), var(--alpha-edge-bottom)) 0%, rgba(var(--glow-bottom), 0) 60%),\n+    radial-gradient(50% 60% at 0% 50%,    rgba(var(--glow-left), var(--alpha-edge-left)) 0%, rgba(var(--glow-left), 0) 60%),\n+    radial-gradient(50% 60% at 100% 50%,  rgba(var(--glow-right), var(--alpha-edge-right)) 0%, rgba(var(--glow-right), 0) 60%);\n+}\n+\n+.rounded-box {\n+  position: relative;\n+  isolation: isolate;\n+  /* Optional per-box tuning */\n+  --blur: 40px; /* override page blur just for the box */\n+  /* --alpha-edge-top: 0.7; etc. (you can override any of the root vars per box) */\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756790991763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,34 +1,69 @@\n \n+:root{\n+  --bg: 237, 229, 221;\n \n+  /* individual glow colors */\n+  --glow-top-left: 237, 229, 221;\n+  --glow-top-right: 237, 229, 221;\n+  --glow-bottom-left: 0, 0, 0;\n+  --glow-bottom-right: 237, 229, 221;\n \n-/* Glow effect for each rounded box – corners + edges (mirrors .glow::before) */\n-.rounded-box::before {\n+  --glow-top: 237, 229, 221;\n+  --glow-bottom: 237, 229, 221;\n+  --glow-left: 237, 196, 130;\n+  --glow-right: 128, 128, 128;\n+\n+  /* per-position sizes and alpha */\n+  --size-edge-top: 150vmin;\n+  --size-edge-bottom: 150vmin;\n+  --size-edge-left: 150vmin;\n+  --size-edge-right: 150vmin;\n+  --alpha-edge-top: 0.9;\n+  --alpha-edge-bottom: 0.9;\n+  --alpha-edge-left: 0.9;\n+  --alpha-edge-right: 0.8;\n+\n+  --size-corner-top-left: 100vmin;\n+  --size-corner-top-right: 100vmin;\n+  --size-corner-bottom-left: 125vmin;\n+  --size-corner-bottom-right: 100vmin;\n+  --alpha-corner-top-left: 0.9;\n+  --alpha-corner-top-right: 0.9;\n+  --alpha-corner-bottom-left: 0.8;\n+  --alpha-corner-bottom-right: 0.9;\n+\n+  --alpha: 0.9;\n+  --blur: 60px;\n+}\n+\n+.glow{\n+  position: relative;\n+  min-height: 100vh;\n+  background: rgb(var(--bg));\n+  isolation: isolate;        /* keep blending scoped */\n+}\n+\n+/* Keep any children above the glow */\n+.glow > * { position: relative; z-index: 1; }\n+\n+/* Edge + corner glow */\n+.glow::before{\n   content: \"\";\n-  position: absolute;\n-  inset: -20px; /* extend beyond edges for softness */\n+  position: fixed;           /* pin to viewport */\n+  inset: -12vmax;            /* extend past edges for softness */\n   pointer-events: none;\n-  z-index: 0;\n-  border-radius: inherit;\n+  z-index: 0;                /* above background, below content */\n   filter: blur(var(--blur));\n   opacity: 1;\n-  /* Use percentage-based radii so it scales with the box size */\n   background:\n     /* Corners */\n-    radial-gradient(70% 70% at 0% 0%,     rgba(var(--glow-top-left), var(--alpha-corner-top-left)) 0%, rgba(var(--glow-top-left), 0) 60%),\n-    radial-gradient(70% 70% at 100% 0%,   rgba(var(--glow-top-right), var(--alpha-corner-top-right)) 0%, rgba(var(--glow-top-right), 0) 60%),\n-    radial-gradient(70% 70% at 0% 100%,   rgba(var(--glow-bottom-left), var(--alpha-corner-bottom-left)) 0%, rgba(var(--glow-bottom-left), 0) 60%),\n-    radial-gradient(70% 70% at 100% 100%, rgba(var(--glow-bottom-right), var(--alpha-corner-bottom-right)) 0%, rgba(var(--glow-bottom-right), 0) 60%),\n+    radial-gradient(var(--size-corner-top-left) var(--size-corner-top-left) at 0% 0%, rgba(var(--glow-top-left), var(--alpha-corner-top-left)) 0%, rgba(var(--glow-top-left), 0) 60%),\n+    radial-gradient(var(--size-corner-top-right) var(--size-corner-top-right) at 100% 0%, rgba(var(--glow-top-right), var(--alpha-corner-top-right)) 0%, rgba(var(--glow-top-right), 0) 60%),\n+    radial-gradient(var(--size-corner-bottom-left) var(--size-corner-bottom-left) at 0% 100%, rgba(var(--glow-bottom-left), var(--alpha-corner-bottom-left)) 0%, rgba(var(--glow-bottom-left), 0) 60%),\n+    radial-gradient(var(--size-corner-bottom-right) var(--size-corner-bottom-right) at 100% 100%, rgba(var(--glow-bottom-right), var(--alpha-corner-bottom-right)) 0%, rgba(var(--glow-bottom-right), 0) 60%),\n     /* Edges */\n-    radial-gradient(60% 50% at 50% 0%,    rgba(var(--glow-top), var(--alpha-edge-top)) 0%, rgba(var(--glow-top), 0) 60%),\n-    radial-gradient(60% 50% at 50% 100%,  rgba(var(--glow-bottom), var(--alpha-edge-bottom)) 0%, rgba(var(--glow-bottom), 0) 60%),\n-    radial-gradient(50% 60% at 0% 50%,    rgba(var(--glow-left), var(--alpha-edge-left)) 0%, rgba(var(--glow-left), 0) 60%),\n-    radial-gradient(50% 60% at 100% 50%,  rgba(var(--glow-right), var(--alpha-edge-right)) 0%, rgba(var(--glow-right), 0) 60%);\n-}\n-\n-.rounded-box {\n-  position: relative;\n-  isolation: isolate;\n-  /* Optional per-box tuning */\n-  --blur: 40px; /* override page blur just for the box */\n-  /* --alpha-edge-top: 0.7; etc. (you can override any of the root vars per box) */\n+    radial-gradient(var(--size-edge-top) var(--size-edge-top) at 50% 0%, rgba(var(--glow-top), var(--alpha-edge-top)) 0%, rgba(var(--glow-top), 0) 60%),\n+    radial-gradient(var(--size-edge-bottom) var(--size-edge-bottom) at 50% 100%, rgba(var(--glow-bottom), var(--alpha-edge-bottom)) 0%, rgba(var(--glow-bottom), 0) 60%),\n+    radial-gradient(var(--size-edge-left) var(--size-edge-left) at 0% 50%, rgba(var(--glow-left), var(--alpha-edge-left)) 0%, rgba(var(--glow-left), 0) 60%),\n+    radial-gradient(var(--size-edge-right) var(--size-edge-right) at 100% 50%, rgba(var(--glow-right), var(--alpha-edge-right)) 0%, rgba(var(--glow-right), 0) 60%);\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756791406491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,59 +1,21 @@\n-\n-:root{\n-  --bg: 237, 229, 221;\n-\n-  /* individual glow colors */\n-  --glow-top-left: 237, 229, 221;\n-  --glow-top-right: 237, 229, 221;\n-  --glow-bottom-left: 0, 0, 0;\n-  --glow-bottom-right: 237, 229, 221;\n-\n-  --glow-top: 237, 229, 221;\n-  --glow-bottom: 237, 229, 221;\n-  --glow-left: 237, 196, 130;\n-  --glow-right: 128, 128, 128;\n-\n-  /* per-position sizes and alpha */\n-  --size-edge-top: 150vmin;\n-  --size-edge-bottom: 150vmin;\n-  --size-edge-left: 150vmin;\n-  --size-edge-right: 150vmin;\n-  --alpha-edge-top: 0.9;\n-  --alpha-edge-bottom: 0.9;\n-  --alpha-edge-left: 0.9;\n-  --alpha-edge-right: 0.8;\n-\n-  --size-corner-top-left: 100vmin;\n-  --size-corner-top-right: 100vmin;\n-  --size-corner-bottom-left: 125vmin;\n-  --size-corner-bottom-right: 100vmin;\n-  --alpha-corner-top-left: 0.9;\n-  --alpha-corner-top-right: 0.9;\n-  --alpha-corner-bottom-left: 0.8;\n-  --alpha-corner-bottom-right: 0.9;\n-\n-  --alpha: 0.9;\n-  --blur: 60px;\n-}\n-\n-.glow{\n+/* Rounded box that uses the SAME glow as .glow::before */\n+.rounded-box {\n   position: relative;\n-  min-height: 100vh;\n-  background: rgb(var(--bg));\n-  isolation: isolate;        /* keep blending scoped */\n+  isolation: isolate; /* keep blending scoped to this box only */\n }\n \n-/* Keep any children above the glow */\n-.glow > * { position: relative; z-index: 1; }\n+/* Ensure the box content stays above the glow */\n+.rounded-box > * { position: relative; z-index: 1; }\n \n-/* Edge + corner glow */\n-.glow::before{\n+/* EXACT glow: same layers/sizes/variables, just positioned absolutely for the box */\n+.rounded-box::before{\n   content: \"\";\n-  position: fixed;           /* pin to viewport */\n-  inset: -12vmax;            /* extend past edges for softness */\n+  position: absolute;        /* scoped to the box (not fixed) */\n+  inset: -12vmax;            /* extend past edges for softness — same as page */\n   pointer-events: none;\n-  z-index: 0;                /* above background, below content */\n+  z-index: 0;                /* under the content */\n+  border-radius: inherit;\n   filter: blur(var(--blur));\n   opacity: 1;\n   background:\n     /* Corners */\n"
+                },
+                {
+                    "date": 1756791980468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+\n+\n /* Rounded box that uses the SAME glow as .glow::before */\n .rounded-box {\n   position: relative;\n   isolation: isolate; /* keep blending scoped to this box only */\n"
+                },
+                {
+                    "date": 1756792356140,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,22 +1,24 @@\n-\n-\n-/* Rounded box that uses the SAME glow as .glow::before */\n+/* Rounded box with EXACT same glow as .glow::before */\n .rounded-box {\n   position: relative;\n-  isolation: isolate; /* keep blending scoped to this box only */\n+  isolation: isolate; /* keep blending scoped to box */\n+  border-radius: 20px;\n }\n \n-/* Ensure the box content stays above the glow */\n-.rounded-box > * { position: relative; z-index: 1; }\n+/* Keep content above glow */\n+.rounded-box > * {\n+  position: relative;\n+  z-index: 1;\n+}\n \n-/* EXACT glow: same layers/sizes/variables, just positioned absolutely for the box */\n-.rounded-box::before{\n+/* Exact same glow */\n+.rounded-box::before {\n   content: \"\";\n-  position: absolute;        /* scoped to the box (not fixed) */\n-  inset: -12vmax;            /* extend past edges for softness — same as page */\n+  position: absolute;\n+  inset: -12vmax;\n   pointer-events: none;\n-  z-index: 0;                /* under the content */\n+  z-index: 0;\n   border-radius: inherit;\n   filter: blur(var(--blur));\n   opacity: 1;\n   background:\n"
+                },
+                {
+                    "date": 1756792376849,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,35 +1,27 @@\n-/* Rounded box with EXACT same glow as .glow::before */\n .rounded-box {\n-  position: relative;\n-  isolation: isolate; /* keep blending scoped to box */\n+  top: 40px;\n+  margin: auto;\n+  display: flex;\n+  align-items: center;\n+  justify-content: flex-start;\n+  padding: 16px;\n+  border: 1px solid rgba(0, 0, 0, 0.1);\n   border-radius: 20px;\n+  background-color: rgba(255, 255, 255, 0.9);\n+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n+  /* max-width: 500px; */\n+  width: 90%;\n+  height: 100px;\n+  gap: 16px;\n }\n \n-/* Keep content above glow */\n-.rounded-box > * {\n-  position: relative;\n-  z-index: 1;\n+.rounded-box__image {\n+  border-radius: 10px;\n+  transition: all 0.3s ease;\n }\n \n-/* Exact same glow */\n-.rounded-box::before {\n-  content: \"\";\n-  position: absolute;\n-  inset: -12vmax;\n-  pointer-events: none;\n-  z-index: 0;\n-  border-radius: inherit;\n-  filter: blur(var(--blur));\n-  opacity: 1;\n-  background:\n-    /* Corners */\n-    radial-gradient(var(--size-corner-top-left) var(--size-corner-top-left) at 0% 0%, rgba(var(--glow-top-left), var(--alpha-corner-top-left)) 0%, rgba(var(--glow-top-left), 0) 60%),\n-    radial-gradient(var(--size-corner-top-right) var(--size-corner-top-right) at 100% 0%, rgba(var(--glow-top-right), var(--alpha-corner-top-right)) 0%, rgba(var(--glow-top-right), 0) 60%),\n-    radial-gradient(var(--size-corner-bottom-left) var(--size-corner-bottom-left) at 0% 100%, rgba(var(--glow-bottom-left), var(--alpha-corner-bottom-left)) 0%, rgba(var(--glow-bottom-left), 0) 60%),\n-    radial-gradient(var(--size-corner-bottom-right) var(--size-corner-bottom-right) at 100% 100%, rgba(var(--glow-bottom-right), var(--alpha-corner-bottom-right)) 0%, rgba(var(--glow-bottom-right), 0) 60%),\n-    /* Edges */\n-    radial-gradient(var(--size-edge-top) var(--size-edge-top) at 50% 0%, rgba(var(--glow-top), var(--alpha-edge-top)) 0%, rgba(var(--glow-top), 0) 60%),\n-    radial-gradient(var(--size-edge-bottom) var(--size-edge-bottom) at 50% 100%, rgba(var(--glow-bottom), var(--alpha-edge-bottom)) 0%, rgba(var(--glow-bottom), 0) 60%),\n-    radial-gradient(var(--size-edge-left) var(--size-edge-left) at 0% 50%, rgba(var(--glow-left), var(--alpha-edge-left)) 0%, rgba(var(--glow-left), 0) 60%),\n-    radial-gradient(var(--size-edge-right) var(--size-edge-right) at 100% 50%, rgba(var(--glow-right), var(--alpha-edge-right)) 0%, rgba(var(--glow-right), 0) 60%);\n+.rounded-box__text {\n+  font-family: monospace;\n+  font-size: 1rem;\n+  color: #333;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756792565975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,5 +23,75 @@\n .rounded-box__text {\n   font-family: monospace;\n   font-size: 1rem;\n   color: #333;\n+}\n+\n+\n+:root{\n+  --bg: 237, 229, 221;\n+\n+  /* individual glow colors */\n+  --glow-top-left: 237, 229, 221;\n+  --glow-top-right: 237, 229, 221;\n+  --glow-bottom-left: 0, 0, 0;\n+  --glow-bottom-right: 237, 229, 221;\n+\n+  --glow-top: 237, 229, 221;\n+  --glow-bottom: 237, 229, 221;\n+  --glow-left: 237, 196, 130;\n+  --glow-right: 128, 128, 128;\n+\n+  /* per-position sizes and alpha */\n+  --size-edge-top: 150vmin;\n+  --size-edge-bottom: 150vmin;\n+  --size-edge-left: 150vmin;\n+  --size-edge-right: 150vmin;\n+  --alpha-edge-top: 0.9;\n+  --alpha-edge-bottom: 0.9;\n+  --alpha-edge-left: 0.9;\n+  --alpha-edge-right: 0.8;\n+\n+  --size-corner-top-left: 100vmin;\n+  --size-corner-top-right: 100vmin;\n+  --size-corner-bottom-left: 125vmin;\n+  --size-corner-bottom-right: 100vmin;\n+  --alpha-corner-top-left: 0.9;\n+  --alpha-corner-top-right: 0.9;\n+  --alpha-corner-bottom-left: 0.8;\n+  --alpha-corner-bottom-right: 0.9;\n+\n+  --alpha: 0.9;\n+  --blur: 60px;\n+}\n+\n+.glow{\n+  position: relative;\n+  min-height: 100vh;\n+  background: rgb(var(--bg));\n+  isolation: isolate;        /* keep blending scoped */\n+}\n+\n+/* Keep any children above the glow */\n+.glow > * { position: relative; z-index: 1; }\n+\n+/* Edge + corner glow */\n+.glow::before{\n+  content: \"\";\n+  position: fixed;           /* pin to viewport */\n+  inset: -12vmax;            /* extend past edges for softness */\n+  pointer-events: none;\n+  z-index: 0;                /* above background, below content */\n+  filter: blur(var(--blur));\n+  opacity: 1;\n+  background:\n+    /* Corners */\n+    radial-gradient(var(--size-corner-top-left) var(--size-corner-top-left) at 0% 0%, rgba(var(--glow-top-left), var(--alpha-corner-top-left)) 0%, rgba(var(--glow-top-left), 0) 60%),\n+    radial-gradient(var(--size-corner-top-right) var(--size-corner-top-right) at 100% 0%, rgba(var(--glow-top-right), var(--alpha-corner-top-right)) 0%, rgba(var(--glow-top-right), 0) 60%),\n+    radial-gradient(var(--size-corner-bottom-left) var(--size-corner-bottom-left) at 0% 100%, rgba(var(--glow-bottom-left), var(--alpha-corner-bottom-left)) 0%, rgba(var(--glow-bottom-left), 0) 60%),\n+    radial-gradient(var(--size-corner-bottom-right) var(--size-corner-bottom-right) at 100% 100%, rgba(var(--glow-bottom-right), var(--alpha-corner-bottom-right)) 0%, rgba(var(--glow-bottom-right), 0) 60%),\n+    /* Edges */\n+    radial-gradient(var(--size-edge-top) var(--size-edge-top) at 50% 0%, rgba(var(--glow-top), var(--alpha-edge-top)) 0%, rgba(var(--glow-top), 0) 60%),\n+    radial-gradient(var(--size-edge-bottom) var(--size-edge-bottom) at 50% 100%, rgba(var(--glow-bottom), var(--alpha-edge-bottom)) 0%, rgba(var(--glow-bottom), 0) 60%),\n+    radial-gradient(var(--size-edge-left) var(--size-edge-left) at 0% 50%, rgba(var(--glow-left), var(--alpha-edge-left)) 0%, rgba(var(--glow-left), 0) 60%),\n+    radial-gradient(var(--size-edge-right) var(--size-edge-right) at 100% 50%, rgba(var(--glow-right), var(--alpha-edge-right)) 0%, rgba(var(--glow-right), 0) 60%);\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756792815545,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,73 +25,4 @@\n   font-size: 1rem;\n   color: #333;\n }\n \n-\n-:root{\n-  --bg: 237, 229, 221;\n-\n-  /* individual glow colors */\n-  --glow-top-left: 237, 229, 221;\n-  --glow-top-right: 237, 229, 221;\n-  --glow-bottom-left: 0, 0, 0;\n-  --glow-bottom-right: 237, 229, 221;\n-\n-  --glow-top: 237, 229, 221;\n-  --glow-bottom: 237, 229, 221;\n-  --glow-left: 237, 196, 130;\n-  --glow-right: 128, 128, 128;\n-\n-  /* per-position sizes and alpha */\n-  --size-edge-top: 150vmin;\n-  --size-edge-bottom: 150vmin;\n-  --size-edge-left: 150vmin;\n-  --size-edge-right: 150vmin;\n-  --alpha-edge-top: 0.9;\n-  --alpha-edge-bottom: 0.9;\n-  --alpha-edge-left: 0.9;\n-  --alpha-edge-right: 0.8;\n-\n-  --size-corner-top-left: 100vmin;\n-  --size-corner-top-right: 100vmin;\n-  --size-corner-bottom-left: 125vmin;\n-  --size-corner-bottom-right: 100vmin;\n-  --alpha-corner-top-left: 0.9;\n-  --alpha-corner-top-right: 0.9;\n-  --alpha-corner-bottom-left: 0.8;\n-  --alpha-corner-bottom-right: 0.9;\n-\n-  --alpha: 0.9;\n-  --blur: 60px;\n-}\n-\n-.glow{\n-  position: relative;\n-  min-height: 100vh;\n-  background: rgb(var(--bg));\n-  isolation: isolate;        /* keep blending scoped */\n-}\n-\n-/* Keep any children above the glow */\n-.glow > * { position: relative; z-index: 1; }\n-\n-/* Edge + corner glow */\n-.glow::before{\n-  content: \"\";\n-  position: fixed;           /* pin to viewport */\n-  inset: -12vmax;            /* extend past edges for softness */\n-  pointer-events: none;\n-  z-index: 0;                /* above background, below content */\n-  filter: blur(var(--blur));\n-  opacity: 1;\n-  background:\n-    /* Corners */\n-    radial-gradient(var(--size-corner-top-left) var(--size-corner-top-left) at 0% 0%, rgba(var(--glow-top-left), var(--alpha-corner-top-left)) 0%, rgba(var(--glow-top-left), 0) 60%),\n-    radial-gradient(var(--size-corner-top-right) var(--size-corner-top-right) at 100% 0%, rgba(var(--glow-top-right), var(--alpha-corner-top-right)) 0%, rgba(var(--glow-top-right), 0) 60%),\n-    radial-gradient(var(--size-corner-bottom-left) var(--size-corner-bottom-left) at 0% 100%, rgba(var(--glow-bottom-left), var(--alpha-corner-bottom-left)) 0%, rgba(var(--glow-bottom-left), 0) 60%),\n-    radial-gradient(var(--size-corner-bottom-right) var(--size-corner-bottom-right) at 100% 100%, rgba(var(--glow-bottom-right), var(--alpha-corner-bottom-right)) 0%, rgba(var(--glow-bottom-right), 0) 60%),\n-    /* Edges */\n-    radial-gradient(var(--size-edge-top) var(--size-edge-top) at 50% 0%, rgba(var(--glow-top), var(--alpha-edge-top)) 0%, rgba(var(--glow-top), 0) 60%),\n-    radial-gradient(var(--size-edge-bottom) var(--size-edge-bottom) at 50% 100%, rgba(var(--glow-bottom), var(--alpha-edge-bottom)) 0%, rgba(var(--glow-bottom), 0) 60%),\n-    radial-gradient(var(--size-edge-left) var(--size-edge-left) at 0% 50%, rgba(var(--glow-left), var(--alpha-edge-left)) 0%, rgba(var(--glow-left), 0) 60%),\n-    radial-gradient(var(--size-edge-right) var(--size-edge-right) at 100% 50%, rgba(var(--glow-right), var(--alpha-edge-right)) 0%, rgba(var(--glow-right), 0) 60%);\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756793409381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,28 +1,14 @@\n+\n+\n+\n .rounded-box {\n-  top: 40px;\n-  margin: auto;\n-  display: flex;\n-  align-items: center;\n-  justify-content: flex-start;\n-  padding: 16px;\n-  border: 1px solid rgba(0, 0, 0, 0.1);\n-  border-radius: 20px;\n-  background-color: rgba(255, 255, 255, 0.9);\n-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n-  /* max-width: 500px; */\n   width: 90%;\n   height: 100px;\n-  gap: 16px;\n-}\n-\n-.rounded-box__image {\n-  border-radius: 10px;\n-  transition: all 0.3s ease;\n-}\n-\n-.rounded-box__text {\n-  font-family: monospace;\n-  font-size: 1rem;\n-  color: #333;\n-}\n-\n+  background: rgb(247, 247, 247);\n+  border-radius: 15px;\n+  margin: 20px auto;\n+  box-shadow:\n+    0 0 20px rgba(237, 229, 221, 0.8),\n+    0 0 40px rgba(237, 196, 130, 0.6),\n+    0 0 60px rgba(128, 128, 128, 0.4);\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756793934910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n \n .rounded-box {\n   width: 90%;\n   height: 100px;\n+  top: 40px;\n   background: rgb(247, 247, 247);\n   border-radius: 15px;\n   margin: 20px auto;\n   box-shadow:\n"
+                },
+                {
+                    "date": 1756794001116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,13 @@\n-\n-\n-\n .rounded-box {\n   width: 90%;\n   height: 100px;\n   top: 40px;\n   background: rgb(247, 247, 247);\n   border-radius: 15px;\n   margin: 20px auto;\n   box-shadow:\n-    0 0 20px rgba(237, 229, 221, 0.8),\n-    0 0 40px rgba(237, 196, 130, 0.6),\n-    0 0 60px rgba(128, 128, 128, 0.4);\n+    0 0 10px rgba(237, 229, 221, 0.8),\n+    0 0 20px rgba(237, 229, 221, 0.6),\n+    0 0 30px rgba(237, 196, 130, 0.5),\n+    0 0 50px rgba(128, 128, 128, 0.4);\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756794392905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,31 @@\n   top: 40px;\n   background: rgb(247, 247, 247);\n   border-radius: 15px;\n   margin: 20px auto;\n-  box-shadow:\n-    0 0 10px rgba(237, 229, 221, 0.8),\n-    0 0 20px rgba(237, 229, 221, 0.6),\n-    0 0 30px rgba(237, 196, 130, 0.5),\n-    0 0 50px rgba(128, 128, 128, 0.4);\n+  position: relative;\n+  z-index: 1;\n+}\n+\n+/* Pseudo-element for glow layers */\n+.rounded-box::before {\n+  content: '';\n+  position: absolute;\n+  top: 0;\n+  left: 0;\n+  width: 100%;\n+  height: 100%;\n+  border-radius: inherit;\n+  pointer-events: none;\n+  background:\n+    /* Corner glow */\n+    radial-gradient(circle at top left, rgba(237,229,221,0.8) 0%, transparent 70%),\n+    radial-gradient(circle at top right, rgba(237,229,221,0.8) 0%, transparent 70%),\n+    radial-gradient(circle at bottom left, rgba(237,196,130,0.6) 0%, transparent 70%),\n+    radial-gradient(circle at bottom right, rgba(128,128,128,0.4) 0%, transparent 70%),\n+    /* Edge glow */\n+    linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%),\n+    linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%),\n+    linear-gradient(to left, rgba(237,196,130,0.5), transparent 70%),\n+    linear-gradient(to right, rgba(128,128,128,0.4), transparent 70%);\n+  z-index: -1;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756861153222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .rounded-box {\n   width: 90%;\n-  height: 100px;\n+  height: 500px;\n   top: 40px;\n   background: rgb(247, 247, 247);\n   border-radius: 15px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756861172707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .rounded-box {\n   width: 90%;\n-  height: 500px;\n+  height: 800px;\n   top: 40px;\n   background: rgb(247, 247, 247);\n   border-radius: 15px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756861426529,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .rounded-box {\n   width: 90%;\n   height: 800px;\n-  top: 40px;\n+  top: 80px;\n   background: rgb(247, 247, 247);\n   border-radius: 15px;\n   margin: 20px auto;\n   position: relative;\n"
+                },
+                {
+                    "date": 1756861772019,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,15 +20,15 @@\n   border-radius: inherit;\n   pointer-events: none;\n   background:\n     /* Corner glow */\n-    radial-gradient(circle at top left, rgba(237,229,221,0.8) 0%, transparent 70%),\n-    radial-gradient(circle at top right, rgba(237,229,221,0.8) 0%, transparent 70%),\n-    radial-gradient(circle at bottom left, rgba(237,196,130,0.6) 0%, transparent 70%),\n-    radial-gradient(circle at bottom right, rgba(128,128,128,0.4) 0%, transparent 70%),\n+    /* radial-gradient(circle at top left, rgba(237,229,221,0.8) 0%, transparent 70%), */\n+    /* radial-gradient(circle at top right, rgba(237,229,221,0.8) 0%, transparent 70%), */\n+    radial-gradient(circle at bottom left, rgba(40,40,40,0.4) 0%, transparent 70%),\n+    /* radial-gradient(circle at bottom right, rgba(128,128,128,0.4) 0%, transparent 70%), */\n     /* Edge glow */\n-    linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%),\n-    linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%),\n+    /* linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%), */\n+    /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n     linear-gradient(to left, rgba(237,196,130,0.5), transparent 70%),\n-    linear-gradient(to right, rgba(128,128,128,0.4), transparent 70%);\n+    linear-gradient(to right, rgba(40,40,40,0.4), transparent 70%);\n   z-index: -1;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756861812211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   background:\n     /* Corner glow */\n     /* radial-gradient(circle at top left, rgba(237,229,221,0.8) 0%, transparent 70%), */\n     /* radial-gradient(circle at top right, rgba(237,229,221,0.8) 0%, transparent 70%), */\n-    radial-gradient(circle at bottom left, rgba(40,40,40,0.4) 0%, transparent 70%),\n+    radial-gradient(circle at bottom left, rgba(40,40,40,0.4) , transparent 70%),\n     /* radial-gradient(circle at bottom right, rgba(128,128,128,0.4) 0%, transparent 70%), */\n     /* Edge glow */\n     /* linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%), */\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n"
+                },
+                {
+                    "date": 1756861900149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,13 +22,13 @@\n   background:\n     /* Corner glow */\n     /* radial-gradient(circle at top left, rgba(237,229,221,0.8) 0%, transparent 70%), */\n     /* radial-gradient(circle at top right, rgba(237,229,221,0.8) 0%, transparent 70%), */\n-    radial-gradient(circle at bottom left, rgba(40,40,40,0.4) , transparent 70%),\n+    radial-gradient(circle at bottom left, rgba(40,40,40,0.4) 0%, transparent 70%),\n     /* radial-gradient(circle at bottom right, rgba(128,128,128,0.4) 0%, transparent 70%), */\n     /* Edge glow */\n     /* linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%), */\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n-    linear-gradient(to left, rgba(237,196,130,0.5), transparent 70%),\n-    linear-gradient(to right, rgba(40,40,40,0.4), transparent 70%);\n+    linear-gradient(to right, rgba(237,196,130,0.5), transparent 70%),\n+    linear-gradient(to left, rgba(40,40,40,0.4), transparent 70%);\n   z-index: -1;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756861919786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   width: 90%;\n   height: 800px;\n   top: 80px;\n   background: rgb(247, 247, 247);\n-  border-radius: 15px;\n+  border-radius: 20px;\n   margin: 20px auto;\n   position: relative;\n   z-index: 1;\n }\n"
+                },
+                {
+                    "date": 1756861927452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   width: 90%;\n   height: 800px;\n   top: 80px;\n   background: rgb(247, 247, 247);\n-  border-radius: 20px;\n+  border-radius: 80px;\n   margin: 20px auto;\n   position: relative;\n   z-index: 1;\n }\n"
+                },
+                {
+                    "date": 1756861989966,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,8 @@\n     /* radial-gradient(circle at bottom right, rgba(128,128,128,0.4) 0%, transparent 70%), */\n     /* Edge glow */\n     /* linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%), */\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n-    linear-gradient(to right, rgba(237,196,130,0.5), transparent 70%),\n-    linear-gradient(to left, rgba(40,40,40,0.4), transparent 70%);\n+    linear-gradient(to right, rgba(237,196,130,0.5), transparent 50%),\n+    linear-gradient(to left, rgba(40,40,40,0.4), transparent 50%);\n   z-index: -1;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756862321327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,8 @@\n     /* radial-gradient(circle at bottom right, rgba(128,128,128,0.4) 0%, transparent 70%), */\n     /* Edge glow */\n     /* linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%), */\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n-    linear-gradient(to right, rgba(237,196,130,0.5), transparent 50%),\n-    linear-gradient(to left, rgba(40,40,40,0.4), transparent 50%);\n+    linear-gradient(to right, rgba(237,196,130,0.5), transparent 30%),\n+    linear-gradient(to left, rgba(40,40,40,0.4), transparent 30%);\n   z-index: -1;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756862347682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,8 @@\n     /* radial-gradient(circle at bottom right, rgba(128,128,128,0.4) 0%, transparent 70%), */\n     /* Edge glow */\n     /* linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%), */\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n-    linear-gradient(to right, rgba(237,196,130,0.5), transparent 30%),\n+    radial-gradient(circle at right, rgba(237,196,130,0.5), transparent 30%),\n     linear-gradient(to left, rgba(40,40,40,0.4), transparent 30%);\n   z-index: -1;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756862363669,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,8 @@\n     /* radial-gradient(circle at bottom right, rgba(128,128,128,0.4) 0%, transparent 70%), */\n     /* Edge glow */\n     /* linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%), */\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n-    radial-gradient(circle at right, rgba(237,196,130,0.5), transparent 30%),\n-    linear-gradient(to left, rgba(40,40,40,0.4), transparent 30%);\n+    radial-gradient(circle at  left, rgba(237,196,130,0.5), transparent 30%),\n+    radial-gradient(circle at right, rgba(40,40,40,0.4), transparent 30%);\n   z-index: -1;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756862376991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   background:\n     /* Corner glow */\n     /* radial-gradient(circle at top left, rgba(237,229,221,0.8) 0%, transparent 70%), */\n     /* radial-gradient(circle at top right, rgba(237,229,221,0.8) 0%, transparent 70%), */\n-    radial-gradient(circle at bottom left, rgba(40,40,40,0.4) 0%, transparent 70%),\n+    radial-gradient(circle at bottom left, rgba(40,40,40,0.4) 0%, transparent 30%),\n     /* radial-gradient(circle at bottom right, rgba(128,128,128,0.4) 0%, transparent 70%), */\n     /* Edge glow */\n     /* linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%), */\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n"
+                },
+                {
+                    "date": 1756862404119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .rounded-box {\n   width: 90%;\n   height: 800px;\n   top: 80px;\n-  background: rgb(247, 247, 247);\n+  background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n   position: relative;\n   z-index: 1;\n"
+                },
+                {
+                    "date": 1756862434173,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,8 @@\n     /* radial-gradient(circle at bottom right, rgba(128,128,128,0.4) 0%, transparent 70%), */\n     /* Edge glow */\n     /* linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%), */\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n-    radial-gradient(circle at  left, rgba(237,196,130,0.5), transparent 30%),\n-    radial-gradient(circle at right, rgba(40,40,40,0.4), transparent 30%);\n+    radial-gradient(circle at  left, rgba(237,196,130,0.5), transparent 50%),\n+    radial-gradient(circle at right, rgba(40,40,40,0.4), transparent 50%);\n   z-index: -1;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756862445004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,8 +27,8 @@\n     /* radial-gradient(circle at bottom right, rgba(128,128,128,0.4) 0%, transparent 70%), */\n     /* Edge glow */\n     /* linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%), */\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n-    radial-gradient(circle at  left, rgba(237,196,130,0.5), transparent 50%),\n-    radial-gradient(circle at right, rgba(40,40,40,0.4), transparent 50%);\n+    radial-gradient(circle at  left, rgba(237,196,130,0.5), transparent 55%),\n+    radial-gradient(circle at right, rgba(40,40,40,0.4), transparent 55%);\n   z-index: -1;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756862450655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   background:\n     /* Corner glow */\n     /* radial-gradient(circle at top left, rgba(237,229,221,0.8) 0%, transparent 70%), */\n     /* radial-gradient(circle at top right, rgba(237,229,221,0.8) 0%, transparent 70%), */\n-    radial-gradient(circle at bottom left, rgba(40,40,40,0.4) 0%, transparent 30%),\n+    radial-gradient(circle at bottom left, rgba(40,40,40,0.4) 0%, transparent 20%),\n     /* radial-gradient(circle at bottom right, rgba(128,128,128,0.4) 0%, transparent 70%), */\n     /* Edge glow */\n     /* linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%), */\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n"
+                },
+                {
+                    "date": 1756862461606,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   background:\n     /* Corner glow */\n     /* radial-gradient(circle at top left, rgba(237,229,221,0.8) 0%, transparent 70%), */\n     /* radial-gradient(circle at top right, rgba(237,229,221,0.8) 0%, transparent 70%), */\n-    radial-gradient(circle at bottom left, rgba(40,40,40,0.4) 0%, transparent 20%),\n+    radial-gradient(circle at bottom left, rgba(40,40,40,0.4) 0%, transparent 10%),\n     /* radial-gradient(circle at bottom right, rgba(128,128,128,0.4) 0%, transparent 70%), */\n     /* Edge glow */\n     /* linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%), */\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n"
+                },
+                {
+                    "date": 1756862475726,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,13 +22,13 @@\n   background:\n     /* Corner glow */\n     /* radial-gradient(circle at top left, rgba(237,229,221,0.8) 0%, transparent 70%), */\n     /* radial-gradient(circle at top right, rgba(237,229,221,0.8) 0%, transparent 70%), */\n-    radial-gradient(circle at bottom left, rgba(40,40,40,0.4) 0%, transparent 10%),\n+    radial-gradient(circle at bottom left, rgba(40,40,40,0.4) 0%, transparent 20%),\n     /* radial-gradient(circle at bottom right, rgba(128,128,128,0.4) 0%, transparent 70%), */\n     /* Edge glow */\n     /* linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%), */\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n     radial-gradient(circle at  left, rgba(237,196,130,0.5), transparent 55%),\n-    radial-gradient(circle at right, rgba(40,40,40,0.4), transparent 55%);\n+    radial-gradient(circle at right, rgba(40,40,40,0.5), transparent 55%);\n   z-index: -1;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756862485266,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,7 +28,7 @@\n     /* Edge glow */\n     /* linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%), */\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n     radial-gradient(circle at  left, rgba(237,196,130,0.5), transparent 55%),\n-    radial-gradient(circle at right, rgba(40,40,40,0.5), transparent 55%);\n+    radial-gradient(circle at right, rgba(40,40,40,0.35), transparent 55%);\n   z-index: -1;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756862491926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,7 +28,7 @@\n     /* Edge glow */\n     /* linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%), */\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n     radial-gradient(circle at  left, rgba(237,196,130,0.5), transparent 55%),\n-    radial-gradient(circle at right, rgba(40,40,40,0.35), transparent 55%);\n+    radial-gradient(circle at right, rgba(40,40,40,0.20), transparent 55%);\n   z-index: -1;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756862497226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   background:\n     /* Corner glow */\n     /* radial-gradient(circle at top left, rgba(237,229,221,0.8) 0%, transparent 70%), */\n     /* radial-gradient(circle at top right, rgba(237,229,221,0.8) 0%, transparent 70%), */\n-    radial-gradient(circle at bottom left, rgba(40,40,40,0.4) 0%, transparent 20%),\n+    radial-gradient(circle at bottom left, rgba(40,40,40,020) 0%, transparent 20%),\n     /* radial-gradient(circle at bottom right, rgba(128,128,128,0.4) 0%, transparent 70%), */\n     /* Edge glow */\n     /* linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%), */\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n"
+                },
+                {
+                    "date": 1756862504427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n   background:\n     /* Corner glow */\n     /* radial-gradient(circle at top left, rgba(237,229,221,0.8) 0%, transparent 70%), */\n     /* radial-gradient(circle at top right, rgba(237,229,221,0.8) 0%, transparent 70%), */\n-    radial-gradient(circle at bottom left, rgba(40,40,40,020) 0%, transparent 20%),\n+    radial-gradient(circle at bottom left, rgba(40,40,40,0.20) 0%, transparent 20%),\n     /* radial-gradient(circle at bottom right, rgba(128,128,128,0.4) 0%, transparent 70%), */\n     /* Edge glow */\n     /* linear-gradient(to top, rgba(237,229,221,0.5), transparent 70%), */\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n"
+                },
+                {
+                    "date": 1756862793294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .rounded-box {\n-  width: 90%;\n+  width: 50%;\n   height: 800px;\n   top: 80px;\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n"
+                },
+                {
+                    "date": 1756865327717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,5 +30,12 @@\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n     radial-gradient(circle at  left, rgba(237,196,130,0.5), transparent 55%),\n     radial-gradient(circle at right, rgba(40,40,40,0.20), transparent 55%);\n   z-index: -1;\n+}\n+\n+.rounded-box h2, .rounded-box p {\n+  color: #333;\n+  text-align: center;\n+  padding: 20px;\n+  margin: 0;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756865412005,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,19 @@\n .rounded-box {\n-  width: 50%;\n-  height: 800px;\n+  width: 60%;\n+  height: auto;\n+  min-height: 200px;\n   top: 80px;\n   background: rgb(235, 227, 215);\n-  border-radius: 80px;\n-  margin: 20px auto;\n+  border-radius: 40px;\n+  margin: 40px auto;\n+  padding: 20px;\n   position: relative;\n   z-index: 1;\n+  display: flex;\n+  flex-direction: column;\n+  justify-content: center;\n+  align-items: center;\n }\n \n /* Pseudo-element for glow layers */\n .rounded-box::before {\n@@ -30,12 +36,19 @@\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n     radial-gradient(circle at  left, rgba(237,196,130,0.5), transparent 55%),\n     radial-gradient(circle at right, rgba(40,40,40,0.20), transparent 55%);\n   z-index: -1;\n+.rounded-box h2 {\n+  font-family: 'Helvetica Neue', Arial, sans-serif;\n+  font-size: 2rem;\n+  color: #222;\n+  margin-bottom: 10px;\n }\n \n-.rounded-box h2, .rounded-box p {\n-  color: #333;\n+.rounded-box p {\n+  font-family: 'Georgia', serif;\n+  font-size: 1.1rem;\n+  line-height: 1.6;\n+  color: #444;\n   text-align: center;\n-  padding: 20px;\n-  margin: 0;\n+  max-width: 80%;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756865477756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,19 +1,13 @@\n .rounded-box {\n-  width: 60%;\n-  height: auto;\n-  min-height: 200px;\n+  width: 50%;\n+  height: 800px;\n   top: 80px;\n   background: rgb(235, 227, 215);\n-  border-radius: 40px;\n-  margin: 40px auto;\n-  padding: 20px;\n+  border-radius: 80px;\n+  margin: 20px auto;\n   position: relative;\n   z-index: 1;\n-  display: flex;\n-  flex-direction: column;\n-  justify-content: center;\n-  align-items: center;\n }\n \n /* Pseudo-element for glow layers */\n .rounded-box::before {\n@@ -36,19 +30,19 @@\n     /* linear-gradient(to bottom, rgba(237,229,221,0.5), transparent 70%), */\n     radial-gradient(circle at  left, rgba(237,196,130,0.5), transparent 55%),\n     radial-gradient(circle at right, rgba(40,40,40,0.20), transparent 55%);\n   z-index: -1;\n+}\n+\n+.rounded-box h2, .rounded-box p {\n+  color: #333;\n+  text-align: center;\n+  padding: 20px;\n+  margin: 0;\n+}\n+\n .rounded-box h2 {\n   font-family: 'Helvetica Neue', Arial, sans-serif;\n   font-size: 2rem;\n   color: #222;\n   margin-bottom: 10px;\n-}\n-\n-.rounded-box p {\n-  font-family: 'Georgia', serif;\n-  font-size: 1.1rem;\n-  line-height: 1.6;\n-  color: #444;\n-  text-align: center;\n-  max-width: 80%;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756865486009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n   margin: 0;\n }\n \n .rounded-box h2 {\n-  font-family: 'Helvetica Neue', Arial, sans-serif;\n+  font-family: monospace;\n   font-size: 2rem;\n   color: #222;\n   margin-bottom: 10px;\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756865500465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,10 @@\n   color: #333;\n   text-align: center;\n   padding: 20px;\n   margin: 0;\n+  font-family: monospace;\n+  font-size: 2rem;\n }\n \n .rounded-box h2 {\n   font-family: monospace;\n"
+                },
+                {
+                    "date": 1756865505787,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,10 +41,4 @@\n   font-family: monospace;\n   font-size: 2rem;\n }\n \n-.rounded-box h2 {\n-  font-family: monospace;\n-  font-size: 2rem;\n-  color: #222;\n-  margin-bottom: 10px;\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756865518277,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,7 +38,7 @@\n   text-align: center;\n   padding: 20px;\n   margin: 0;\n   font-family: monospace;\n-  font-size: 2rem;\n+  font-size: 1.2rem;\n }\n \n"
+                },
+                {
+                    "date": 1756865529928,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n .rounded-box h2, .rounded-box p {\n   color: #333;\n   text-align: center;\n   padding: 20px;\n-  margin: 0;\n+  margin: 1.20rem;\n   font-family: monospace;\n   font-size: 1.2rem;\n }\n \n"
+                },
+                {
+                    "date": 1756867635334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   top: 80px;\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n-  position: relative;\n+  position: fixed;\n   z-index: 1;\n }\n \n /* Pseudo-element for glow layers */\n"
+                },
+                {
+                    "date": 1756867645524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n .rounded-box {\n   width: 50%;\n   height: 800px;\n   top: 80px;\n+  left: 50%;\n+  transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n   position: fixed;\n"
+                },
+                {
+                    "date": 1756867691163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .rounded-box {\n-  width: 50%;\n+  width: 55%;\n   height: 800px;\n   top: 80px;\n   left: 50%;\n   transform: translateX(-50%);\n"
+                },
+                {
+                    "date": 1756867697519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n .rounded-box {\n-  width: 55%;\n+  width: 53%;\n   height: 800px;\n   top: 80px;\n   left: 50%;\n   transform: translateX(-50%);\n"
+                },
+                {
+                    "date": 1756867820920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .rounded-box {\n   width: 53%;\n-  height: 800px;\n+  height: 500px;\n   top: 80px;\n   left: 50%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n"
+                },
+                {
+                    "date": 1756869950801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,13 +34,20 @@\n     radial-gradient(circle at right, rgba(40,40,40,0.20), transparent 55%);\n   z-index: -1;\n }\n \n+.bio-image {\n+  width: 20px;\n+  height: 20px;\n+  border-radius: 50%;\n+  object-fit: cover;\n+  margin-top: 20px;\n+}\n+\n .rounded-box h2, .rounded-box p {\n   color: #333;\n   text-align: center;\n   padding: 20px;\n   margin: 1.20rem;\n   font-family: monospace;\n   font-size: 1.2rem;\n }\n-\n"
+                },
+                {
+                    "date": 1756869959058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,10 +35,10 @@\n   z-index: -1;\n }\n \n .bio-image {\n-  width: 20px;\n-  height: 20px;\n+  width: 50px;\n+  height: 50px;\n   border-radius: 50%;\n   object-fit: cover;\n   margin-top: 20px;\n }\n"
+                },
+                {
+                    "date": 1756869964975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,10 +35,10 @@\n   z-index: -1;\n }\n \n .bio-image {\n-  width: 50px;\n-  height: 50px;\n+  width: 100px;\n+  height: 100px;\n   border-radius: 50%;\n   object-fit: cover;\n   margin-top: 20px;\n }\n"
+                },
+                {
+                    "date": 1756869971675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,10 +35,10 @@\n   z-index: -1;\n }\n \n .bio-image {\n-  width: 100px;\n-  height: 100px;\n+  width: 200px;\n+  height: 200px;\n   border-radius: 50%;\n   object-fit: cover;\n   margin-top: 20px;\n }\n"
+                },
+                {
+                    "date": 1756869976857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n   z-index: -1;\n }\n \n .bio-image {\n-  width: 200px;\n+  width: 150px;\n   height: 200px;\n   border-radius: 50%;\n   object-fit: cover;\n   margin-top: 20px;\n"
+                },
+                {
+                    "date": 1756869982960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n }\n \n .bio-image {\n   width: 150px;\n-  height: 200px;\n+  height: 150px;\n   border-radius: 50%;\n   object-fit: cover;\n   margin-top: 20px;\n }\n"
+                },
+                {
+                    "date": 1756869989111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,10 +35,10 @@\n   z-index: -1;\n }\n \n .bio-image {\n-  width: 150px;\n-  height: 150px;\n+  width: 175px;\n+  height: 175px;\n   border-radius: 50%;\n   object-fit: cover;\n   margin-top: 20px;\n }\n"
+                },
+                {
+                    "date": 1756870005671,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,9 @@\n   height: 175px;\n   border-radius: 50%;\n   object-fit: cover;\n   margin-top: 20px;\n+  left: 50%;\n }\n \n .rounded-box h2, .rounded-box p {\n   color: #333;\n"
+                },
+                {
+                    "date": 1756870013805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,10 @@\n   height: 175px;\n   border-radius: 50%;\n   object-fit: cover;\n   margin-top: 20px;\n-  left: 50%;\n+  left: 100%;\n+  transform: translateX(-50%);\n }\n \n .rounded-box h2, .rounded-box p {\n   color: #333;\n"
+                },
+                {
+                    "date": 1756870019737,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n   height: 175px;\n   border-radius: 50%;\n   object-fit: cover;\n   margin-top: 20px;\n-  left: 100%;\n+  left: 0%;\n   transform: translateX(-50%);\n }\n \n .rounded-box h2, .rounded-box p {\n"
+                },
+                {
+                    "date": 1756870028329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,10 +40,9 @@\n   height: 175px;\n   border-radius: 50%;\n   object-fit: cover;\n   margin-top: 20px;\n-  left: 0%;\n-  transform: translateX(-50%);\n+  transform: translateX(-100%);\n }\n \n .rounded-box h2, .rounded-box p {\n   color: #333;\n"
+                },
+                {
+                    "date": 1756870037729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n   height: 175px;\n   border-radius: 50%;\n   object-fit: cover;\n   margin-top: 20px;\n-  transform: translateX(-100%);\n+  transform: translateX(50%);\n }\n \n .rounded-box h2, .rounded-box p {\n   color: #333;\n"
+                },
+                {
+                    "date": 1756870083763,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,9 +40,9 @@\n   height: 175px;\n   border-radius: 50%;\n   object-fit: cover;\n   margin-top: 20px;\n-  transform: translateX(50%);\n+  align-items: center;\n }\n \n .rounded-box h2, .rounded-box p {\n   color: #333;\n"
+                },
+                {
+                    "date": 1756870099609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,8 +40,10 @@\n   height: 175px;\n   border-radius: 50%;\n   object-fit: cover;\n   margin-top: 20px;\n+  display: flex;\n+  flex-direction: column;\n   align-items: center;\n }\n \n .rounded-box h2, .rounded-box p {\n"
+                },
+                {
+                    "date": 1756870114490,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n .rounded-box {\n   width: 53%;\n-  height: 500px;\n+  height: auto;\n   top: 80px;\n   left: 50%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n"
+                },
+                {
+                    "date": 1756870640745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n \n .bio-image {\n   width: 175px;\n   height: 175px;\n-  border-radius: 50%;\n+  border-radius: 10%;\n   object-fit: cover;\n   margin-top: 20px;\n   display: flex;\n   flex-direction: column;\n"
+                },
+                {
+                    "date": 1756870650539,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n \n .bio-image {\n   width: 175px;\n   height: 175px;\n-  border-radius: 10%;\n+  border-radius: 30%;\n   object-fit: cover;\n   margin-top: 20px;\n   display: flex;\n   flex-direction: column;\n"
+                },
+                {
+                    "date": 1756870682962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n \n .bio-image {\n   width: 175px;\n   height: 175px;\n-  border-radius: 30%;\n+  border-radius: 80px;\n   object-fit: cover;\n   margin-top: 20px;\n   display: flex;\n   flex-direction: column;\n"
+                },
+                {
+                    "date": 1756870690397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n \n .bio-image {\n   width: 175px;\n   height: 175px;\n-  border-radius: 80px;\n+  border-radius: 40px;\n   object-fit: cover;\n   margin-top: 20px;\n   display: flex;\n   flex-direction: column;\n"
+                },
+                {
+                    "date": 1756870699184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   top: 80px;\n   left: 50%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n-  border-radius: 80px;\n+  border-radius: 40px;\n   margin: 20px auto;\n   position: fixed;\n   z-index: 1;\n }\n"
+                },
+                {
+                    "date": 1756870706771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   top: 80px;\n   left: 50%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n-  border-radius: 40px;\n+  border-radius: 80px;\n   margin: 20px auto;\n   position: fixed;\n   z-index: 1;\n }\n@@ -37,9 +37,9 @@\n \n .bio-image {\n   width: 175px;\n   height: 175px;\n-  border-radius: 40px;\n+  border-radius: 80px;\n   object-fit: cover;\n   margin-top: 20px;\n   display: flex;\n   flex-direction: column;\n"
+                },
+                {
+                    "date": 1756870737902,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n   top: 80px;\n-  left: 50%;\n+  left: 70%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756870748686,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n   top: 80px;\n-  left: 70%;\n+  left: 50%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756871340354,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n   top: 80px;\n-  left: 50%;\n+  left: 70%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756871349085,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n   top: 80px;\n-  left: 70%;\n+  left: 0%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n@@ -34,18 +34,18 @@\n     radial-gradient(circle at right, rgba(40,40,40,0.20), transparent 55%);\n   z-index: -1;\n }\n \n-.bio-image {\n+/* .bio-image {\n   width: 175px;\n   height: 175px;\n   border-radius: 80px;\n   object-fit: cover;\n   margin-top: 20px;\n   display: flex;\n   flex-direction: column;\n   align-items: center;\n-}\n+} */\n \n .rounded-box h2, .rounded-box p {\n   color: #333;\n   text-align: center;\n"
+                },
+                {
+                    "date": 1756871549411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n   top: 80px;\n-  left: 0%;\n+  left: 70%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756871568937,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n   top: 80px;\n-  left: 70%;\n+  left: 65%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756871578676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n   top: 80px;\n-  left: 65%;\n+  left: 75%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756871584294,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n   top: 80px;\n-  left: 75%;\n+  left: 70%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756871606091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n   width: 53%;\n   height: auto;\n   top: 80px;\n   left: 70%;\n+  margin-left: 100%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756871613246,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   width: 53%;\n   height: auto;\n   top: 80px;\n   left: 70%;\n-  margin-left: 100%;\n+  margin-left: 80%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756871647370,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   width: 53%;\n   height: auto;\n   top: 80px;\n   left: 70%;\n-  margin-left: 80%;\n+  margin-right: auto;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756871659026,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   width: 53%;\n   height: auto;\n   top: 80px;\n   left: 70%;\n-  margin-right: auto;\n+  margin-right: 50%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756871664127,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   width: 53%;\n   height: auto;\n   top: 80px;\n   left: 70%;\n-  margin-right: 50%;\n+  margin-right: 90%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756871673508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   width: 53%;\n   height: auto;\n   top: 80px;\n   left: 70%;\n-  margin-right: 90%;\n+\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756872388362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   width: 53%;\n   height: auto;\n   top: 80px;\n   left: 70%;\n-\n+  max-width: 50%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756872395559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   width: 53%;\n   height: auto;\n   top: 80px;\n   left: 70%;\n-  max-width: 50%;\n+  max-width: 25%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756872405185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   width: 53%;\n   height: auto;\n   top: 80px;\n   left: 70%;\n-  max-width: 25%;\n+  max-width: 40%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756872447968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n   width: 53%;\n   height: auto;\n   top: 80px;\n   left: 70%;\n-  max-width: 40%;\n+  max-width: 37.5%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n   margin: 20px auto;\n"
+                },
+                {
+                    "date": 1756872453999,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n   top: 80px;\n-  left: 70%;\n+  left: 50%;\n   max-width: 37.5%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n"
+                },
+                {
+                    "date": 1756872613749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n   top: 80px;\n-  left: 50%;\n+  left: 62.5%;\n   max-width: 37.5%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n"
+                },
+                {
+                    "date": 1756872619791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n   top: 80px;\n-  left: 62.5%;\n+  left: 60%;\n   max-width: 37.5%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n"
+                },
+                {
+                    "date": 1756872626516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n   top: 80px;\n-  left: 60%;\n+  left: 37.5%;\n   max-width: 37.5%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n"
+                },
+                {
+                    "date": 1756872646719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n   top: 80px;\n-  left: 37.5%;\n+  left: 60%;\n   max-width: 37.5%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n"
+                },
+                {
+                    "date": 1756872664150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n   top: 80px;\n-  left: 60%;\n+  left: 50%;\n   max-width: 37.5%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n"
+                },
+                {
+                    "date": 1756872731267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n   top: 80px;\n-  left: 50%;\n+  left: 58.75%;\n   max-width: 37.5%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n   border-radius: 80px;\n"
+                },
+                {
+                    "date": 1756874933973,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -52,6 +52,6 @@\n   text-align: center;\n   padding: 20px;\n   margin: 1.20rem;\n   font-family: monospace;\n-  font-size: 1.2rem;\n+  font-size: 1rem;\n }\n"
+                },
+                {
+                    "date": 1756875583157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n-  top: 80px;\n+  top: 5px;\n   left: 58.75%;\n   max-width: 37.5%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n"
+                },
+                {
+                    "date": 1756875590043,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n-  top: 5px;\n+  top: 50px;\n   left: 58.75%;\n   max-width: 37.5%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n"
+                },
+                {
+                    "date": 1756875668683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n .rounded-box {\n   width: 53%;\n   height: auto;\n-  top: 50px;\n+  top: 80px;\n   left: 58.75%;\n   max-width: 37.5%;\n   transform: translateX(-50%);\n   background: rgb(235, 227, 215);\n"
+                }
+            ],
+            "date": 1756788392866,
+            "name": "Commit-0",
+            "content": ".rounded-box {\n  display: flex;\n  align-items: center;\n  justify-content: flex-start;\n  padding: 16px;\n  border: 1px solid rgba(0, 0, 0, 0.1);\n  border-radius: 20px;\n  background-color: rgba(255, 255, 255, 0.9);\n  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);\n  max-width: 500px;\n  gap: 16px;\n}\n\n.rounded-box__image {\n  border-radius: 10px;\n  transition: all 0.3s ease;\n}\n\n.rounded-box__text {\n  font-family: monospace;\n  font-size: 1rem;\n  color: #333;\n}"
+        }
+    ]
+}

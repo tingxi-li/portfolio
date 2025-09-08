@@ -1,0 +1,13 @@
+.bio-avatar {
+  top: 80px;
+  left: 25%;
+  display: fixed;  /* Vertical alignment */
+  margin: 20px auto;       /* Center horizontally on page */
+}
+
+.bio-image {
+  width: 80px;          /* Desired width */
+  height: 80px;         /* Desired height */
+  border-radius: 30%;   /* Rounded corners */
+  object-fit: cover;    /* Crops the image nicely */
+}

@@ -1,0 +1,72 @@
+/* /src/index.css */
+html, body, #root { height: 100%; margin: 0; }
+
+/* Strong defaults so you SEE it. Tune later. */
+:root{
+  --bg: 237, 229, 221;
+
+  /* individual glow colors */
+  --glow-top-left: 237, 229, 221;
+  --glow-top-right: 237, 229, 221;
+  --glow-bottom-left: 0, 0, 0;
+  --glow-bottom-right: 237, 229, 221;
+
+  --glow-top: 237, 229, 221;
+  --glow-bottom: 237, 229, 221;
+  --glow-left: 237, 196, 130;
+  --glow-right: 128, 128, 128;
+
+  /* per-position sizes and alpha */
+  --size-edge-top: 150vmin;
+  --size-edge-bottom: 150vmin;
+  --size-edge-left: 150vmin;
+  --size-edge-right: 150vmin;
+  --alpha-edge-top: 0.9;
+  --alpha-edge-bottom: 0.9;
+  --alpha-edge-left: 0.9;
+  --alpha-edge-right: 0.8;
+
+  --size-corner-top-left: 100vmin;
+  --size-corner-top-right: 100vmin;
+  --size-corner-bottom-left: 100vmin;
+  --size-corner-bottom-right: 100vmin;
+  --alpha-corner-top-left: 0.9;
+  --alpha-corner-top-right: 0.9;
+  --alpha-corner-bottom-left: 0.8;
+  --alpha-corner-bottom-right: 0.9;
+
+  --alpha: 0.9;
+  --blur: 60px;
+}
+
+.glow{
+  position: relative;
+  min-height: 100vh;
+  background: rgb(var(--bg));
+  isolation: isolate;        /* keep blending scoped */
+}
+
+/* Keep any children above the glow */
+.glow > * { position: relative; z-index: 1; }
+
+/* Edge + corner glow */
+.glow::before{
+  content: "";
+  position: fixed;           /* pin to viewport */
+  inset: -12vmax;            /* extend past edges for softness */
+  pointer-events: none;
+  z-index: 0;                /* above background, below content */
+  filter: blur(var(--blur));
+  opacity: 1;
+  background:
+    /* Corners */
+    radial-gradient(var(--size-corner-top-left) var(--size-corner-top-left) at 0% 0%, rgba(var(--glow-top-left), var(--alpha-corner-top-left)) 0%, rgba(var(--glow-top-left), 0) 60%),
+    radial-gradient(var(--size-corner-top-right) var(--size-corner-top-right) at 100% 0%, rgba(var(--glow-top-right), var(--alpha-corner-top-right)) 0%, rgba(var(--glow-top-right), 0) 60%),
+    radial-gradient(var(--size-corner-bottom-left) var(--size-corner-bottom-left) at 0% 100%, rgba(var(--glow-bottom-left), var(--alpha-corner-bottom-left)) 0%, rgba(var(--glow-bottom-left), 0) 60%),
+    radial-gradient(var(--size-corner-bottom-right) var(--size-corner-bottom-right) at 100% 100%, rgba(var(--glow-bottom-right), var(--alpha-corner-bottom-right)) 0%, rgba(var(--glow-bottom-right), 0) 60%),
+    /* Edges */
+    radial-gradient(var(--size-edge-top) var(--size-edge-top) at 50% 0%, rgba(var(--glow-top), var(--alpha-edge-top)) 0%, rgba(var(--glow-top), 0) 60%),
+    radial-gradient(var(--size-edge-bottom) var(--size-edge-bottom) at 50% 100%, rgba(var(--glow-bottom), var(--alpha-edge-bottom)) 0%, rgba(var(--glow-bottom), 0) 60%),
+    radial-gradient(var(--size-edge-left) var(--size-edge-left) at 0% 50%, rgba(var(--glow-left), var(--alpha-edge-left)) 0%, rgba(var(--glow-left), 0) 60%),
+    radial-gradient(var(--size-edge-right) var(--size-edge-right) at 100% 50%, rgba(var(--glow-right), var(--alpha-edge-right)) 0%, rgba(var(--glow-right), 0) 60%);
+}

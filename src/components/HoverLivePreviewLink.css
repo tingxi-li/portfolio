@@ -1,11 +1,17 @@
 .hover-live-link {
   --link-color: #333;
   --link-hover: #e87500 ;
+  --underline-base: #5fe0b7;
+  --underline-active: #e87500;
+  --grad-1: #7a3cff;
+  --grad-2: #ff4d4f;
+  --grad-3: #ffc107;
   --pop-width: 360px;
   --pop-height: 230px;      /* 固定高，便于排版；也可用 aspect-ratio */
   --radius: 14px;
   --shadow: 0 12px 30px rgba(0,0,0,.18);
   --timing: .28s;
+  --grad-time: .85s;
   --spin-speed: 1.1s;
   --border-thick: 2px;
 
@@ -17,24 +23,50 @@
   transition: color var(--timing) ease;
 }
 
-.hover-live-link:hover { color: var(--link-hover); }
+/* .hover-live-link:hover { color: var(--link-hover); } */
 
 .hover-live-link .link-text {
   position: relative;
+  display: inline-block;          /* 避免多行导致的重排影响 */
+  contain: paint;                 /* 隔离绘制，减少关联重绘 */
+  line-height: 1;                 /* 紧贴文本，避免行高带来的大间距 */
+  background-image: linear-gradient(90deg, var(--grad-1), var(--grad-2), var(--grad-3));
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+/* 基础下划线：常驻，颜色与高亮不同 */
+.hover-live-link .link-text::before {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0px;
+  height: 1px;
+  background: var(--underline-base);
+  z-index: 1;
+  pointer-events: none;
 }
 .hover-live-link .link-text::after {
   content: "";
   position: absolute;
-  left: 0; right: 0; bottom: -2px;
-  height: 2px;
-  background: currentColor;
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: var(--underline-active);
   transform: scaleX(0);
-  transform-origin: right;
+  transform-origin: left;
   transition: transform var(--timing) ease;
+  z-index: 1;
+  pointer-events: none;
 }
 .hover-live-link:hover .link-text::after {
   transform: scaleX(1);
-  transform-origin: left;
+}
+
+/* 悬停时触发左→右的渐变扫光 */
+.hover-live-link:hover .link-text {
+  color: transparent;                         /* 让渐变可见 */
+  background-position: 100% 50%;              /* 从左滑到右 */
+  transition: background-position var(--grad-time) ease;
 }
 
 /* 外层容器，承接 enter/leave */
@@ -69,13 +101,13 @@
   position: absolute;
   inset: 0;
   border-radius: var(--radius);
-  background:
-    conic-gradient(from 0turn,
-      currentColor 0 20%, transparent 20% 100%);
-  -webkit-mask:
-    radial-gradient(farthest-side, transparent calc(100% - var(--border-thick)), #000 0);
-  mask:
-    radial-gradient(farthest-side, transparent calc(100% - var(--border-thick)), #000 0);
+  box-sizing: border-box;
+  /* Gradient border using border-image to respect rounded corners */
+  border: var(--border-thick) solid transparent;
+  border-image-slice: 1;
+  border-image-source: conic-gradient(from 0turn, currentColor 0 20%, transparent 20% 100%);
+  background: none;
+  pointer-events: none;
   opacity: 0;
   transform: scale(.96);
   transition: opacity var(--timing) ease, transform var(--timing) ease;
@@ -118,4 +150,11 @@
 
 @media (max-width: 480px) {
   .hover-live-link { --pop-width: 300px; --pop-height: 190px; }
+}
+
+/* 低动效设备：关闭旋转边框与渐变动画以减少竞争 */
+@media (prefers-reduced-motion: reduce) {
+  .preview-frame { animation: none !important; }
+  .hover-live-link .link-text { background-image: none; }
+  .hover-live-link:hover .link-text { color: var(--link-hover) !important; }
 }

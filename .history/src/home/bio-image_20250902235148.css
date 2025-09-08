@@ -1,0 +1,24 @@
+.bio-avatar {
+  width: 60px;
+  height: auto;
+  top: 80px;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  border-radius: 30%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.bio-image {
+  width: 40px;
+  height: auto;
+  top: 80px;
+  left: 50%;
+  border-radius: 30%;
+  object-fit: cover;
+  display: block;
+  box-sizing: border-box;
+}

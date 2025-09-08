@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/main/main.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1757237752371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1757237752371,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\nimport \"./Main.css\";\n\nexport default function Main() {\n  return (\n    <div className=\"main\">\n      <h1>Welcome to My Personal Website</h1>\n      <p>This is a simple text-only homepage built with React.</p>\n    </div>\n  );\n}"
+        }
+    ]
+}

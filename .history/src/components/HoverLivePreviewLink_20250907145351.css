@@ -1,0 +1,120 @@
+.hover-live-link {
+  --link-color: #333;
+  --link-hover: #7a3cff;
+  --pop-width: 360px;
+  --pop-height: 230px;      /* 固定高，便于排版；也可用 aspect-ratio */
+  --radius: 14px;
+  --shadow: 0 12px 30px rgba(0,0,0,.18);
+  --timing: .28s;
+  --spin-speed: 1.1s;
+  --border-thick: 2px;
+
+  position: relative;
+  display: inline-block;
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--timing) ease;
+}
+
+.hover-live-link:hover { color: var(--link-hover); }
+
+.hover-live-link .link-text {
+  position: relative;
+}
+.hover-live-link .link-text::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--timing) ease;
+}
+.hover-live-link:hover .link-text::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* 预览弹层 */
+.preview-pop {
+  position: absolute;
+  top: 125%;
+  left: 0;
+  width: var(--pop-width);
+  height: var(--pop-height);
+  pointer-events: none;
+  transform: translateY(6px);
+  opacity: 0;
+  transition:
+    transform var(--timing) ease,
+    opacity var(--timing) ease;
+  z-index: 40;
+}
+.hover-live-link.right .preview-pop { left: auto; right: 0; }
+.preview-pop.open {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* 旋转边框（可选） */
+.preview-frame {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  background:
+    conic-gradient(from 0turn,
+      currentColor 0 20%, transparent 20% 100%);
+  -webkit-mask:
+    radial-gradient(farthest-side, transparent calc(100% - var(--border-thick)), #000 0);
+  mask:
+    radial-gradient(farthest-side, transparent calc(100% - var(--border-thick)), #000 0);
+  opacity: 0;
+  transform: scale(.96);
+  transition: opacity var(--timing) ease, transform var(--timing) ease;
+  animation: spin var(--spin-speed) linear infinite;
+  animation-play-state: paused;
+}
+.preview-pop.open .preview-frame {
+  opacity: 1;
+  transform: scale(1);
+  animation-play-state: running;
+}
+
+/* 视口容器（投影+圆角+裁剪） */
+.preview-viewport {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: #fff;
+}
+
+/* iframe 样式：让“真网页”填满预览框 */
+.preview-viewport iframe,
+.preview-viewport img {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  object-fit: cover;
+}
+
+/* 不可用时的占位 */
+.preview-placeholder {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: #888;
+  font-size: 14px;
+  background: linear-gradient(180deg,#f5f5f7,#f0f0f2);
+}
+
+@keyframes spin { to { transform: rotate(1turn); } }
+
+@media (max-width: 480px) {
+  .hover-live-link { --pop-width: 300px; --pop-height: 190px; }
+}

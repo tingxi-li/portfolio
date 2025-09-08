@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'Ephidona';
+  src: url('/public/Ephidona.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* index.css */
+
+
+body {
+  font-family: 'Ephidona', sans-serif;
+}
+
+
+.content {
+  max-width: 60%;
+}
+
+.custom-text {
+  font-family: 'Ephidona', sans-serif;
+}
+
+.custom-text {
+  font-size: 24px;
+  font-family: 'Arial', sans-serif;
+  color: #333333;
+  text-align: center;
+  margin-top: 20px;
+}

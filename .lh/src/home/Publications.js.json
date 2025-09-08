@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/home/Publications.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1757302948344,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1757302954252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,12 +61,12 @@\n             </div>\n             {(pdf || github) ? (\n               <div className=\"pub-links\">\n                 {pdf ? (\n-                  <a className=\"pub-link\" href={pdf} target=\"_blank\" rel=\"noopener noreferrer\">pdf</a>\n+                  <a className=\"pub-link\" href={pdf} target=\"_blank\" rel=\"noopener noreferrer\">[pdf]</a>\n                 ) : null}\n                 {github ? (\n-                  <a className=\"pub-link\" href={github} target=\"_blank\" rel=\"noopener noreferrer\">github</a>\n+                  <a className=\"pub-link\" href={github} target=\"_blank\" rel=\"noopener noreferrer\">[github]</a>\n                 ) : null}\n               </div>\n             ) : null}\n           </li>\n"
+                },
+                {
+                    "date": 1757302961572,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,12 +61,12 @@\n             </div>\n             {(pdf || github) ? (\n               <div className=\"pub-links\">\n                 {pdf ? (\n-                  <a className=\"pub-link\" href={pdf} target=\"_blank\" rel=\"noopener noreferrer\">[pdf]</a>\n+                  <a className=\"pub-link\" href={pdf} target=\"_blank\" rel=\"noopener noreferrer\">pdf</a>\n                 ) : null}\n                 {github ? (\n-                  <a className=\"pub-link\" href={github} target=\"_blank\" rel=\"noopener noreferrer\">[github]</a>\n+                  <a className=\"pub-link\" href={github} target=\"_blank\" rel=\"noopener noreferrer\">github</a>\n                 ) : null}\n               </div>\n             ) : null}\n           </li>\n"
+                },
+                {
+                    "date": 1757303458903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -61,12 +61,12 @@\n             </div>\n             {(pdf || github) ? (\n               <div className=\"pub-links\">\n                 {pdf ? (\n-                  <a className=\"pub-link\" href={pdf} target=\"_blank\" rel=\"noopener noreferrer\">pdf</a>\n+                  <a className=\"pub-link\" href={pdf} target=\"_blank\" rel=\"noopener noreferrer\">PDF</a>\n                 ) : null}\n                 {github ? (\n-                  <a className=\"pub-link\" href={github} target=\"_blank\" rel=\"noopener noreferrer\">github</a>\n+                  <a className=\"pub-link\" href={github} target=\"_blank\" rel=\"noopener noreferrer\">GitHub</a>\n                 ) : null}\n               </div>\n             ) : null}\n           </li>\n"
+                }
+            ],
+            "date": 1757302948344,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\n\nfunction normalizeAuthors(authors, me) {\n  if (!Array.isArray(authors)) return [];\n  const meLower = typeof me === \"string\" ? me.trim().toLowerCase() : \"\";\n  return authors.map((a) => {\n    if (a && typeof a === \"object\") {\n      const name = String(a.name || \"\");\n      const isMe = Boolean(a.me) || (meLower && name.trim().toLowerCase() === meLower);\n      return { name, me: isMe };\n    }\n    const name = String(a || \"\");\n    const isMe = meLower && name.trim().toLowerCase() === meLower;\n    return { name, me: Boolean(isMe) };\n  });\n}\n\nfunction Authors({ authors = [], me }) {\n  const list = normalizeAuthors(authors, me);\n  return (\n    <span className=\"pub-authors\">\n      {list.map((a, i) => (\n        <span key={i} className={a.me ? \"me\" : undefined}>\n          {a.name}\n          {i < list.length - 1 ? \", \" : \"\"}\n        </span>\n      ))}\n    </span>\n  );\n}\n\nexport default function Publications({ items = [], me }) {\n  if (!Array.isArray(items) || items.length === 0) return null;\n\n  return (\n    <ul className=\"publications\">\n      {items.map((it, idx) => {\n        const {\n          title,\n          titleUrl,\n          authors = [],\n          venue,\n          year,\n          pdf,\n          github,\n        } = it || {};\n\n        const titleEl = titleUrl || pdf ? (\n          <a href={(titleUrl || pdf)} target=\"_blank\" rel=\"noopener noreferrer\">{title}</a>\n        ) : (\n          <>{title}</>\n        );\n\n        return (\n          <li className=\"pub-item\" key={`${title || \"pub\"}-${year || idx}`}>\n            <h4 className=\"pub-title\">{titleEl}</h4>\n            <Authors authors={authors} me={me} />\n            <div className=\"pub-meta\">\n              {venue ? <span className=\"pub-venue\">{venue}</span> : null}\n              {year ? <span className=\"pub-year\">{year}</span> : null}\n            </div>\n            {(pdf || github) ? (\n              <div className=\"pub-links\">\n                {pdf ? (\n                  <a className=\"pub-link\" href={pdf} target=\"_blank\" rel=\"noopener noreferrer\">pdf</a>\n                ) : null}\n                {github ? (\n                  <a className=\"pub-link\" href={github} target=\"_blank\" rel=\"noopener noreferrer\">github</a>\n                ) : null}\n              </div>\n            ) : null}\n          </li>\n        );\n      })}\n    </ul>\n  );\n}\n\n"
+        }
+    ]
+}

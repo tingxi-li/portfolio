@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/navi/navibar.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1756784124181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1756784124181,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\nimport \"./index.css\"; // or put nav CSS in a separate CSS module\n\nexport default function NavBar() {\n  return (\n    <nav className=\"nav\">\n      <div className=\"nav__inner\">\n        <div className=\"nav__logo\">MyPortfolio</div>\n        <ul className=\"nav__links\">\n          <li><a href=\"#home\">Home</a></li>\n          <li><a href=\"#projects\">Projects</a></li>\n          <li><a href=\"#about\">About</a></li>\n          <li><a href=\"#contact\">Contact</a></li>\n        </ul>\n      </div>\n    </nav>\n  );\n}"
+        }
+    ]
+}

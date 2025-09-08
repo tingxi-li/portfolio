@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/pages/Home.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1756310482317,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1756310482317,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\nimport Section from \"../components/Section\";\nimport ProjectCard from \"../components/ProjectCard\";\nimport { projects } from \"../data/projects\";\n\nexport default function Home(){\n  return (\n    <>\n      <Section\n        kicker=\"Researcher · AI Security\"\n        title=\"Tingxi Li\"\n        right={\n          <div className=\"border\" style={{padding:\"14px\"}}>\n            <div className=\"small\">Currently</div>\n            <div>Ph.D. student focusing on AI Security, RecSys, and Systems.</div>\n            <div style={{marginTop:10}}>\n              <a href=\"/tingxi-cv.pdf\" target=\"_blank\" rel=\"noreferrer\">Download CV →</a>\n            </div>\n          </div>\n        }\n      >\n        <p>\n          Minimal, editorial-style portfolio inspired by luxury fashion sites:\n          generous white space, thin borders, and a strict grid. Clean,\n          typographic first—no distractions.\n        </p>\n      </Section>\n\n      <section id=\"work\" className=\"main container\" style={{paddingTop:0}}>\n        <div className=\"kicker\">Selected Work</div>\n        <div className=\"grid\">\n          {projects.map((p, i) => (\n            <ProjectCard key={i} {...p} />\n          ))}\n        </div>\n      </section>\n\n      <section id=\"about\" className=\"main container\" style={{paddingTop:\"40px\"}}>\n        <div className=\"kicker\">About</div>\n        <div className=\"border\" style={{padding:\"18px\"}}>\n          <p>\n            I study security of adaptive deep-learning systems and code-model red teaming.\n            I like building clean, reliable infra and writing precise interfaces.\n          </p>\n        </div>\n      </section>\n    </>\n  );\n}"
+        }
+    ]
+}

@@ -1,0 +1,122 @@
+{
+    "sourceFile": "src/nav/navbar.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 26,
+            "patches": [
+                {
+                    "date": 1756784268153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1756784280018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import React from \"react\";\n+import \"./index.css\"; // or put nav CSS in a separate CSS module\n \n export default function NavBar() {\n   return (\n     <nav className=\"nav\">\n"
+                },
+                {
+                    "date": 1756784287163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from \"react\";\n-import \"./index.css\"; // or put nav CSS in a separate CSS module\n+import \"../index.css\"; // or put nav CSS in a separate CSS module\n \n export default function NavBar() {\n   return (\n     <nav className=\"nav\">\n"
+                },
+                {
+                    "date": 1756784309137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from \"react\";\n-import \"../index.css\"; // or put nav CSS in a separate CSS module\n+// import \"./index.css\"; // or put nav CSS in a separate CSS module\n \n export default function NavBar() {\n   return (\n     <nav className=\"nav\">\n"
+                },
+                {
+                    "date": 1756784516793,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import React from \"react\";\n-// import \"./index.css\"; // or put nav CSS in a separate CSS module\n+import \"./navbar.css\";\n \n export default function NavBar() {\n   return (\n     <nav className=\"nav\">\n"
+                },
+                {
+                    "date": 1756785264721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import \"./navbar.css\";\n \n export default function NavBar() {\n   return (\n-    <nav className=\"nav\">\n+    <nav className=\"site-nav\">\n       <div className=\"nav__inner\">\n         <div className=\"nav__logo\">MyPortfolio</div>\n         <ul className=\"nav__links\">\n           <li><a href=\"#home\">Home</a></li>\n"
+                },
+                {
+                    "date": 1756786076432,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,15 +4,18 @@\n export default function NavBar() {\n   return (\n     <nav className=\"site-nav\">\n       <div className=\"nav__inner\">\n-        <div className=\"nav__logo\">MyPortfolio</div>\n-        <ul className=\"nav__links\">\n+        <ul className=\"nav__links nav__left\">\n           <li><a href=\"#home\">Home</a></li>\n-          <li><a href=\"#projects\">Projects</a></li>\n-          <li><a href=\"#about\">About</a></li>\n-          <li><a href=\"#contact\">Contact</a></li>\n+          <li><a href=\"#projects\">Pub/Project</a></li>\n+          <li><a href=\"#cv\">CV</a></li>\n+          <li><a href=\"#award\">Award</a></li>\n         </ul>\n+        <div className=\"nav__logo\">MyPortfolio</div>\n+        <ul className=\"nav__links nav__right\">\n+          <li><a href=\"#gallery\">Gallery</a></li>\n+        </ul>\n       </div>\n     </nav>\n   );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1756786102054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,8 @@\n         <ul className=\"nav__links nav__left\">\n           <li><a href=\"#home\">Home</a></li>\n           <li><a href=\"#projects\">Pub/Project</a></li>\n           <li><a href=\"#cv\">CV</a></li>\n-          <li><a href=\"#award\">Award</a></li>\n         </ul>\n         <div className=\"nav__logo\">MyPortfolio</div>\n         <ul className=\"nav__links nav__right\">\n           <li><a href=\"#gallery\">Gallery</a></li>\n"
+                },
+                {
+                    "date": 1756786720564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,5 +16,5 @@\n         </ul>\n       </div>\n     </nav>\n   );\n-}\n\\ No newline at end of file\n+}\n"
+                },
+                {
+                    "date": 1756786858255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     <nav className=\"site-nav\">\n       <div className=\"nav__inner\">\n         <ul className=\"nav__links nav__left\">\n           <li><a href=\"#home\">Home</a></li>\n-          <li><a href=\"#projects\">Pub/Project</a></li>\n+          <li><a href=\"#projects\">Publications/Projects</a></li>\n           <li><a href=\"#cv\">CV</a></li>\n         </ul>\n         <div className=\"nav__logo\">MyPortfolio</div>\n         <ul className=\"nav__links nav__right\">\n"
+                },
+                {
+                    "date": 1756787263692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import React from \"react\";\n import \"./navbar.css\";\n \n+\n export default function NavBar() {\n   return (\n     <nav className=\"site-nav\">\n       <div className=\"nav__inner\">\n"
+                },
+                {
+                    "date": 1756787866283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n         </ul>\n         <div className=\"nav__logo\">MyPortfolio</div>\n         <ul className=\"nav__links nav__right\">\n           <li><a href=\"#gallery\">Gallery</a></li>\n+          <li><a href=\"#misc\">Misc.</a></li>\n         </ul>\n       </div>\n     </nav>\n   );\n"
+                },
+                {
+                    "date": 1756861498921,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     <nav className=\"site-nav\">\n       <div className=\"nav__inner\">\n         <ul className=\"nav__links nav__left\">\n           <li><a href=\"#home\">Home</a></li>\n-          <li><a href=\"#projects\">Publications/Projects</a></li>\n+          <li><a href=\"#projects\">Pub/Projects</a></li>\n           <li><a href=\"#cv\">CV</a></li>\n         </ul>\n         <div className=\"nav__logo\">MyPortfolio</div>\n         <ul className=\"nav__links nav__right\">\n"
+                },
+                {
+                    "date": 1756861512654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     <nav className=\"site-nav\">\n       <div className=\"nav__inner\">\n         <ul className=\"nav__links nav__left\">\n           <li><a href=\"#home\">Home</a></li>\n-          <li><a href=\"#projects\">Pub/Projects</a></li>\n+          <li><a href=\"#projects\">Projects</a></li>\n           <li><a href=\"#cv\">CV</a></li>\n         </ul>\n         <div className=\"nav__logo\">MyPortfolio</div>\n         <ul className=\"nav__links nav__right\">\n"
+                },
+                {
+                    "date": 1756867337384,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n           <li><a href=\"#home\">Home</a></li>\n           <li><a href=\"#projects\">Projects</a></li>\n           <li><a href=\"#cv\">CV</a></li>\n         </ul>\n-        <div className=\"nav__logo\">MyPortfolio</div>\n+        <div className=\"nav__logo\">Tingxi Li</div>\n         <ul className=\"nav__links nav__right\">\n           <li><a href=\"#gallery\">Gallery</a></li>\n           <li><a href=\"#misc\">Misc.</a></li>\n         </ul>\n"
+                },
+                {
+                    "date": 1756867350710,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n           <li><a href=\"#home\">Home</a></li>\n           <li><a href=\"#projects\">Projects</a></li>\n           <li><a href=\"#cv\">CV</a></li>\n         </ul>\n-        <div className=\"nav__logo\">Tingxi Li</div>\n+        <div className=\"nav__logo\">Tingxi Li \\\\ a</div>\n         <ul className=\"nav__links nav__right\">\n           <li><a href=\"#gallery\">Gallery</a></li>\n           <li><a href=\"#misc\">Misc.</a></li>\n         </ul>\n"
+                },
+                {
+                    "date": 1756867359465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n           <li><a href=\"#home\">Home</a></li>\n           <li><a href=\"#projects\">Projects</a></li>\n           <li><a href=\"#cv\">CV</a></li>\n         </ul>\n-        <div className=\"nav__logo\">Tingxi Li \\\\ a</div>\n+        <div className=\"nav__logo\">Tingxi Li</div>\n         <ul className=\"nav__links nav__right\">\n           <li><a href=\"#gallery\">Gallery</a></li>\n           <li><a href=\"#misc\">Misc.</a></li>\n         </ul>\n"
+                },
+                {
+                    "date": 1756867468124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,12 @@\n           <li><a href=\"#home\">Home</a></li>\n           <li><a href=\"#projects\">Projects</a></li>\n           <li><a href=\"#cv\">CV</a></li>\n         </ul>\n-        <div className=\"nav__logo\">Tingxi Li</div>\n+        <div className=\"nav__logo\">\n+          <span className=\"logo-line1\">My</span>\n+          <span className=\"logo-line2\">Portfolio</span>\n+        </div>\n         <ul className=\"nav__links nav__right\">\n           <li><a href=\"#gallery\">Gallery</a></li>\n           <li><a href=\"#misc\">Misc.</a></li>\n         </ul>\n"
+                },
+                {
+                    "date": 1756867541796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,10 @@\n           <li><a href=\"#projects\">Projects</a></li>\n           <li><a href=\"#cv\">CV</a></li>\n         </ul>\n         <div className=\"nav__logo\">\n-          <span className=\"logo-line1\">My</span>\n-          <span className=\"logo-line2\">Portfolio</span>\n+          <span className=\"logo-line1\">Tingxi Li</span>\n+          <span className=\"logo-line2\">ˈtɪŋɕi li</span>\n         </div>\n         <ul className=\"nav__links nav__right\">\n           <li><a href=\"#gallery\">Gallery</a></li>\n           <li><a href=\"#misc\">Misc.</a></li>\n"
+                },
+                {
+                    "date": 1756867554859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n           <li><a href=\"#cv\">CV</a></li>\n         </ul>\n         <div className=\"nav__logo\">\n           <span className=\"logo-line1\">Tingxi Li</span>\n-          <span className=\"logo-line2\">ˈtɪŋɕi li</span>\n+          <span className=\"logo-line2\">/ˈtɪŋɕi li/</span>\n         </div>\n         <ul className=\"nav__links nav__right\">\n           <li><a href=\"#gallery\">Gallery</a></li>\n           <li><a href=\"#misc\">Misc.</a></li>\n"
+                },
+                {
+                    "date": 1756867727239,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n           <span className=\"logo-line2\">/ˈtɪŋɕi li/</span>\n         </div>\n         <ul className=\"nav__links nav__right\">\n           <li><a href=\"#gallery\">Gallery</a></li>\n-          <li><a href=\"#misc\">Misc.</a></li>\n+          {/* <li><a href=\"#misc\">Misc.</a></li> */}\n         </ul>\n       </div>\n     </nav>\n   );\n"
+                },
+                {
+                    "date": 1756867769732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,10 @@\n           <span className=\"logo-line1\">Tingxi Li</span>\n           <span className=\"logo-line2\">/ˈtɪŋɕi li/</span>\n         </div>\n         <ul className=\"nav__links nav__right\">\n-          <li><a href=\"#gallery\">Gallery</a></li>\n-          {/* <li><a href=\"#misc\">Misc.</a></li> */}\n+          <li><a href=\"#gallery\">CV</a></li>\n+          <li><a href=\"#misc\">Misc.</a></li>\n         </ul>\n       </div>\n     </nav>\n   );\n"
+                },
+                {
+                    "date": 1756867775403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n       <div className=\"nav__inner\">\n         <ul className=\"nav__links nav__left\">\n           <li><a href=\"#home\">Home</a></li>\n           <li><a href=\"#projects\">Projects</a></li>\n-          <li><a href=\"#cv\">CV</a></li>\n+          {/* <li><a href=\"#cv\">CV</a></li> */}\n         </ul>\n         <div className=\"nav__logo\">\n           <span className=\"logo-line1\">Tingxi Li</span>\n           <span className=\"logo-line2\">/ˈtɪŋɕi li/</span>\n"
+                },
+                {
+                    "date": 1756867788700,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n           <span className=\"logo-line1\">Tingxi Li</span>\n           <span className=\"logo-line2\">/ˈtɪŋɕi li/</span>\n         </div>\n         <ul className=\"nav__links nav__right\">\n-          <li><a href=\"#gallery\">CV</a></li>\n+          <li><a href=\"#gallery\">Resume</a></li>\n           <li><a href=\"#misc\">Misc.</a></li>\n         </ul>\n       </div>\n     </nav>\n"
+                },
+                {
+                    "date": 1756867797216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n           <span className=\"logo-line1\">Tingxi Li</span>\n           <span className=\"logo-line2\">/ˈtɪŋɕi li/</span>\n         </div>\n         <ul className=\"nav__links nav__right\">\n-          <li><a href=\"#gallery\">Resume</a></li>\n+          <li><a href=\"#gallery\">C.V.</a></li>\n           <li><a href=\"#misc\">Misc.</a></li>\n         </ul>\n       </div>\n     </nav>\n"
+                },
+                {
+                    "date": 1756869334453,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n           {/* <li><a href=\"#cv\">CV</a></li> */}\n         </ul>\n         <div className=\"nav__logo\">\n           <span className=\"logo-line1\">Tingxi Li</span>\n-          <span className=\"logo-line2\">/ˈtɪŋɕi li/</span>\n+          <span className=\"logo-line2\">[ˈtɪŋɕi li]</span>\n         </div>\n         <ul className=\"nav__links nav__right\">\n           <li><a href=\"#gallery\">C.V.</a></li>\n           <li><a href=\"#misc\">Misc.</a></li>\n"
+                },
+                {
+                    "date": 1756869364704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n           <span className=\"logo-line1\">Tingxi Li</span>\n           <span className=\"logo-line2\">[ˈtɪŋɕi li]</span>\n         </div>\n         <ul className=\"nav__links nav__right\">\n-          <li><a href=\"#gallery\">C.V.</a></li>\n+          <li><a href=\"#gallery\">CV</a></li>\n           <li><a href=\"#misc\">Misc.</a></li>\n         </ul>\n       </div>\n     </nav>\n"
+                }
+            ],
+            "date": 1756784268153,
+            "name": "Commit-0",
+            "content": "import React from \"react\";\n\nexport default function NavBar() {\n  return (\n    <nav className=\"nav\">\n      <div className=\"nav__inner\">\n        <div className=\"nav__logo\">MyPortfolio</div>\n        <ul className=\"nav__links\">\n          <li><a href=\"#home\">Home</a></li>\n          <li><a href=\"#projects\">Projects</a></li>\n          <li><a href=\"#about\">About</a></li>\n          <li><a href=\"#contact\">Contact</a></li>\n        </ul>\n      </div>\n    </nav>\n  );\n}"
+        }
+    ]
+}

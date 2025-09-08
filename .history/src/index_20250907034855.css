@@ -1,0 +1,21 @@
+/* index.css */
+
+/* Basic reset */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevents scrollbars from the background element */
+}
+
+
+/* Your main content container (can be #root or another class) */
+.content {
+  position: relative; /* Establishes a stacking context */
+  z-index: 1; /* Ensures content is on top of the background */
+  padding: 2rem; /* Add some padding to see the content */
+  color: #333; /* Example text color */
+  max-width: 60%;
+  margin: 0 auto;
+}
