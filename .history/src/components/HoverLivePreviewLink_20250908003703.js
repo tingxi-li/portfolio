@@ -48,13 +48,14 @@ export default function HoverLivePreviewLink({
       setScreenshotFailed(false);
       clear("load");
       timers.current.load = setTimeout(() => {
-        
+        // 仅当尚未加载成功时才显示占位
         if (!loadedRef.current) setUseFallback(true);
       }, timeout);
     }, showDelay);
   };
 
   const onLeave = (e) => {
+    // 如果仍在容器内部（比如从链接移动到预览框），不关闭
     const next = e?.relatedTarget;
     if (next && boxRef.current?.contains(next)) return;
 
@@ -80,6 +81,7 @@ export default function HoverLivePreviewLink({
     if (!autoScreenshot) return "";
     try {
       const enc = encodeURIComponent(u);
+      // 使用 WordPress mShots 作为公共截图服务（无需密钥）
       return `https://s.wordpress.com/mshots/v1/${enc}?w=360`;
     } catch {
       return "";
@@ -87,6 +89,7 @@ export default function HoverLivePreviewLink({
   };
 
   const onFallbackImgError = () => {
+    // 如果自带的 fallback 图失败，尝试自动截图；否则占位
     if (fallbackImg && !fallbackImageFailed) {
       setFallbackImageFailed(true);
     } else {
@@ -119,6 +122,7 @@ export default function HoverLivePreviewLink({
             />
           )}
           {(isBlocked || (useFallback && !loaded)) && (() => {
+            // 计算优先的回退资源：先用用户提供的图；若失败或没有，则用自动截图
             const userImgOk = !!fallbackImg && !fallbackImageFailed;
             const shotSrc = !screenshotFailed ? getScreenshotSrc(url) : "";
             const finalSrc = userImgOk ? fallbackImg : shotSrc;
