@@ -51,92 +51,96 @@ export default function Main() {
       <p className="heading">Education</p>
 
       <div className="line-left-right">
-        <p className="normal-text" style={{fontSize: "18px"}}>
+        <p className="normal-text" style={{fontSize: "24px"}}>
           The University of Texas at Dallas
         </p>
-        <p className="normal-text" style={{fontStyle: "italic" , fontSize: "17px"}}>
+        <p className="normal-text accent-underline" style={{fontStyle: "italic" , fontSize: "20px"}}>
           Doctor of Philosophy, 2024 - present
         </p>
       </div>
 
       <div className="line-left-right">
-        <p className="normal-text" style={{fontSize: "18px"}}>
+        <p className="normal-text" style={{fontSize: "24px"}}>
           Dalian University of Technology
         </p>
-        <p className="normal-text" style={{fontStyle: "italic" , fontSize: "17px"}}>
+        <p className="normal-text accent-underline" style={{fontStyle: "italic" , fontSize: "20px"}}>
           Bachelor of Science, 2019 - 2024
         </p>
       </div>
 
       <div className="line-left-right">
-        <p className="normal-text" style={{fontSize: "18px"}}>
+        <p className="normal-text" style={{fontSize: "24px"}}>
           Technical University of Munich
         </p>
-        <p className="normal-text" style={{fontStyle: "italic" , fontSize: "17px"}}>
+        <p className="normal-text accent-underline" style={{fontStyle: "italic" , fontSize: "20px"}}>
           Visiting Student, 2022 - 2022
         </p>
       </div>
 
       <p className="heading">Publications</p>
 
-      <Publications items={pubs1} me="Tingxi Li" />
+      <div className="pubs-large"><Publications items={pubs1} me="Tingxi Li" /></div>
 
-      <Publications items={pubs2} me="Tingxi Li" />
+      <div className="pubs-large"><Publications items={pubs2} me="Tingxi Li" /></div>
 
       <p className="heading">Experience</p>
 
-      <div className="line-left-right">
-        <p className="normal-text" style={{fontSize: "18px"}}>
-          SOPHGO
-        </p>
-        <p className="normal-text" style={{fontStyle: "italic" , fontSize: "17px"}}>
-          Research Intern, May 2024 - Aug 2024
-        </p>
-      </div>
+      <ul className="cards">
+        <li className="card-item">
+          <h3 className="card-title">SOPHGO</h3>
+          <div className="card-meta">
+            <span className="card-tag">Research Intern</span>
+            <span className="card-tag">May 2024 – Aug 2024</span>
+          </div>
+          <p className="card-description">
+            refactored c++ code, tested the refactored code to ensure compilation and functionality, and wrote documentation.
+          </p>
+        </li>
 
-      <p className="normal-text" style={{color: "#666666", fontSize: "16px"}}>refactored c++ code, tested the refactored code to ensure compilation and functionality, and wrote documentation.</p>
-
-      <div className="line-left-right">
-        <p className="normal-text" style={{fontSize: "18px"}}>
-          Amazon Nova AI Challenge: Trusted AI
-        </p>
-        <p className="normal-text" style={{fontStyle: "italic" , fontSize: "17px"}}>
-          Finalist Team, Nov 2024 - Jul 2025
-        </p>
-      </div>
-
-      <p className="normal-text" style={{color: "#666666", fontSize: "16px"}}>team member of one of the red teaming finalists. develop surrogate model to help evaluating adversarial probes and refine attack strategies based on the findings.</p>
+        <li className="card-item">
+          <h3 className="card-title">Amazon Nova AI Challenge: Trusted AI</h3>
+          <div className="card-meta">
+            <span className="card-tag">Finalist Team</span>
+            <span className="card-tag">Nov 2024 – Jul 2025</span>
+          </div>
+          <p className="card-description">
+            team member of one of the red teaming finalists. develop surrogate model to help evaluating adversarial probes and refine attack strategies based on the findings.
+          </p>
+        </li>
+      </ul>
 
 
       <p className="heading">Teaching</p>
 
-      <div className="line-left-right">
-        <p className="normal-text" style={{fontSize: "18px"}}>
-          CS4375: Introduction to Machine Learning
-        </p>
-        <p className="normal-text" style={{fontStyle: "italic" , fontSize: "17px"}}>
-          Teaching Assistant, 2024 Fall
-        </p>
-      </div>
+      <ul className="cards">
+        <li className="card-item">
+          <h3 className="card-title">CS4375: Introduction to Machine Learning</h3>
+          <div className="card-meta">
+            <span className="card-tag">Teaching Assistant</span>
+            <span className="card-tag">Fall 2024</span>
+          </div>
+          <p className="card-description">
+            host office hours, design exam questions and deliver review lectures for the course
+          </p>
+        </li>
 
-      <p className="normal-text" style={{color: "#666666", fontSize: "16px"}}>host office hours, design exam questions and deliver review lectures for the course</p>
-
-      <div className="line-left-right">
-        <p className="normal-text" style={{fontSize: "18px"}}>
-          CS4375: Introduction to Machine Learning
-        </p>
-        <p className="normal-text" style={{fontStyle: "italic" , fontSize: "17px"}}>
-          Teaching Assistant, 2025 Fall
-        </p>
-      </div>
-
-      <p className="normal-text" style={{color: "#666666", fontSize: "16px"}}>host  office hours; teach introductory level of machine learning compilation, vllm, sglang, tilelang and triton; design coding assignments</p>
+        <li className="card-item">
+          <h3 className="card-title">CS4375: Introduction to Machine Learning</h3>
+          <div className="card-meta">
+            <span className="card-tag">Teaching Assistant</span>
+            <span className="card-tag">Fall 2025</span>
+          </div>
+          <p className="card-description">
+            host  office hours; teach introductory level of machine learning compilation, vllm, sglang, tilelang and triton; design coding assignments
+          </p>
+        </li>
+      </ul>
 
 
       <p className="heading">Misc.</p>
 
-      <p className="normal-text" style={{color: "#666666", fontSize: "16px"}}>Programming Languages: Python, C/C++, Java, JavaScript, SQL, HTML/CSS</p>
-      <p className="normal-text" style={{color: "#666666", fontSize: "16px"}}>Languages: Mandarin, Cantonese, English</p>
+      <p className="normal-text" style={{color: "#666666", fontSize: "18px"}}>Programming Languages: Python, C/C++, Java, JavaScript, SQL, HTML/CSS</p>
+      <p className="normal-text" style={{color: "#666666", fontSize: "18px"}}>Languages: Mandarin, Cantonese, English</p>
 
 
 

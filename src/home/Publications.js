@@ -65,7 +65,7 @@ export default function Publications({ items = [], me }) {
                   <a className="pub-link" href={pdf} target="_blank" rel="noopener noreferrer">PDF</a>
                 ) : null}
                 {github ? (
-                  <a className="pub-link" href={github} target="_blank" rel="noopener noreferrer">GitHub</a>
+                  <a className="pub-link" href={github} target="_blank" rel="noopener noreferrer">Code</a>
                 ) : null}
               </div>
             ) : null}
