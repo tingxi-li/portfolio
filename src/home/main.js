@@ -212,7 +212,7 @@ function ContactRow() {
               <linearGradient id="contact-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" style={{ stopColor: 'var(--grad-1)' }} />
                 <stop offset="50%" style={{ stopColor: 'var(--grad-2)' }} />
-                <stop offset="100%" style={{ stopColor: 'var(--grad-3)' }} />
+
               </linearGradient>
             </defs>
             <path fill="url(#contact-grad)" d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2Zm0 3.5-8 5-8-5V6l8 5 8-5v1.5Z" />
@@ -226,8 +226,8 @@ function ContactRow() {
               <defs>
                 <linearGradient id="contact-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" style={{ stopColor: 'var(--grad-1)' }} />
-                  <stop offset="50%" style={{ stopColor: 'var(--grad-2)' }} />
-                  <stop offset="100%" style={{ stopColor: 'var(--grad-3)' }} />
+                  <stop offset="33%" style={{ stopColor: 'var(--grad-2)' }} />
+
                 </linearGradient>
               </defs>
               <path fill="url(#contact-grad)" d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.11.37 2.31.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C10.07 21 3 13.93 3 5a1 1 0 011-1h3.5a1 1 0 011 1c0 1.27.2 2.47.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2Z"/>
@@ -243,7 +243,7 @@ function ContactRow() {
                 <linearGradient id="contact-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" style={{ stopColor: 'var(--grad-1)' }} />
                   <stop offset="50%" style={{ stopColor: 'var(--grad-2)' }} />
-                  <stop offset="100%" style={{ stopColor: 'var(--grad-3)' }} />
+
                 </linearGradient>
               </defs>
               <path fill="url(#contact-grad)" d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6Zm0 2.5L18.5 9H14V4.5ZM8 12h8v1.5H8V12Zm0 4h8v1.5H8V16Z" />
@@ -257,8 +257,8 @@ function ContactRow() {
               <defs>
                 <linearGradient id="contact-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" style={{ stopColor: 'var(--grad-1)' }} />
-                  <stop offset="50%" style={{ stopColor: 'var(--grad-2)' }} />
-                  <stop offset="100%" style={{ stopColor: 'var(--grad-3)' }} />
+                  <stop offset="33%" style={{ stopColor: 'var(--grad-2)' }} />
+
                 </linearGradient>
               </defs>
               <path fill="url(#contact-grad)" d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.27 2.3-2.6 4.74-2.6 5.07 0 6 3.34 6 7.68V24h-5v-7.6c0-1.8-.03-4.12-2.51-4.12-2.52 0-2.9 1.96-2.9 4v7.72h-5V8z"/>
@@ -272,8 +272,8 @@ function ContactRow() {
               <defs>
                 <linearGradient id="contact-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" style={{ stopColor: 'var(--grad-1)' }} />
-                  <stop offset="50%" style={{ stopColor: 'var(--grad-2)' }} />
-                  <stop offset="100%" style={{ stopColor: 'var(--grad-3)' }} />
+                  <stop offset="33%" style={{ stopColor: 'var(--grad-2)' }} />
+
                 </linearGradient>
               </defs>
               <g fill="url(#contact-grad)">
