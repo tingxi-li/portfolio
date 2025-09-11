@@ -1,7 +1,0 @@
-:root{
-  --bg: 235 235 222;
-  --glow: 0 200 255;
-  --alpha: 0.9;   /* was 0.55 */
-  --size: 60vmin; /* a bit bigger */
-  --blur: 60px;   /* softer */
-}

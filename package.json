@@ -10,6 +10,7 @@
     "@mui/system": "^6.1.10",
     "ajv": "^6.12.6",
     "ajv-keywords": "^3.5.2",
+    "antd": "^5.27.3",
     "cra-template": "1.2.0",
     "firebase": "^11.0.2",
     "framer-motion": "^11.13.5",
@@ -44,8 +45,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
-  ,
+  },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
