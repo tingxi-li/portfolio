@@ -39,6 +39,55 @@
 
 html, body { margin: 0; padding: 0; background: #ffffff;}
 body { color: #111; }
+html { scroll-behavior: smooth; }
+
+/* Ensure in-page anchors are not hidden under the sticky back button */
+section[id] {
+  scroll-margin-top: calc(60px + clamp(12px, 4vw, 24px));
+}
+#top { /* a little offset is fine for top */
+  scroll-margin-top: clamp(12px, 4vw, 24px);
+}
+
+/* Right-side vertical section dots */
+.section-dots {
+  position: fixed;
+  right: clamp(8px, 3vw, 24px);
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2000;
+}
+.section-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #111;
+  background: #fff;
+  display: inline-block;
+}
+.section-dot:hover, .section-dot:focus {
+  background: #000;
+}
+.section-dot[aria-current="true"] {
+  background: #000;
+}
+
+/* Visually hidden but accessible text */
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0);
+  white-space: nowrap; border: 0;
+}
+
+@media (max-width: 640px) {
+  .section-dots { right: 8px; gap: 8px; }
+  .section-dot { width: 10px; height: 10px; }
+}
 
 #root {
   /* Centered, responsive content width */

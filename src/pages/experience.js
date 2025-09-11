@@ -27,7 +27,7 @@ export default function Experience() {
       <EntryItem
       title="Amazon Nova AI Challenge: Trusted AI"
       description="team member of one of the red teaming finalists. develop surrogate model to help evaluating adversarial probes and refine attack strategies based on the findings."
-      time="Nov 2024 - Jul. 2024"
+      time="Nov 2024 - Jul. 2025"
       role="finalist team member"
       />
 
