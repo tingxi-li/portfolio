@@ -31,6 +31,7 @@
   --title-font-size: clamp(20px, 8vw, 60px);
   --toc-font-size: clamp(16px, 5vw, 48px);
   --text-font-size: clamp(14px, 4vw, 24px);
+  --smaller-text-font-size: clamp(13px, 3.5vw, 20px);
   --caption-font-size: clamp(12px, 3vw, 16px);
   --title-weight: 600;
   --title-line-height: 1.1;
@@ -157,6 +158,7 @@ section[id] {
   grid-template-columns: max-content max-content max-content; /* pre | align char | post */
   justify-content: center; /* center the whole block within #root or container */
   align-content: center; /* vertical center within available height */
+  align-items: center; /* keep each row's items visually aligned */
   min-height: calc(100dvh - 2 * var(--page-pad));
   row-gap: 12px;
   font-family: "Chelsea Market";
@@ -213,21 +215,23 @@ section[id] {
 .aligned-link .align {
   grid-column: 2;
   justify-self: start;
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  line-height: 1em; /* center the letter vertically */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1; /* not used; center with flex */
   text-align: center;
   /* Easily override these from JS using CSS variables */
   background: var(--align-bg, transparent);
   color: var(--align-fg, currentColor);
-  border: 2px solid var(--align-border, currentColor);
+  border: 5px solid var(--align-border, currentColor);
   border-radius: 50%;
   box-sizing: border-box;
-  margin: 0 4px;
-  vertical-align: middle; /* align circle with surrounding text */
+  margin: 0 6px;
+  vertical-align: middle; /* ensure inline alignment if needed */
 }
-.aligned-link .pre, .aligned-link .post { line-height: 1; }
+.aligned-link .pre, .aligned-link .post { line-height: 1; align-self: center; }
 .aligned-link .post { grid-column: 3; justify-self: start; white-space: nowrap; }
 .aligned-link:hover .pre, .aligned-link:hover .align, .aligned-link:hover .post { text-decoration: underline; }
 /* Chelsea Market font from public/ */
