@@ -225,7 +225,9 @@ section[id] {
   /* Easily override these from JS using CSS variables */
   background: var(--align-bg, transparent);
   color: var(--align-fg, currentColor);
-  border: 5px solid var(--align-border, currentColor);
+  border-style: solid;
+  border-color: var(--align-border, currentColor);
+  border-width: clamp(2px, 0.12em, 5px);
   border-radius: 50%;
   box-sizing: border-box;
   margin: 0 6px;
