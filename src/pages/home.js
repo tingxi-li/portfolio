@@ -38,7 +38,7 @@ export default function Home({ onNav }) {
       </a>
       <a href="/" className="aligned-link" onClick={(e) => handle(e, "/")}>
         <span className="pre"></span>
-        <span className="align"></span>
+        <span className="align" style={{ '--align-bg': '#111' }}></span>
         <span className="post"></span>
       </a>
       <a href="/contact" className="aligned-link" onClick={(e) => handle(e, "/contact")}>
