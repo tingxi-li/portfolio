@@ -25,6 +25,8 @@ export default function Bio() {
         <figcaption className="img-caption">Deer Valley, Utah</figcaption>
       </figure>
 
+      <br />
+
       <p className="content" style={{fontFamily: "var(--font-mono)", fontSize: "var(--text-font-size)" , fontWeight: 400}}>
         i'm a <s>1st</s> 2nd year phd student in computer science
          at <EmLink href="https://www.utdallas.edu/">ut dallas</EmLink>, advised by <EmLink href="https://www.youngwei.com/">prof. wei yang</EmLink>. </p>

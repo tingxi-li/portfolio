@@ -42,7 +42,9 @@ export default function App() {
     <>
       {/* Top anchor for back-to-top */}
       <div id="top" />
-      <Home />
+      <section id="home">
+        <Home />
+      </section>
       <SectionDots />
 
       <section id="research-interests">

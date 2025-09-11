@@ -40,24 +40,28 @@ export default function SectionDots() {
     return () => observer.disconnect();
   }, [sections]);
 
-  const anchors = useMemo(() => sections.map(({ id }) => ({ id, href: `/#${id}` })), [sections]);
+  const toLabel = (id) => id.split('-').map((s) => s.charAt(0).toUpperCase() + s.slice(1)).join(' ');
+  const anchors = useMemo(
+    () => sections.map(({ id }) => ({ id, href: `/#${id}`, label: toLabel(id) })),
+    [sections]
+  );
 
   if (!anchors.length) return null;
 
   return (
     <nav className="section-dots" aria-label="Section navigation">
-      {anchors.map(({ id, href }) => (
+      {anchors.map(({ id, href, label }) => (
         <a
           key={id}
           href={href}
           className="section-dot"
-          aria-label={id}
+          aria-label={label}
           aria-current={active === id ? "true" : undefined}
         >
-          <span className="sr-only">{id}</span>
+          <span className="sr-only">{label}</span>
+          <span className="section-dot__tooltip" role="tooltip">{label}</span>
         </a>
       ))}
     </nav>
   );
 }
-
