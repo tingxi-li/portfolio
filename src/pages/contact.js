@@ -16,7 +16,7 @@ export default function Contact() {
           <a className="circle-btn" href="/cv.pdf" target="_blank" rel="noopener noreferrer" aria-label="CV">
             CV
           </a>
-          <a className="circle-btn" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a className="circle-btn" href="https://www.linkedin.com/in/tingxi-l-352a45297/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <Linkedin size={28} strokeWidth={2} />
           </a>
         </div>
