@@ -2,11 +2,14 @@ import React, { useMemo } from "react";
 
 // Keep the component signature to avoid touching imports/usages.
 export default function Home() {
-  const alignBg = useMemo(() => {
+  const { alignBg, alignFg } = useMemo(() => {
     const hue = Math.floor(Math.random() * 360);
     const sat = 65 + Math.floor(Math.random() * 20); // 65% - 85%
     const light = 35 + Math.floor(Math.random() * 20); // 35% - 55%
-    return `hsl(${hue}deg ${sat}% ${light}%)`;
+    const bg = `hsl(${hue}deg ${sat}% ${light}%)`;
+    const isDark = light < 50;
+    const fg = isDark ? '#fff' : '#000';
+    return { alignBg: bg, alignFg: fg };
   }, []);
 
   return (
@@ -46,7 +49,7 @@ export default function Home() {
         </a>
         <a href="/" className="aligned-link">
           <span className="pre"></span>
-          <span className="align" style={{ '--align-bg': alignBg }}></span>
+          <span className="align" style={{ '--align-bg': alignBg, '--align-fg': alignFg, '--align-border': alignBg }}></span>
           <span className="post"></span>
         </a>
         <a href="/#contact" className="aligned-link">

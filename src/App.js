@@ -9,6 +9,7 @@ import Teaching from './pages/teaching';
 import Contact from './pages/contact';
 import Misc from './pages/misc';
 import SectionDots from './components/SectionDots';
+import ThemeToggle from './components/ThemeToggle';
 
 function scrollToHash(hash) {
   const id = (hash || '').replace(/^#/, '');
@@ -40,6 +41,7 @@ export default function App() {
 
   return (
     <>
+      <ThemeToggle />
       {/* Top anchor for back-to-top */}
       <div id="top" />
       <section id="home">

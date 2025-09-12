@@ -1,14 +1,14 @@
 @font-face {
   font-family: "Chelsea Market";
-  src: url('/public/ChelseaMarket-Regular.ttf') format('truetype');
+  src: local("Chelsea Market"), url('/public/ChelseaMarket-Regular.woff2') format('truetype');
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
-@font-face {
+/* @font-face {
   font-family: "DMSerifText-Regular";
-  src: url('/public/DMSerifText-Regular.ttf') format('truetype');
+  src: local("DM Serif Text"), url('/DMSerifText-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -16,11 +16,11 @@
 
 @font-face {
   font-family: "DMSerifText-Italic";
-  src: url('/public/DMSerifText-Italic.ttf') format('truetype');
+  src: local("DM Serif Text Italic"), url('/DMSerifText-Italic.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
-}
+} */
 
 :root {
   --font-chelsea: "Chelsea Market", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
@@ -29,7 +29,7 @@
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   --page-pad: clamp(12px, 4vw, 24px);
   --title-font-size: clamp(42px, 6vw, 60px);
-  --toc-font-size: clamp(20px, 4.5vw, 40px);
+  --toc-font-size: clamp(20px, 4.5vw, 38px);
   --text-font-size: clamp(16px, 2.5vw, 18px);
   --smaller-text-font-size: clamp(13px, 2vw, 15px);
   --caption-font-size: clamp(12px, 2vw, 14px);
@@ -38,12 +38,73 @@
   --title-line-height: 1.1;
   --text-weight: 400;
   --text-line-height: 2;
-  --highlight-font-color: blue;
+  --highlight-font-color: blue; /* light theme highlight */
+
+  /* Theme: light defaults */
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #666666;
+  --border: #111111;
+  --tooltip-bg: var(--fg);
+  --tooltip-fg: #ffffff;
+  --dot-hover-bg: var(--fg);
+  --dot-active-bg: var(--fg);
+  /* BackHome derived colors */
+  --back-border: var(--fg);
+  --back-bg: var(--bg);
+  --back-fg: var(--fg);
+  --back-bg-hover: var(--fg);
+  --back-fg-hover: var(--bg);
+
+  /* Tag defaults (EntryItem chips) */
+  --tag-bg-default: transparent;
+  --tag-fg-default: var(--fg);
+  --tag-border-default: var(--border);
 }
 
-html, body { margin: 0; padding: 0; background: #ffffff;}
-body { color: #111; }
+html, body { margin: 0; padding: 0; background: var(--bg);}
+body { color: var(--fg); }
 html { scroll-behavior: smooth; }
+
+/* Dark theme override */
+html[data-theme="dark"] {
+  --bg: #0b0b0b;
+  --fg: #eaeaea;
+  --muted: #aaaaaa;
+  --border: #eaeaea;
+  --tooltip-bg: #eaeaea;
+  --tooltip-fg: #0b0b0b;
+  --dot-hover-bg: #eaeaea;
+  --dot-active-bg: #eaeaea;
+  --back-border: var(--fg);
+  --back-bg: var(--bg);
+  --back-fg: var(--fg);
+  --back-bg-hover: var(--fg);
+  --back-fg-hover: var(--bg);
+  /* dark theme highlight color */
+  --highlight-font-color: yellow;
+}
+
+/* Follow system preference by default when no explicit data-theme is set */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme]) {
+    --bg: #0b0b0b;
+    --fg: #eaeaea;
+    --muted: #aaaaaa;
+    --border: #eaeaea;
+    --tooltip-bg: #eaeaea;
+    --tooltip-fg: #0b0b0b;
+    --dot-hover-bg: #eaeaea;
+    --dot-active-bg: #eaeaea;
+    --back-border: var(--fg);
+    --back-bg: var(--bg);
+    --back-fg: var(--fg);
+    --back-bg-hover: var(--fg);
+    --back-fg-hover: var(--bg);
+    /* system dark default highlight */
+    --highlight-font-color: yellow;
+  }
+}
 
 /* Ensure in-page anchors are not hidden under the sticky back button */
 section[id] {
@@ -68,16 +129,16 @@ section[id] {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  border: 2px solid #111;
-  background: #fff;
+  border: 2px solid var(--border, currentColor);
+  background: var(--bg);
   display: inline-block;
   position: relative;
 }
 .section-dot:hover, .section-dot:focus {
-  background: #000;
+  background: var(--dot-hover-bg);
 }
 .section-dot[aria-current="true"] {
-  background: #000;
+  background: var(--dot-active-bg);
 }
 
 /* Custom tooltip bubble for section dots */
@@ -87,8 +148,8 @@ section[id] {
   top: 50%;
   transform: translateY(-50%) scale(0.98);
   transform-origin: right center;
-  background: #111;
-  color: #fff;
+  background: var(--tooltip-bg);
+  color: var(--tooltip-fg);
   font-family: var(--font-mono);
   font-size: 12px;
   line-height: 1.2;
@@ -109,7 +170,7 @@ section[id] {
   transform: translateY(-50%);
   border-width: 6px;
   border-style: solid;
-  border-color: transparent transparent transparent #111;
+  border-color: transparent transparent transparent var(--tooltip-bg);
 }
 .section-dot:hover .section-dot__tooltip,
 .section-dot:focus-visible .section-dot__tooltip {
@@ -156,8 +217,8 @@ section[id] {
 /* Aligned link list */
 .aligned-links {
   display: grid;
-  grid-template-columns: max-content max-content max-content; /* pre | align char | post */
-  justify-content: center; /* center the whole block within #root or container */
+  grid-template-columns: 1fr max-content 1fr; /* pre | align char | post */
+  width: 100%;
   align-content: center; /* vertical center within available height */
   align-items: center; /* keep each row's items visually aligned */
   min-height: calc(100dvh - 2 * var(--page-pad));
@@ -205,9 +266,9 @@ section[id] {
   font-style: italic;
 }
 .em-link:hover {
-  background: #000;
-  color: #fff;
-  text-decoration-color: #fff;
+  background: var(--fg);
+  color: var(--bg);
+  text-decoration-color: var(--bg);
   transition: background-color 0.2s ease, color 0.2s ease, text-decoration-color 0.2s ease;
 }
 /* Use display: contents so all rows share the same grid columns */
@@ -268,6 +329,29 @@ section[id] {
   background: var(--back-bg-hover, #000);
   color: var(--back-fg-hover, #fff);
   border-color: var(--back-border-hover, #000);
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 999px;
+  border: 2px solid var(--border, currentColor);
+  background: var(--bg);
+  color: var(--fg);
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.08s ease;
+}
+.theme-toggle:hover { text-decoration: none; }
+.theme-toggle:active { transform: scale(0.96); }
+.theme-toggle--fixed {
+  position: fixed;
+  top: clamp(12px, 4vw, 24px);
+  right: clamp(12px, 4vw, 24px);
+  z-index: 1200;
 }
 
 /* IBM Plex Mono full family (TTF) */
@@ -381,12 +465,13 @@ section[id] {
 .entry-desc { margin-top: 6px; font-family: var(--font-mono); font-size: var(--caption-font-size); line-height: var(--text-line-height); }
 
 /* Generic tags */
-.tag { display: inline-flex; align-items: center; justify-content: center; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--tag-border, currentColor); background: var(--tag-bg, transparent); color: var(--tag-fg, currentColor); font-size: var(--tag-font-size); font-family: var(--font-mono); text-decoration: none; line-height: 1.2; }
-.tag:hover { text-decoration: none; }
-.tag--time { --tag-bg: #111; --tag-border: #111; --tag-fg: #fff; }
-.tag--role { --tag-bg: #111; --tag-border: #111; --tag-fg: #fff; }
-.tag--link { --tag-bg: #fff; --tag-border: #111; --tag-fg: #111; }
-.tag--link:hover { background: #111; color: #fff; border-color: #111; transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease; }
+.tag { display: inline-flex; align-items: center; justify-content: center; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--tag-border, var(--tag-border-default, currentColor)); background: var(--tag-bg, var(--tag-bg-default, transparent)); color: var(--tag-fg, var(--tag-fg-default, currentColor)); font-size: var(--tag-font-size); font-family: var(--font-mono); text-decoration: none; line-height: 1.2; }
+  .tag:hover { text-decoration: none; }
+/* Theme-aware presets */
+.tag--time { --tag-bg: var(--fg); --tag-border: var(--fg); --tag-fg: var(--bg); }
+.tag--role { --tag-bg: var(--fg); --tag-border: var(--fg); --tag-fg: var(--bg); }
+.tag--link { --tag-bg: var(--bg); --tag-border: var(--fg); --tag-fg: var(--fg); }
+.tag--link:hover { background: var(--fg); color: var(--bg); border-color: var(--fg); transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease; }
 
 /* Highlight for author's own name inside publication authors list */
 .mark-me { font-weight: 700; text-decoration: underline; }

@@ -4,6 +4,37 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tingxi's Homepage</title>
+    <!-- Preload key fonts to reduce flash on first paint -->
+    <!-- <link rel="preload" href="/ChelseaMarket-Regular.ttf" as="font" type="font/ttf" crossorigin> -->
+    <!-- <link rel="preload" href="/DMSerifText-Regular.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/DMSerifText-Italic.ttf" as="font" type="font/ttf" crossorigin> -->
+    <style>
+      html.fonts-loading body { opacity: 0; }
+      html.fonts-ready body { opacity: 1; transition: opacity 150ms ease; }
+    </style>
+    <script>
+      // Hide content until Chelsea Market is ready to avoid fallback flash
+      document.documentElement.classList.add('fonts-loading');
+      (function() {
+        if (document.fonts && document.fonts.load) {
+          Promise.all([
+            document.fonts.load('1em "Chelsea Market"')
+          ]).then(function(results) {
+            if (Array.isArray(results) && results.length > 0) {
+              document.documentElement.classList.remove('fonts-loading');
+              document.documentElement.classList.add('fonts-ready');
+            }
+          }).catch(function() {
+            // Keep hidden to avoid displaying fallback, per preference
+          });
+        } else {
+          window.addEventListener('load', function() {
+            document.documentElement.classList.remove('fonts-loading');
+            document.documentElement.classList.add('fonts-ready');
+          });
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
