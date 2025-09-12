@@ -21,7 +21,7 @@ export default function Misc() {
           "
           sizes="(max-width: 600px) 92vw, 72ch"
         />
-        <figcaption className="img-caption">Chick-fil-A and his bean bag</figcaption>
+        <figcaption className="img-caption">Chick-fil-A and his bean bag (Sept. 2025)</figcaption>
       </figure>
       <br />
       <br />

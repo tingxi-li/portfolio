@@ -35,6 +35,24 @@
         }
       })();
     </script>
+    <!-- Google Analytics (GA4). Replace GA_ID with your measurement ID like G-XXXXXXX -->
+    <script>
+      (function(){
+        var isLocal = /(^localhost$|^127\.|^\[::1\]$)/.test(location.hostname);
+        if (isLocal) return; // do not track on local dev
+        var GA_ID = 'G-EN3RNBL45G';
+        if (!/^G-[A-Z0-9]+$/.test(GA_ID)) return; // prevent accidental empty ID
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);} window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', GA_ID, { anonymize_ip: true });
+      })();
+    </script>
+    <!-- End Google Analytics -->
   </head>
   <body>
     <div id="root"></div>
