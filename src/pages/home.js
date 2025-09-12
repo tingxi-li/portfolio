@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useMemo } from "react";
 
 // Keep the component signature to avoid touching imports/usages.
 export default function Home() {
+  const alignBg = useMemo(() => {
+    const hue = Math.floor(Math.random() * 360);
+    const sat = 65 + Math.floor(Math.random() * 20); // 65% - 85%
+    const light = 35 + Math.floor(Math.random() * 20); // 35% - 55%
+    return `hsl(${hue}deg ${sat}% ${light}%)`;
+  }, []);
+
   return (
     <div className="home-layout">
       <p className="title home-title"><br />tingxi's homepage</p>
@@ -37,9 +44,9 @@ export default function Home() {
           <span className="align">i</span>
           <span className="post">ng</span>
         </a>
-        <a href="/#home" className="aligned-link">
+        <a href="/" className="aligned-link">
           <span className="pre"></span>
-          <span className="align" style={{ '--align-bg': '#111' }}></span>
+          <span className="align" style={{ '--align-bg': alignBg }}></span>
           <span className="post"></span>
         </a>
         <a href="/#contact" className="aligned-link">

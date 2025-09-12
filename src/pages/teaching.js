@@ -28,6 +28,9 @@ export default function Teaching() {
       time="fall 2025"
       role="teaching assistant"
       />
+      <br />
+      <br />
+      <br />
     </main>
   );
 }

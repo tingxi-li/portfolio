@@ -23,6 +23,9 @@ export default function Misc() {
         />
         <figcaption className="img-caption">Chick-fil-A and his bean bag</figcaption>
       </figure>
+      <br />
+      <br />
+      <br />
     </main>
   );
 }

@@ -43,6 +43,8 @@ export default function GoogleScholar() {
       />
 
       <br />
+      <br />
+      <br />
     </main>
   );
 }

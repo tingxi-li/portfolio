@@ -5,23 +5,27 @@ export default function BackHome({ title = "", style }) {
     if (e.defaultPrevented) return;
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
     e.preventDefault();
-    // Smoothly scroll to the top instead of route-changing
+    // Navigate to home section (triggers smooth scroll via App hash handler)
     try {
-      const topEl = document.getElementById("top");
-      if (topEl) {
-        topEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (window.location.hash !== "#home") {
+        window.location.hash = "home";
       } else {
-        window.scrollTo({ top: 0, behavior: "smooth" });
+        const homeEl = document.getElementById("home");
+        if (homeEl) homeEl.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     } catch (err) {
-      window.scrollTo(0, 0);
+      try {
+        window.location.assign("/#home");
+      } catch (_) {
+        // no-op
+      }
     }
   }, []);
 
   return (
     <div className="back-home" style={style}>
       <a
-        href="/#top"
+        href="/#home"
         onClick={onClick}
         className="back-home__btn"
         aria-label={title}

@@ -28,11 +28,12 @@
   --font-serif-italic: "DMSerifText-Italic", Georgia, Cambria, "Times New Roman", Times, serif;
   --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
   --page-pad: clamp(12px, 4vw, 24px);
-  --title-font-size: clamp(20px, 8vw, 60px);
-  --toc-font-size: clamp(16px, 5vw, 48px);
-  --text-font-size: clamp(14px, 4vw, 24px);
-  --smaller-text-font-size: clamp(13px, 3.5vw, 20px);
-  --caption-font-size: clamp(12px, 3vw, 16px);
+  --title-font-size: clamp(42px, 6vw, 60px);
+  --toc-font-size: clamp(20px, 4.5vw, 40px);
+  --text-font-size: clamp(16px, 2.5vw, 18px);
+  --smaller-text-font-size: clamp(13px, 2vw, 15px);
+  --caption-font-size: clamp(12px, 2vw, 14px);
+  --tag-font-size: clamp(11px, 1.8vw, 12px);
   --title-weight: 600;
   --title-line-height: 1.1;
   --text-weight: 400;
@@ -380,7 +381,7 @@ section[id] {
 .entry-desc { margin-top: 6px; font-family: var(--font-mono); font-size: var(--caption-font-size); line-height: var(--text-line-height); }
 
 /* Generic tags */
-.tag { display: inline-flex; align-items: center; justify-content: center; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--tag-border, currentColor); background: var(--tag-bg, transparent); color: var(--tag-fg, currentColor); font-size: 0.85em; font-family: var(--font-mono); text-decoration: none; line-height: 1.2; }
+.tag { display: inline-flex; align-items: center; justify-content: center; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--tag-border, currentColor); background: var(--tag-bg, transparent); color: var(--tag-fg, currentColor); font-size: var(--tag-font-size); font-family: var(--font-mono); text-decoration: none; line-height: 1.2; }
 .tag:hover { text-decoration: none; }
 .tag--time { --tag-bg: #111; --tag-border: #111; --tag-fg: #fff; }
 .tag--role { --tag-bg: #111; --tag-border: #111; --tag-fg: #fff; }
