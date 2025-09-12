@@ -500,3 +500,28 @@ section[id] {
 .media { margin: clamp(8px, 2vw, 16px) 0; }
 .misc-img { max-width: 100%; height: auto; display: block; border-radius: 8px; }
 .img-caption { margin-top: 6px; font-size: var(--caption-font-size); opacity: 0.8; font-family: var(--font-mono); }
+
+/* Minimal toast for copy feedback */
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: clamp(16px, 4vw, 28px);
+  transform: translateX(-50%) translateY(8px);
+  background: var(--fg);
+  color: var(--bg);
+  border: 1px solid var(--border, currentColor);
+  border-radius: 8px;
+  padding: 6px 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.2;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3000;
+  transition: opacity 150ms ease, transform 150ms ease;
+}
+.toast.toast--show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
