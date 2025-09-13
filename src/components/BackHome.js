@@ -5,17 +5,16 @@ export default function BackHome({ title = "", style }) {
     if (e.defaultPrevented) return;
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
     e.preventDefault();
-    // Navigate to home section (triggers smooth scroll via App hash handler)
+    // Go to root path ("/") and scroll to the home section without hash
     try {
-      if (window.location.hash !== "#home") {
-        window.location.hash = "home";
-      } else {
-        const homeEl = document.getElementById("home");
-        if (homeEl) homeEl.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (window.location.pathname !== "/" || window.location.hash) {
+        window.history.replaceState({}, "", "/");
       }
+      const homeEl = document.getElementById("home");
+      if (homeEl) homeEl.scrollIntoView({ behavior: "smooth", block: "start" });
     } catch (err) {
       try {
-        window.location.assign("/#home");
+        window.location.assign("/");
       } catch (_) {
         // no-op
       }
@@ -25,7 +24,7 @@ export default function BackHome({ title = "", style }) {
   return (
     <div className="back-home" style={style}>
       <a
-        href="/#home"
+        href="/"
         onClick={onClick}
         className="back-home__btn"
         aria-label={title}

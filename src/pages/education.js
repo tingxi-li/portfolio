@@ -1,11 +1,9 @@
 import React from "react";
 import "../global.css";
-import BackHome from "../components/BackHome";
 
 export default function Education() {
   return (
     <main>
-      <BackHome />
       <p className="title">Education</p>
       <p className="content" style={{fontFamily: "var(--font-mono)", fontSize: "var(--text-font-size)" , fontWeight: 800, textAlign: "center"}}>
         <br />

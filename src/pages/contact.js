@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
 import "../global.css";
-import BackHome from "../components/BackHome";
 import { Mail, Linkedin } from "lucide-react";
 export default function Contact() {
   const [copied, setCopied] = useState(false);
@@ -34,7 +33,6 @@ export default function Contact() {
   }, [copied]);
   return (
     <main>
-      <BackHome />
       <p className="title">Contact</p>
       <div className="circle-center">
         <div className="circle-buttons">

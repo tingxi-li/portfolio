@@ -302,13 +302,11 @@ section[id] {
 
 /* Back to Home button */
 .back-home {
-  /* Stick within the content flow so the left edge matches the first letter */
-  position: sticky;
+  /* Fix to viewport so it’s not constrained by content width */
+  position: fixed;
   top: clamp(12px, 4vw, 24px);
-  left: 0;
-  z-index: 1000;
-  /* Reserve some space below so it doesn't crowd the title */
-  margin-bottom: clamp(12px, 3vw, 20px);
+  left: clamp(12px, 3vw, 24px);
+  z-index: 1500;
 }
 .back-home__btn {
   display: inline-flex;

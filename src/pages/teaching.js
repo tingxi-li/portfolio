@@ -1,11 +1,9 @@
 import React from "react";
 import "../global.css";
-import BackHome from "../components/BackHome";
 import EntryItem from "../components/EntryItem";
 export default function Teaching() {
   return (
     <main>
-      <BackHome />
       <p className="title" style={{ fontSize: "var(--title-font-size)" }}>Teaching</p>
       <p className="content" style={{fontFamily: "var(--font-mono)", fontSize: "var(--text-font-size)" , fontWeight: 400}}>
         Courses I teach, as a TA.

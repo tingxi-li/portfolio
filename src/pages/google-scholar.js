@@ -1,13 +1,11 @@
 import React from "react";
 import "../global.css";
-import BackHome from "../components/BackHome";
 import EmLink from "../components/EmLink";
 import EntryItem from '../components/EntryItem'
 
 export default function GoogleScholar() {
   return (
     <main>
-      <BackHome />
       <p className="title" style={{ fontSize: "var(--title-font-size)" }}>Google Scholar</p>
         
       <p className="content" style={{fontFamily: "var(--font-mono)", fontSize: "var(--text-font-size)" , fontWeight: 400}}>

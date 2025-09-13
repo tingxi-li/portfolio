@@ -1,11 +1,9 @@
 import React from "react";
 import "../global.css";
-import BackHome from "../components/BackHome";
 import EntryItem from "../components/EntryItem";
 export default function Experience() {
   return (
     <main>
-      <BackHome />
       <p className="title" style={{ fontSize: "var(--title-font-size)" }}>Experience</p>
 
 

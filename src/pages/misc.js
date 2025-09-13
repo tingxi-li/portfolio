@@ -1,10 +1,8 @@
 import React from "react";
 import "../global.css";
-import BackHome from "../components/BackHome";
 export default function Misc() {
   return (
     <main>
-      <BackHome />
       <p className="title" style={{ fontSize: "var(--title-font-size)" }}>Miscellaneous</p>
       {/* ImageKit-hosted photo */}
       <figure className="media">

@@ -1,11 +1,9 @@
 import React from "react";
 import "../global.css";
-import BackHome from "../components/BackHome";
 import EmLink from "../components/EmLink";
 export default function Bio() {
   return (
     <main>
-      <BackHome />
 
       <p className="title" style={{fontFamily: "var(--font-chelsea)", fontSize: "var(--title-font-size)" }}>Bio</p>
       <br />
