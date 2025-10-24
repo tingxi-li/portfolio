@@ -108,10 +108,10 @@ html[data-theme="dark"] {
 
 /* Ensure in-page anchors are not hidden under the sticky back button */
 section[id] {
-  scroll-margin-top: calc(60px + clamp(12px, 4vw, 24px));
+  scroll-margin-top: calc(68px + var(--page-pad));
 }
-#top { /* a little offset is fine for top */
-  scroll-margin-top: clamp(12px, 4vw, 24px);
+#top { /* match section offset for consistent spacing */
+  scroll-margin-top: calc(68px + var(--page-pad));
 }
 
 /* Right-side vertical section dots */
@@ -206,6 +206,13 @@ section[id] {
   width: min(92vw, 72ch);
   margin: 0 auto;
   padding: var(--page-pad);
+}
+
+@media (max-width: 640px) {
+  #root {
+    /* Reserve space so fixed buttons at the top don't overlap the title */
+    padding-top: calc(var(--page-pad) + 68px);
+  }
 }
 
 /* Utility: force italic with a serif family that has real italic */
