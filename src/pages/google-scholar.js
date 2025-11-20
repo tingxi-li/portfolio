@@ -16,6 +16,17 @@ export default function GoogleScholar() {
       </p>
 
       <EntryItem
+      title="Identify then Exploit: Degrading Performance of Vision-based Deep Learning Systems"
+      description="Tingxi Li*, Mingfang Ji*, Ravishka Rathnasuriya, Simin Chen, Yitao Hu, Wei Yang"
+      time="2025"
+      role="under review at a major cv/ai conference"
+      highlightMe={"Tingxi Li"}
+      />
+      
+      <br />
+
+
+      <EntryItem
       title="Efficiency Attack and Defences Towards Deep Learning Systems"
       description="Ravishka Rathnasuriya, Tingxi Li, Zexin Xu, Zihe Song, Jun Ren, Mirazul Haque, Simin Chen, Wei Yang"
       time="2025"

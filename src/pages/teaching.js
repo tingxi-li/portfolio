@@ -22,9 +22,12 @@ export default function Teaching() {
 
       <EntryItem
       title="CS 4375: Introduction to Machine Learning"
-      description="host office hours; teach introductory level of machine learning compilation, vllm, sglang, tilelang and triton; design coding assignments."
+      description="host office hours; teach introductory level of machine learning compilation, triton programming; design coding assignments/exam questions."
       time="fall 2025"
       role="teaching assistant"
+      links={[
+        { href: 'https://github.com/tingxi-li/portfolio/releases/download/v1.0/ml-compilation-triton.pdf', label: 'Download Slides' },
+      ]}
       />
       <br />
       <br />
