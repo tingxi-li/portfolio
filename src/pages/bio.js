@@ -13,15 +13,15 @@ export default function Bio() {
           className="misc-img"
           alt="me"
           loading="lazy"
-          src="https://ik.imagekit.io/tingxi/myphoto.jpg?updatedAt=1757567875898"
+          src="https://ik.imagekit.io/tingxi/myphoto2.jpeg"
           srcSet="
-            https://ik.imagekit.io/tingxi/myphoto.jpg?updatedAt=1757567875898 480w,
-            https://ik.imagekit.io/tingxi/myphoto.jpg?updatedAt=1757567875898 768w,
-            https://ik.imagekit.io/tingxi/myphoto.jpg?updatedAt=1757567875898 1200w
+            https://ik.imagekit.io/tingxi/myphoto2.jpeg 480w,
+            https://ik.imagekit.io/tingxi/myphoto2.jpeg 768w,
+            https://ik.imagekit.io/tingxi/myphoto2.jpeg 1200w
           "
           style={{maxWidth: "240px", borderRadius: "8px"}}
         />
-        <figcaption className="img-caption">Deer Valley, Utah</figcaption>
+        <figcaption className="img-caption">Yosemite NP, California</figcaption>
       </figure>
 
       <br />

@@ -11,15 +11,15 @@ export default function Misc() {
           className="misc-img"
           alt="A moment I like"
           loading="lazy"
-          src="https://ik.imagekit.io/tingxi/favicon.jpg?updatedAt=1757566627954"
+          src="https://ik.imagekit.io/tingxi/twocats.jpeg"
           srcSet="
-            https://ik.imagekit.io/tingxi/favicon.jpg?updatedAt=1757566627954 480w,
-            https://ik.imagekit.io/tingxi/favicon.jpg?updatedAt=1757566627954 768w,
-            https://ik.imagekit.io/tingxi/favicon.jpg?updatedAt=1757566627954 1200w
+            https://ik.imagekit.io/tingxi/twocats.jpeg 480w,
+            https://ik.imagekit.io/tingxi/twocats.jpeg 768w,
+            https://ik.imagekit.io/tingxi/twocats.jpeg 1200w
           "
           sizes="(max-width: 600px) 92vw, 72ch"
         />
-        <figcaption className="img-caption">Chick-fil-A and his bean bag (Sept. 2025)</figcaption>
+        <figcaption className="img-caption">Jolly-B (Left) and Chick-fil-A (Right) (Jan. 2026)</figcaption>
       </figure>
       <br />
       <br />
