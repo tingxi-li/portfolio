@@ -5,13 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tingxi's Homepage</title>
     <meta name="color-scheme" content="light dark" />
-    <!-- Preload key fonts to reduce flash on first paint -->
-    <!-- <link rel="preload" href="/ChelseaMarket-Regular.ttf" as="font" type="font/ttf" crossorigin> -->
-    <!-- <link rel="preload" href="/DMSerifText-Regular.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="/DMSerifText-Italic.ttf" as="font" type="font/ttf" crossorigin> -->
+    <link rel="icon" href="/favicon.ico" />
     <!-- Critical theme paint to prevent white flash before JS/CSS load -->
     <style>
-      /* Critical theme paint using the same variables as CSS */
       html { --bg: #ffffff; --fg: #111111; background: var(--bg); color: var(--fg); }
       html[data-theme="dark"] { --bg: #0b0b0b; --fg: #eaeaea; }
       @media (prefers-color-scheme: dark) {
@@ -58,13 +54,13 @@
         }
       })();
     </script>
-    <!-- Google Analytics (GA4). Replace GA_ID with your measurement ID like G-XXXXXXX -->
+    <!-- Google Analytics (GA4) -->
     <script>
       (function(){
         var isLocal = /(^localhost$|^127\.|^\[::1\]$)/.test(location.hostname);
-        if (isLocal) return; // do not track on local dev
+        if (isLocal) return;
         var GA_ID = 'G-84PH5CSDKL';
-        if (!/^G-[A-Z0-9]+$/.test(GA_ID)) return; // prevent accidental empty ID
+        if (!/^G-[A-Z0-9]+$/.test(GA_ID)) return;
         var s = document.createElement('script');
         s.async = true;
         s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
@@ -75,9 +71,9 @@
         gtag('config', GA_ID, { anonymize_ip: true });
       })();
     </script>
-    <!-- End Google Analytics -->
   </head>
   <body>
     <div id="root"></div>
+    <script type="module" src="/src/index.jsx"></script>
   </body>
 </html>
