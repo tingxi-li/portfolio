@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useState } from "react";
-import "../global.css";
 import { Mail, Linkedin } from "lucide-react";
+
 export default function Contact() {
   const [copied, setCopied] = useState(false);
   const copyEmail = useCallback(async (e) => {
@@ -22,7 +22,7 @@ export default function Contact() {
       }
       setCopied(true);
     } catch (err) {
-      setCopied(true); // still show feedback
+      setCopied(true);
     }
   }, []);
 
@@ -31,9 +31,10 @@ export default function Contact() {
     const t = setTimeout(() => setCopied(false), 1400);
     return () => clearTimeout(t);
   }, [copied]);
+
   return (
-    <main>
-      <p className="title">Contact</p>
+    <>
+      <h2 className="title">Contact</h2>
       <div className="circle-center">
         <div className="circle-buttons">
           <button className="circle-btn" onClick={copyEmail} aria-label="Copy email">
@@ -47,9 +48,9 @@ export default function Contact() {
           </a>
         </div>
       </div>
-      <div className={"toast" + (copied ? " toast--show" : "") } role="status" aria-live="polite">
+      <div className={"toast" + (copied ? " toast--show" : "")} role="status" aria-live="polite">
         Email copied
       </div>
-    </main>
+    </>
   );
 }

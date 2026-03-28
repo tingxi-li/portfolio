@@ -1,37 +1,31 @@
 import React from "react";
-import "../global.css";
 import EntryItem from "../components/EntryItem";
+
 export default function Teaching() {
   return (
-    <main>
-      <p className="title" style={{ fontSize: "var(--title-font-size)" }}>Teaching</p>
-      <p className="content" style={{fontFamily: "var(--font-mono)", fontSize: "var(--text-font-size)" , fontWeight: 400}}>
+    <>
+      <h2 className="title">Teaching</h2>
+
+      <p className="section-text section-text--lg">
         Courses I teach, as a TA.
-        <br />
-        <br />
       </p>
 
       <EntryItem
-      title="CS 4375: Introduction to Machine Learning"
-      description="host office hours, design exam questions and deliver review lectures for the course."
-      time="fall 2024"
-      role="teaching assistant"
+        title="CS 4375: Introduction to Machine Learning"
+        description="host office hours, design exam questions and deliver review lectures for the course."
+        time="fall 2024"
+        role="teaching assistant"
       />
-      
-      <br />
 
       <EntryItem
-      title="CS 4375: Introduction to Machine Learning"
-      description="host office hours; teach introductory level of machine learning compilation, triton programming; design coding assignments/exam questions."
-      time="fall 2025"
-      role="teaching assistant"
-      links={[
-        { href: 'https://github.com/tingxi-li/portfolio/releases/download/v1.0/ml-compilation-triton.pdf', label: 'Download Slides' },
-      ]}
+        title="CS 4375: Introduction to Machine Learning"
+        description="host office hours; teach introductory level of machine learning compilation, triton programming; design coding assignments/exam questions."
+        time="fall 2025"
+        role="teaching assistant"
+        links={[
+          { href: 'https://github.com/tingxi-li/portfolio/releases/download/v1.0/ml-compilation-triton.pdf', label: 'Download Slides' },
+        ]}
       />
-      <br />
-      <br />
-      <br />
-    </main>
+    </>
   );
 }

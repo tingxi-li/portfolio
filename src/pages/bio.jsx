@@ -1,14 +1,12 @@
 import React from "react";
-import "../global.css";
 import EmLink from "../components/EmLink";
+
 export default function Bio() {
   return (
-    <main>
+    <>
+      <h2 className="title">Bio</h2>
 
-      <p className="title" style={{fontFamily: "var(--font-chelsea)", fontSize: "var(--title-font-size)" }}>Bio</p>
-      <br />
       <figure className="media">
-        {/* Replace YOUR_ENDPOINT and PATH/TO/IMG.jpg with your ImageKit values */}
         <img
           className="misc-img"
           alt="me"
@@ -24,17 +22,14 @@ export default function Bio() {
         <figcaption className="img-caption">Yosemite NP, California</figcaption>
       </figure>
 
-      <br />
-
-      <p className="content" style={{fontFamily: "var(--font-mono)", fontSize: "var(--smaller-text-font-size)" , fontWeight: 400}}>
+      <p className="section-text">
         i'm a <s>1st</s> 2nd year phd student in computer science
-         at <EmLink href="https://www.utdallas.edu/">ut dallas</EmLink>, advised by <EmLink href="https://www.youngwei.com/">prof. wei yang</EmLink>. </p>
+        at <EmLink href="https://www.utdallas.edu/">ut dallas</EmLink>, advised by <EmLink href="https://www.youngwei.com/">prof. wei yang</EmLink>.
+      </p>
 
-      <p className="content" style={{fontFamily: "var(--font-mono)", fontSize: "var(--smaller-text-font-size)" , fontWeight: 400}}>
-        prior to that, i earned my bachelor's degree at <EmLink href="https://en.dlut.edu.cn/">dalian university of technology</EmLink>, and was a visiting student at <EmLink href="https://www.tum.de/en/">technical university of munich</EmLink>.</p>
-      <br />
-      <br />
-      <br />
-    </main>
+      <p className="section-text">
+        prior to that, i earned my bachelor's degree at <EmLink href="https://en.dlut.edu.cn/">dalian university of technology</EmLink>, and was a visiting student at <EmLink href="https://www.tum.de/en/">technical university of munich</EmLink>.
+      </p>
+    </>
   );
 }

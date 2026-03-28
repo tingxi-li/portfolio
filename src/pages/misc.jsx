@@ -1,12 +1,10 @@
 import React from "react";
-import "../global.css";
+
 export default function Misc() {
   return (
-    <main>
-      <p className="title" style={{ fontSize: "var(--title-font-size)" }}>Miscellaneous</p>
-      {/* ImageKit-hosted photo */}
+    <>
+      <h2 className="title">Miscellaneous</h2>
       <figure className="media">
-        {/* Replace YOUR_ENDPOINT and PATH/TO/IMG.jpg with your ImageKit values */}
         <img
           className="misc-img"
           alt="A moment I like"
@@ -21,9 +19,6 @@ export default function Misc() {
         />
         <figcaption className="img-caption">Jolly-B (Left) and Chick-fil-A (Right) (Jan. 2026)</figcaption>
       </figure>
-      <br />
-      <br />
-      <br />
-    </main>
+    </>
   );
 }
