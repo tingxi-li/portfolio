@@ -3,57 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tingxi's Homepage</title>
-    <meta name="color-scheme" content="light dark" />
+    <title>Tingxi Li</title>
     <link rel="icon" href="/favicon.ico" />
-    <!-- Critical theme paint to prevent white flash before JS/CSS load -->
-    <style>
-      html { --bg: #ffffff; --fg: #111111; background: var(--bg); color: var(--fg); }
-      html[data-theme="dark"] { --bg: #0b0b0b; --fg: #eaeaea; }
-      @media (prefers-color-scheme: dark) {
-        html:not([data-theme]) { --bg: #0b0b0b; --fg: #eaeaea; }
-      }
-    </style>
-    <script>
-      // Apply saved/system theme ASAP to avoid white flash on dark
-      (function() {
-        try {
-          var t = localStorage.getItem('theme');
-          if (t === 'dark' || t === 'light') {
-            document.documentElement.setAttribute('data-theme', t);
-          } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-          }
-        } catch (e) {}
-      })();
-    </script>
-    <style>
-      html.fonts-loading body { opacity: 0; }
-      html.fonts-ready body { opacity: 1; transition: opacity 150ms ease; }
-    </style>
-    <script>
-      // Hide content until Chelsea Market is ready to avoid fallback flash
-      document.documentElement.classList.add('fonts-loading');
-      (function() {
-        if (document.fonts && document.fonts.load) {
-          Promise.all([
-            document.fonts.load('1em "Chelsea Market"')
-          ]).then(function(results) {
-            if (Array.isArray(results) && results.length > 0) {
-              document.documentElement.classList.remove('fonts-loading');
-              document.documentElement.classList.add('fonts-ready');
-            }
-          }).catch(function() {
-            // Keep hidden to avoid displaying fallback, per preference
-          });
-        } else {
-          window.addEventListener('load', function() {
-            document.documentElement.classList.remove('fonts-loading');
-            document.documentElement.classList.add('fonts-ready');
-          });
-        }
-      })();
-    </script>
     <!-- Google Analytics (GA4) -->
     <script>
       (function(){
