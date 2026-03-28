@@ -5,6 +5,11 @@ import EntryItem from "./components/EntryItem";
 
 export default function App() {
   const [copied, setCopied] = useState(false);
+  const [openSection, setOpenSection] = useState(null);
+
+  const toggleSection = useCallback((id) => {
+    setOpenSection((prev) => (prev === id ? null : id));
+  }, []);
 
   const copyEmail = useCallback(async (e) => {
     if (e && e.preventDefault) e.preventDefault();
@@ -43,13 +48,13 @@ export default function App() {
       <header className="hero">
         <h1 className="hero__name">Tingxi Li</h1>
         <p className="hero__subtitle">
-          PhD Student · Computer Science · University of Texas at Dallas
+          李 亭熹
         </p>
       </header>
 
-      {/* 01 Bio + 02 Research (side by side) */}
-      <div className="section section--split" style={{ borderBottom: "none" }}>
-        <Section id="bio" number="01" label="Bio">
+      {/* About: Photo+Contact | Bio+Research */}
+      <div id="bio" className="section section--split">
+        <div className="section__content">
           <img
             className="bio-photo"
             alt="Tingxi Li"
@@ -57,68 +62,57 @@ export default function App() {
             src="https://ik.imagekit.io/tingxi/myphoto2.jpeg"
           />
           <p className="photo-caption">Yosemite NP, California</p>
-          <p className="body-text">
-            2nd year PhD student at{" "}
-            <a href="https://www.utdallas.edu/" target="_blank" rel="noopener noreferrer">
-              UT Dallas
-            </a>
-            , advised by{" "}
-            <a href="https://www.youngwei.com/" target="_blank" rel="noopener noreferrer">
-              Prof. Wei Yang
-            </a>
-            .
-          </p>
-          <p className="body-text">
-            B.S. from{" "}
-            <a href="https://en.dlut.edu.cn/" target="_blank" rel="noopener noreferrer">
-              Dalian University of Technology
-            </a>
-            . Visiting student at{" "}
-            <a href="https://www.tum.de/en/" target="_blank" rel="noopener noreferrer">
-              TU Munich
-            </a>
-            .
-          </p>
-        </Section>
+          <ul className="contact-list">
+            <li className="contact-item">
+              <svg className="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <button onClick={copyEmail}>
+                {copied ? "Copied!" : "tingxi.li [at] utdallas.edu"}
+              </button>
+            </li>
+            <li className="contact-item">
+              <svg className="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+            </li>
+            <li className="contact-item">
+              <svg className="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+              <a href="https://scholar.google.com/citations?user=a_XpeY0AAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+            </li>
+            <li className="contact-item">
+              <svg className="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              <a href="https://www.linkedin.com/in/tingxi-l-352a45297/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </li>
+          </ul>
+        </div>
 
-        <Section id="research" number="02" label="Research Interests">
-          <p className="body-text body-text--bold">Efficient ML Systems</p>
+        <div id="research" className="section__content">
+          <div className="section__label">01 — About</div>
+          <p className="body-text body-text--bold" style={{ marginTop: 16 }}>BIO</p>
+          <p className="body-text body-text--muted">
+            tingxi li is a 2nd year PhD student at{" "}
+            <a href="https://www.utdallas.edu/" target="_blank" rel="noopener noreferrer">UT Dallas</a>,
+            advised by{" "}
+            <a href="https://www.youngwei.com/" target="_blank" rel="noopener noreferrer">Prof. Wei Yang</a>.
+            , before that, he earned his B.S. from{" "}
+            <a href="https://en.dlut.edu.cn/" target="_blank" rel="noopener noreferrer">Dalian University of Tech</a>.
+          </p>
+          {/* <p className="body-text body-text--bold" style={{ marginTop: 16 }}>Efficient ML Systems</p>
           <p className="body-text body-text--bold">ML Compilation</p>
-          <p className="body-text body-text--bold">Adversarial Attacks on DNNs</p>
+          <p className="body-text body-text--bold">Adversarial Attacks on DNNs</p> */}
+          <p className="body-text body-text--bold" style={{ marginTop: 16 }}>RESEARCH INTEREST</p>
+
           <p className="body-text body-text--muted" style={{ marginTop: 12 }}>
             Analyzing efficiency of DL pipeline systems under malicious inputs;
             compiler design and automated kernel generation.
           </p>
-          <p className="keywords">Keywords: Efficient ML · MLSys</p>
-          <p className="body-text body-text--highlight">
-            Looking for internship in ML Compilation, summer 2026
+          
+          <p className="body-text body-text--highlight" style={{ marginTop:20, fontSize: 14, color: 'blue' }}>
+            I am Looking for internship in ML Compilation, summer 2026
           </p>
-        </Section>
+        </div>
       </div>
 
-      {/* 03 Education */}
-      <div className="section">
-        <Section id="education" number="03" label="Education">
-          <div className="edu-entry">
-            <span className="edu-entry__school">University of Texas at Dallas</span>
-            {" — "}
-            <span className="edu-entry__detail">PhD in Computer Science · Aug 2024 – Present</span>
-          </div>
-          <div className="edu-entry">
-            <span className="edu-entry__school">Dalian University of Technology</span>
-            {" — "}
-            <span className="edu-entry__detail">Bachelor of Science · Sep 2019 – Jun 2024</span>
-          </div>
-          <div className="edu-entry">
-            <span className="edu-entry__school">Technical University of Munich</span>
-            {" — "}
-            <span className="edu-entry__detail">Visiting Student · Apr 2022 – Oct 2022</span>
-          </div>
-        </Section>
-      </div>
-
-      {/* 04 Publications (collapsible) */}
-      <Section id="publications" number="04" label="Publications" collapsible>
+      {/* 02 Publications (collapsible) */}
+      <Section id="publications" number="02" label="Publications" collapsible open={openSection === "publications"} onToggle={() => toggleSection("publications")}>
         <p className="body-text body-text--muted" style={{ marginBottom: 16 }}>
           Full list on{" "}
           <a
@@ -166,8 +160,8 @@ export default function App() {
         />
       </Section>
 
-      {/* 05 Experience (collapsible) */}
-      <Section id="experience" number="05" label="Experience" collapsible>
+      {/* 03 Experience (collapsible) */}
+      <Section id="experience" number="03" label="Experience" collapsible open={openSection === "experience"} onToggle={() => toggleSection("experience")}>
         <EntryItem
           title="SOPHGO"
           description="Refactor C++ code, test the refactored code to ensure compilation and functionality, and write documentation."
@@ -182,8 +176,8 @@ export default function App() {
         />
       </Section>
 
-      {/* 06 Teaching (collapsible) */}
-      <Section id="teaching" number="06" label="Teaching" collapsible>
+      {/* 04 Teaching (collapsible) */}
+      <Section id="teaching" number="04" label="Teaching" collapsible open={openSection === "teaching"} onToggle={() => toggleSection("teaching")}>
         <EntryItem
           title="CS 4375: Introduction to Machine Learning"
           description="Host office hours, design exam questions and deliver review lectures for the course."
@@ -202,57 +196,6 @@ export default function App() {
             },
           ]}
         />
-      </Section>
-
-      {/* 07 Contact (collapsible) */}
-      <Section id="contact" number="07" label="Contact" collapsible>
-        <ul className="contact-list">
-          <li className="contact-item">
-            Email:{" "}
-            <button onClick={copyEmail}>
-              tingxi.li@utdallas.edu {copied ? "(copied!)" : "(click to copy)"}
-            </button>
-          </li>
-          <li className="contact-item">
-            CV:{" "}
-            <a href="/cv.pdf" target="_blank" rel="noopener noreferrer">
-              Download PDF
-            </a>
-          </li>
-          <li className="contact-item">
-            Scholar:{" "}
-            <a
-              href="https://scholar.google.com/citations?user=a_XpeY0AAAAJ&hl=en"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Google Scholar
-            </a>
-          </li>
-          <li className="contact-item">
-            LinkedIn:{" "}
-            <a
-              href="https://www.linkedin.com/in/tingxi-l-352a45297/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Profile
-            </a>
-          </li>
-        </ul>
-      </Section>
-
-      {/* 08 Misc (collapsible) */}
-      <Section id="misc" number="08" label="Misc" collapsible>
-        <img
-          className="misc-photo"
-          alt="Jolly-B and Chick-fil-A"
-          loading="lazy"
-          src="https://ik.imagekit.io/tingxi/twocats.jpeg"
-        />
-        <p className="misc-caption">
-          Jolly-B (Left) and Chick-fil-A (Right) (Jan. 2026)
-        </p>
       </Section>
 
       {/* Toast */}

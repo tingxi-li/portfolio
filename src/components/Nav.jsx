@@ -1,13 +1,10 @@
 import React, { useCallback, useEffect, useState } from "react";
 
 const SECTIONS = [
-  { id: "bio", label: "Bio" },
-  { id: "research", label: "Research" },
-  { id: "education", label: "Education" },
+  { id: "bio", label: "About" },
   { id: "publications", label: "Publications" },
   { id: "experience", label: "Experience" },
   { id: "teaching", label: "Teaching" },
-  { id: "contact", label: "Contact" },
 ];
 
 export default function Nav() {

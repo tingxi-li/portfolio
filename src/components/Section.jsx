@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 
-export default function Section({ id, number, label, collapsible = false, children }) {
-  const [open, setOpen] = useState(false);
-
+export default function Section({ id, number, label, collapsible = false, open = false, onToggle, children }) {
   if (collapsible) {
     return (
       <div id={id}>
-        <div className="collapse__bar" onClick={() => setOpen((o) => !o)}>
+        <div className="collapse__bar" onClick={onToggle}>
           <span className="section__label" style={{ marginBottom: 0 }}>
             {number} — {label}
           </span>
           <span className="collapse__toggle">[{open ? "−" : "+"}]</span>
         </div>
         <div className={`collapse__body${open ? " collapse__body--open" : ""}`}>
-          <div className="collapse__inner">{children}</div>
+          <div className="collapse__inner">
+            <div className="collapse__inner-content">{children}</div>
+          </div>
         </div>
       </div>
     );

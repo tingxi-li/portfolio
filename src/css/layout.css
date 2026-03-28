@@ -152,17 +152,19 @@
   padding: var(--section-pad) var(--page-pad);
 }
 
-/* Two-column split (bio + research) */
+/* Two-column split (photo+contact | about) */
 .section--split {
   display: flex;
 }
 
-.section--split > .section__content {
-  width: 50%;
+.section--split > .section__content:first-child {
+  flex: 0 0 auto;
+  width: clamp(280px, 25vw, 360px);
+  border-right: var(--border-thick);
 }
 
-.section--split > .section__content:first-child {
-  border-right: var(--border-thick);
+.section--split > .section__content:last-child {
+  flex: 1;
 }
 
 /* ===== COLLAPSIBLE SECTION ===== */
@@ -188,17 +190,21 @@
 }
 
 .collapse__body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.35s ease;
 }
 
 .collapse__body--open {
-  max-height: 2000px;
-  transition: max-height 0.5s ease;
+  grid-template-rows: 1fr;
 }
 
-.collapse__inner {
+.collapse__body > .collapse__inner {
+  overflow: hidden;
+  min-height: 0;
+}
+
+.collapse__inner-content {
   padding: var(--section-pad) var(--page-pad);
   border-bottom: var(--border-thick);
 }
@@ -207,8 +213,8 @@
 
 /* Photo */
 .bio-photo {
-  width: 80px;
-  height: 80px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
   border: 2px solid var(--black);
   display: block;
@@ -370,11 +376,18 @@ a:hover {
 
 .contact-item {
   font-family: var(--font-mono);
-  font-size: var(--size-body);
-  margin-bottom: 12px;
+  font-size: var(--size-small);
+  margin-bottom: 8px;
+  white-space: nowrap;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
+}
+
+.contact-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
 }
 
 .contact-item button {
@@ -427,6 +440,7 @@ a:hover {
   }
 
   .section--split > .section__content:first-child {
+    width: 100%;
     border-right: none;
     border-bottom: var(--border-thick);
   }
