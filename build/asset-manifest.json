@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.235cf946.css",
+    "main.js": "/static/js/main.f44a0321.js",
+    "static/media/IBMPlexMono-SemiBoldItalic.ttf": "/static/media/IBMPlexMono-SemiBoldItalic.c2401979657a26fee8c8.ttf",
+    "static/media/IBMPlexMono-ThinItalic.ttf": "/static/media/IBMPlexMono-ThinItalic.2293ac509ac2f77a7762.ttf",
+    "static/media/IBMPlexMono-ExtraLightItalic.ttf": "/static/media/IBMPlexMono-ExtraLightItalic.a649f1bdb5422c13c04b.ttf",
+    "static/media/IBMPlexMono-BoldItalic.ttf": "/static/media/IBMPlexMono-BoldItalic.1a9f25578f026bbaf7b3.ttf",
+    "static/media/IBMPlexMono-MediumItalic.ttf": "/static/media/IBMPlexMono-MediumItalic.5c1ec74a9f9adb58813e.ttf",
+    "static/media/IBMPlexMono-Italic.ttf": "/static/media/IBMPlexMono-Italic.829c224b500c32cfd1e5.ttf",
+    "static/media/IBMPlexMono-LightItalic.ttf": "/static/media/IBMPlexMono-LightItalic.0a3c532e1fd8b2b2615e.ttf",
+    "static/media/IBMPlexMono-SemiBold.ttf": "/static/media/IBMPlexMono-SemiBold.5f82c3b8863d23615092.ttf",
+    "static/media/IBMPlexMono-Thin.ttf": "/static/media/IBMPlexMono-Thin.86f7b7453e653fa3eb10.ttf",
+    "static/media/IBMPlexMono-Bold.ttf": "/static/media/IBMPlexMono-Bold.270fc7685a99d1197e53.ttf",
+    "static/media/IBMPlexMono-Medium.ttf": "/static/media/IBMPlexMono-Medium.e44b6da17070f5fecd5b.ttf",
+    "static/media/IBMPlexMono-ExtraLight.ttf": "/static/media/IBMPlexMono-ExtraLight.0064945a20eef9328573.ttf",
+    "static/media/IBMPlexMono-Regular.ttf": "/static/media/IBMPlexMono-Regular.1509e8d24f8562f776e4.ttf",
+    "static/media/IBMPlexMono-Light.ttf": "/static/media/IBMPlexMono-Light.a21361968db7f557724b.ttf",
+    "static/media/ChelseaMarket-Regular.woff2": "/static/media/ChelseaMarket-Regular.c2b2a498ceff9f3a7e11.woff2",
+    "index.html": "/index.html",
+    "main.235cf946.css.map": "/static/css/main.235cf946.css.map",
+    "main.f44a0321.js.map": "/static/js/main.f44a0321.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.235cf946.css",
+    "static/js/main.f44a0321.js"
+  ]
+}
