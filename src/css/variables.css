@@ -1,86 +1,55 @@
 :root {
-  --font-chelsea: "Chelsea Market", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-  --page-pad: clamp(12px, 4vw, 24px);
-  --title-font-size: clamp(42px, 6vw, 60px);
-  --toc-font-size: clamp(20px, 4.5vw, 38px);
-  --text-font-size: clamp(16px, 2.5vw, 18px);
-  --smaller-text-font-size: clamp(13px, 2vw, 15px);
-  --caption-font-size: clamp(12px, 2vw, 14px);
-  --tag-font-size: clamp(11px, 1.8vw, 12px);
-  --title-weight: 600;
-  --title-line-height: 1.1;
-  --text-line-height: 2;
-  --highlight-font-color: blue;
+  /* Fonts */
+  --font-heading: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
-  /* Theme: light defaults */
-  --bg: #ffffff;
-  --fg: #111111;
-  --muted: #666666;
-  --border: #111111;
-  --tooltip-bg: var(--fg);
-  --tooltip-fg: #ffffff;
-  --dot-hover-bg: var(--fg);
-  --dot-active-bg: var(--fg);
-  --back-border: var(--fg);
-  --back-bg: var(--bg);
-  --back-fg: var(--fg);
-  --back-bg-hover: var(--fg);
-  --back-fg-hover: var(--bg);
-  --tag-bg-default: transparent;
-  --tag-fg-default: var(--fg);
-  --tag-border-default: var(--border);
+  /* Monochrome palette */
+  --black: #000;
+  --white: #fff;
+  --gray-dark: #333;
+  --gray-mid: #555;
+  --gray-light: #888;
+  --gray-rule: #ccc;
+
+  /* Semantic tokens */
+  --bg: var(--white);
+  --fg: var(--black);
+  --muted: var(--gray-mid);
+
+  /* Borders */
+  --border-thick: 3px solid var(--black);
+  --border-thin: 1px solid var(--black);
+
+  /* Spacing */
+  --page-pad: clamp(16px, 4vw, 40px);
+  --section-pad: clamp(20px, 4vw, 40px);
+
+  /* Type sizes */
+  --size-hero: clamp(48px, 10vw, 100px);
+  --size-heading: clamp(18px, 3vw, 24px);
+  --size-body: clamp(14px, 1.8vw, 16px);
+  --size-small: clamp(12px, 1.5vw, 14px);
+  --size-label: clamp(10px, 1.2vw, 11px);
+  --size-nav: 11px;
 }
 
-html, body { margin: 0; padding: 0; background: var(--bg); }
-body { color: var(--fg); }
-html { scroll-behavior: smooth; }
-
-/* Dark theme override */
-html[data-theme="dark"] {
-  --bg: #0b0b0b;
-  --fg: #eaeaea;
-  --muted: #aaaaaa;
-  --border: #eaeaea;
-  --tooltip-bg: #eaeaea;
-  --tooltip-fg: #0b0b0b;
-  --dot-hover-bg: #eaeaea;
-  --dot-active-bg: #eaeaea;
-  --back-border: var(--fg);
-  --back-bg: var(--bg);
-  --back-fg: var(--fg);
-  --back-bg-hover: var(--fg);
-  --back-fg-hover: var(--bg);
-  --highlight-font-color: yellow;
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme]) {
-    --bg: #0b0b0b;
-    --fg: #eaeaea;
-    --muted: #aaaaaa;
-    --border: #eaeaea;
-    --tooltip-bg: #eaeaea;
-    --tooltip-fg: #0b0b0b;
-    --dot-hover-bg: #eaeaea;
-    --dot-active-bg: #eaeaea;
-    --back-border: var(--fg);
-    --back-bg: var(--bg);
-    --back-fg: var(--fg);
-    --back-bg-hover: var(--fg);
-    --back-fg-hover: var(--bg);
-    --highlight-font-color: yellow;
-  }
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 #root {
-  width: min(92vw, 72ch);
-  margin: 0 auto;
-  padding: var(--page-pad);
-}
-
-@media (max-width: 640px) {
-  #root {
-    padding-top: calc(var(--page-pad) + 68px);
-  }
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
