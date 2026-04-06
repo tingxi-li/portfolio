@@ -4,12 +4,12 @@ import { getFirestore, doc, runTransaction } from "firebase/firestore";
 // Replace with your Firebase config from:
 // Firebase Console → Project Settings → Your apps → Web app
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
+  apiKey: "AIzaSyD52b7RfxHmnByqttsDHV5nIp0xD6ovuWg",
   authDomain: "tingxi-portfolio.firebaseapp.com",
   projectId: "tingxi-portfolio",
   storageBucket: "tingxi-portfolio.firebasestorage.app",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID",
+  messagingSenderId: "394084954232",
+  appId: "1:394084954232:web:90f1d79df05f4d874fbd8d",
 };
 
 const app = initializeApp(firebaseConfig);
