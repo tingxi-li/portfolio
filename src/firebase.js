@@ -1,15 +1,13 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, doc, runTransaction } from "firebase/firestore";
 
-// Replace with your Firebase config from:
-// Firebase Console → Project Settings → Your apps → Web app
 const firebaseConfig = {
-  apiKey: "AIzaSyD52b7RfxHmnByqttsDHV5nIp0xD6ovuWg",
-  authDomain: "tingxi-portfolio.firebaseapp.com",
-  projectId: "tingxi-portfolio",
-  storageBucket: "tingxi-portfolio.firebasestorage.app",
-  messagingSenderId: "394084954232",
-  appId: "1:394084954232:web:90f1d79df05f4d874fbd8d",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
