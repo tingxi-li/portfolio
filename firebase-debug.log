@@ -1,0 +1,73 @@
+[debug] [2026-04-06T02:24:59.953Z] ----------------------------------------------------------------------
+[debug] [2026-04-06T02:24:59.954Z] Command:       /Users/tingxi/.nvm/versions/node/v18.20.4/bin/node /Users/tingxi/.nvm/versions/node/v18.20.4/bin/firebase apps:sdkconfig web
+[debug] [2026-04-06T02:24:59.955Z] CLI Version:   13.28.0
+[debug] [2026-04-06T02:24:59.955Z] Platform:      darwin
+[debug] [2026-04-06T02:24:59.955Z] Node Version:  v18.20.4
+[debug] [2026-04-06T02:24:59.956Z] Time:          Sun Apr 05 2026 21:24:59 GMT-0500 (Central Daylight Time)
+[debug] [2026-04-06T02:24:59.956Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-04-06T02:24:59.959Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2026-04-06T02:25:00.012Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-06T02:25:00.012Z] > authorizing via signed-in user (tinzzy.li@gmail.com)
+[debug] [2026-04-06T02:25:00.012Z] Checked if tokens are valid: false, expires at: 1733992457572
+[debug] [2026-04-06T02:25:00.012Z] Checked if tokens are valid: false, expires at: 1733992457572
+[debug] [2026-04-06T02:25:00.013Z] > refreshing access token with scopes: []
+[debug] [2026-04-06T02:25:00.013Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-04-06T02:25:00.013Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-06T02:25:00.084Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2026-04-06T02:25:00.084Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2026-04-06T02:25:00.095Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2026-04-06T02:25:00.095Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-06T02:25:00.095Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/tingxi-portfolio/webApps pageSize=100
+[debug] [2026-04-06T02:25:00.161Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/tingxi-portfolio/webApps 401
+[debug] [2026-04-06T02:25:00.161Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/tingxi-portfolio/webApps {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2026-04-06T02:25:00.161Z] Got a 401 Unauthenticated error for a call that required authentication. Refreshing tokens.
+[debug] [2026-04-06T02:25:00.161Z] Checked if tokens are valid: false, expires at: 1733992457572
+[debug] [2026-04-06T02:25:00.161Z] Checked if tokens are valid: false, expires at: 1733992457572
+[debug] [2026-04-06T02:25:00.161Z] > refreshing access token with scopes: []
+[debug] [2026-04-06T02:25:00.161Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-04-06T02:25:00.161Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-06T02:25:00.221Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2026-04-06T02:25:00.221Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-06T02:25:00.221Z] Request to https://firebase.googleapis.com/v1beta1/projects/tingxi-portfolio/webApps?pageSize=100 had HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2026-04-06T02:25:00.373Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/tingxi-portfolio/webApps?pageSize=100 had HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (/Users/tingxi/.nvm/versions/node/v18.20.4/lib/node_modules/firebase-tools/lib/responseToError.js:52:12)
+    at RetryOperation._fn (/Users/tingxi/.nvm/versions/node/v18.20.4/lib/node_modules/firebase-tools/lib/apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to list Firebase WEB apps. See firebase-debug.log for more info.
+[debug] [2026-04-06T02:25:05.667Z] ----------------------------------------------------------------------
+[debug] [2026-04-06T02:25:05.668Z] Command:       /Users/tingxi/.nvm/versions/node/v18.20.4/bin/node /Users/tingxi/.nvm/versions/node/v18.20.4/bin/firebase apps:list
+[debug] [2026-04-06T02:25:05.668Z] CLI Version:   13.28.0
+[debug] [2026-04-06T02:25:05.668Z] Platform:      darwin
+[debug] [2026-04-06T02:25:05.668Z] Node Version:  v18.20.4
+[debug] [2026-04-06T02:25:05.669Z] Time:          Sun Apr 05 2026 21:25:05 GMT-0500 (Central Daylight Time)
+[debug] [2026-04-06T02:25:05.669Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-04-06T02:25:05.703Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-04-06T02:25:05.703Z] > authorizing via signed-in user (tinzzy.li@gmail.com)
+[debug] [2026-04-06T02:25:05.704Z] Checked if tokens are valid: false, expires at: 1733992457572
+[debug] [2026-04-06T02:25:05.704Z] Checked if tokens are valid: false, expires at: 1733992457572
+[debug] [2026-04-06T02:25:05.705Z] > refreshing access token with scopes: []
+[debug] [2026-04-06T02:25:05.705Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-04-06T02:25:05.705Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-06T02:25:05.786Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2026-04-06T02:25:05.786Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-06T02:25:05.787Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/tingxi-portfolio:searchApps pageSize=100
+[debug] [2026-04-06T02:25:05.844Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/tingxi-portfolio:searchApps 401
+[debug] [2026-04-06T02:25:05.844Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/tingxi-portfolio:searchApps {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2026-04-06T02:25:05.844Z] Got a 401 Unauthenticated error for a call that required authentication. Refreshing tokens.
+[debug] [2026-04-06T02:25:05.844Z] Checked if tokens are valid: false, expires at: 1733992457572
+[debug] [2026-04-06T02:25:05.844Z] Checked if tokens are valid: false, expires at: 1733992457572
+[debug] [2026-04-06T02:25:05.844Z] > refreshing access token with scopes: []
+[debug] [2026-04-06T02:25:05.845Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-04-06T02:25:05.845Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-06T02:25:05.910Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2026-04-06T02:25:05.911Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-04-06T02:25:05.911Z] Request to https://firebase.googleapis.com/v1beta1/projects/tingxi-portfolio:searchApps?pageSize=100 had HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2026-04-06T02:25:05.961Z] FirebaseError: Request to https://firebase.googleapis.com/v1beta1/projects/tingxi-portfolio:searchApps?pageSize=100 had HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (/Users/tingxi/.nvm/versions/node/v18.20.4/lib/node_modules/firebase-tools/lib/responseToError.js:52:12)
+    at RetryOperation._fn (/Users/tingxi/.nvm/versions/node/v18.20.4/lib/node_modules/firebase-tools/lib/apiv2.js:312:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to list Firebase apps. See firebase-debug.log for more info.
