@@ -151,6 +151,12 @@ export default function App() {
         <li className="pub-year">2026</li>
 
         <li className="pub-entry">
+          <span className="pub-title">Characterizing Real-World Bugs in Tile Programs for Automated Bug Detection <span className="badge-new">NEW!</span></span>
+          <span className="pub-authors">Ravishka Rathnasuriya, Zihe Song, Nidhi Majoju, <b>Tingxi Li</b>, Aaryaa Moharir, Wei Yang, Tao Xie</span>
+          <span className="pub-venue">ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)</span>
+        </li>
+
+        <li className="pub-entry">
           <span className="pub-title">A Systematic Review of AI Compilation: From Framework Intent to Kernel Optimization <span className="badge-new">NEW!</span></span>
           <span className="pub-authors"><b>Tingxi Li</b>, Wei Yang</span>
           <span className="pub-venue">Under review</span>
@@ -163,7 +169,7 @@ export default function App() {
         </li>
 
         <li className="pub-entry">
-          <span className="pub-title">Identify then Exploit: Degrading Performance of Vision-based Deep Learning Systems <span className="badge-new">NEW!</span></span>
+          <span className="pub-title">Identify then Exploit: Degrading Performance of Vision-based Deep Learning Systems</span>
           <span className="pub-authors"><b>Tingxi Li</b>*, Mingfang Ji*, Ravishka Rathnasuriya, Simin Chen, Yitao Hu, Wei Yang</span>
           <span className="pub-venue">Under review</span>
         </li>
