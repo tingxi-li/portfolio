@@ -171,11 +171,18 @@ export default function App() {
             <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=a_XpeY0AAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a>
           </p>
         </div>
-        <img
-          src="https://ik.imagekit.io/tingxi/myphoto2.jpeg"
-          alt="Tingxi Li"
-          className="cv-photo"
-        />
+        <div className="cv-photo-coin">
+          <img
+            src="https://ik.imagekit.io/tingxi/myphoto2.jpeg"
+            alt="Tingxi Li"
+            className="cv-photo cv-photo-front"
+          />
+          <img
+            src="https://ik.imagekit.io/tingxi/SDIM0107.jpg"
+            alt="My two cats"
+            className="cv-photo cv-photo-back"
+          />
+        </div>
       </header>
 
       {/* Research Interests */}

@@ -58,19 +58,41 @@ a:hover { text-decoration: underline; }
 .cv-contact a:hover { color: var(--accent); text-decoration: none; }
 .cv-sep { margin: 0 5px; color: var(--fg2); opacity: 0.5; }
 
+.cv-photo-coin {
+  width: 88px;
+  height: 88px;
+  flex-shrink: 0;
+  position: relative;
+  perspective: 600px;
+  cursor: pointer;
+}
+
+.cv-photo-coin:hover .cv-photo-front {
+  transform: rotateY(180deg);
+}
+.cv-photo-coin:hover .cv-photo-back {
+  transform: rotateY(0deg);
+}
+
 .cv-photo {
   width: 88px;
   height: 88px;
   border-radius: 50%;
   object-fit: cover;
-  flex-shrink: 0;
   border: 2px solid transparent;
   box-shadow: 0 0 0 1.5px var(--fg2);
-  transition: box-shadow 0.2s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transition: transform 0.6s ease-in-out, box-shadow 0.2s;
 }
-.cv-photo:hover { box-shadow: 0 0 0 2px var(--accent); }
+.cv-photo-front { transform: rotateY(0deg); }
+.cv-photo-back  { transform: rotateY(-180deg); }
+
+.cv-photo-coin:hover .cv-photo { box-shadow: 0 0 0 2px var(--accent); }
 [data-theme="dark"] .cv-photo { box-shadow: 0 0 0 1.5px rgba(255,255,255,0.2); }
-[data-theme="dark"] .cv-photo:hover { box-shadow: 0 0 0 2px var(--accent); }
+[data-theme="dark"] .cv-photo-coin:hover .cv-photo { box-shadow: 0 0 0 2px var(--accent); }
 
 /* ===== SECTION ===== */
 .cv-section { margin-bottom: 20px; }
@@ -359,6 +381,7 @@ a:hover { text-decoration: underline; }
   body { margin: 0; padding: 28px 18px 60px; font-size: 10pt; box-shadow: none; border-radius: 0; }
   .cv-name { font-size: 18pt; }
   .cv-header-spacer { display: none; }
+  .cv-photo-coin { width: 68px; height: 68px; }
   .cv-photo { width: 68px; height: 68px; }
   .cv-entry { padding: 4px 2px; }
   .cv-entry-row { flex-direction: column; gap: 2px; }
