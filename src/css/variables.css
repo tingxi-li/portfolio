@@ -1,1 +1,19 @@
-/* No custom properties */
+:root {
+  --page-bg:      #e8e6e0;
+  --bg:           #ffffff;
+  --fg:           #1a1a1a;
+  --fg2:          #666666;
+  --font:         "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --mono:         "IBM Plex Mono", "Courier New", monospace;
+  --accent:       #2a5ea7;
+  --accent-faint: rgba(42, 94, 167, 0.08);
+}
+
+[data-theme="dark"] {
+  --page-bg:      #111111;
+  --bg:           #1c1c1e;
+  --fg:           #e8e8e6;
+  --fg2:          #999999;
+  --accent:       #6aabdf;
+  --accent-faint: rgba(106, 171, 223, 0.09);
+}
