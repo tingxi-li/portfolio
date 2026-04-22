@@ -357,11 +357,15 @@ a:hover { text-decoration: underline; }
 @media (max-width: 580px) {
   body { margin: 0; padding: 28px 18px 60px; font-size: 10pt; box-shadow: none; border-radius: 0; }
   .cv-name { font-size: 18pt; }
+  .cv-header { gap: 14px; margin-bottom: 22px; }
   .cv-header-spacer { display: none; }
+  .cv-header-text { min-width: 0; }
+  .cv-contact { overflow-wrap: break-word; }
   .cv-photo-coin { width: 68px; height: 68px; }
   .cv-photo { width: 68px; height: 68px; }
   .cv-entry { padding: 4px 2px; }
-  .cv-entry-row { flex-direction: column; gap: 2px; }
+  .cv-entry-row { flex-direction: column; gap: 2px; align-items: flex-start; }
+  .pub-abstract { max-width: 100%; }
   .section-dots { display: none; }
 }
 
