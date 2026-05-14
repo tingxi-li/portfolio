@@ -6,8 +6,8 @@ const PUB_ABSTRACTS = {
   issta26: "Tile-based programming models such as Triton and TileLang are increasingly used to write high-performance GPU kernels, yet the reliability of programs in these DSLs remains understudied. We present a systematic characterization of real-world bugs in tile programs and develop automated detection techniques targeting common bug patterns found in production kernel code.",
   usenix25: "A taxonomy of efficiency vulnerabilities in dynamic deep learning systems, along with a comprehensive evaluation of attack techniques and defenses across multiple dimensions (e.g., attack surface, model type, etc.) to identify key factors influencing efficiency robustness and guide future research in this area.",
   comet: "Large language models trained on code are increasingly integrated into software development workflows, raising concerns about their susceptibility to adversarial prompts that elicit malicious outputs. COMET introduces a closed-loop orchestration framework that automatically generates, evaluates, and refines malicious elicitation techniques against black-box code models, achieving high attack success rates through iterative feedback.",
-  tilelangTPU: "Tile-level compilation stacks such as Triton and TileLang achieve strong performance on NVIDIA GPUs, but their applicability to commercial domain-specific accelerators (DSAs) remains unclear. We present TileLang-TPU, a compiler and runtime framework that maps TileLang to SOPHGO TPUs, generating bank-aware local-memory layouts, structured DMA-compute pipelines, and mappings to TPU intrinsics while preserving TileLang's high-level programming abstraction. Our key insight is that computation dataflow and hardware scheduling should be decoupled at the programming level but resolved jointly at compile time.",
-  underReview: "Efficiency attacks on vision-based deep learning systems pose a growing threat in latency-sensitive deployments. We propose a two-phase approach that first identifies vulnerable inputs and model components most susceptible to computational overload, then constructs targeted adversarial examples that degrade inference efficiency while remaining visually imperceptible.",
+  tilelangTPU: "Tile-level DSLs make AI kernels easier to write, but mapping them to commercial DSAs like SOPHGO TPUs is hard due to constrained local memory and decoupled DMA/compute engines. We build a compiler+runtime that preserves the tile abstraction while redesigning its internals around TPU resource orchestration — achieving a 1.10× average speedup over vendor-optimized kernels on Matmul, RMSNorm, RoPE, SwiGLU, and more.",
+  aesop: "ML inference pipelines have a new attack surface single-model attacks miss: which path inputs take through the pipeline. Our attack, AESOP, exploits this — achieving 58× FLOPs / 17× latency inflation even in gray-box settings. Defenses don't stop it; they force pipelines to choose between throughput collapse or dropping 96.7% of inputs.",
 };
 
 const ICONS = {
@@ -232,6 +232,9 @@ export default function App() {
           <div className="cv-entry-authors">
             Sophgo Infra Team
           </div>
+          <div className="cv-pub-links">
+            <a href="https://github.com/xwhzz/tilelang-tpu" target="_blank" rel="noopener noreferrer" className="cv-pub-link">{ICONS.github}Code</a>
+          </div>
           <div className="pub-abstract">
             {PUB_ABSTRACTS.tilelangTPU}
           </div>
@@ -239,14 +242,18 @@ export default function App() {
 
         <div className="cv-entry">
           <div className="cv-entry-row">
-            <span className="cv-entry-title">Identify then Exploit: Degrading Performance of Vision-based Deep Learning Systems</span>
-            <span className="venue venue-review">Under Review</span>
+            <span className="cv-entry-title">AESOP: Adversarial Execution-path Selection to Overload Deep Learning Pipelines</span>
+            <span className="venue venue-arxiv">arXiv Preprint</span>
           </div>
           <div className="cv-entry-authors">
             <b>T. Li</b>, M. Ji, R. Rathnasuriya, S. Chen, Y. Hu, W. Yang
           </div>
+          <div className="cv-pub-links">
+            <a href="https://arxiv.org/abs/2605.10987" target="_blank" rel="noopener noreferrer" className="cv-pub-link">{ICONS.pdf}arXiv</a>
+          </div>
           <div className="pub-abstract">
-            {PUB_ABSTRACTS.underReview}
+            {PUB_ABSTRACTS.aesop}
+            <a href="https://arxiv.org/abs/2605.10987" target="_blank" rel="noopener noreferrer" className="pub-abstract-link">{ICONS.pdf}view full paper →</a>
           </div>
         </div>
       </section>

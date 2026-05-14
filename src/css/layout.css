@@ -181,8 +181,10 @@ a:hover { text-decoration: underline; }
 .venue-conf   { background: var(--accent-faint); color: var(--accent); }
 .venue-review { background: rgba(160, 100, 0, 0.08); color: #8a6200; }
 .venue-report { background: rgba(100, 100, 100, 0.08); color: var(--fg2); }
+.venue-arxiv  { background: rgba(179, 27, 27, 0.08); color: #b31b1b; }
 
 [data-theme="dark"] .venue-review { background: rgba(240, 180, 0, 0.1); color: #c8a020; }
+[data-theme="dark"] .venue-arxiv  { background: rgba(230, 80, 80, 0.12); color: #e26a6a; }
 
 /* ===== PUB ABSTRACT HOVER ===== */
 .pub-abstract {
