@@ -182,8 +182,12 @@ export default function App() {
           <div className="cv-entry-authors">
             R. Rathnasuriya, Z. Song, N. Majoju, <b>T. Li</b>, A. Moharir, W. Yang, T. Xie
           </div>
+          <div className="cv-pub-links">
+            <a href="https://arxiv.org/pdf/2605.19652v1" target="_blank" rel="noopener noreferrer" className="cv-pub-link">{ICONS.pdf}arXiv</a>
+          </div>
           <div className="pub-abstract">
             {PUB_ABSTRACTS.issta26}
+            <a href="https://arxiv.org/pdf/2605.19652v1" target="_blank" rel="noopener noreferrer" className="pub-abstract-link">{ICONS.pdf}view full paper →</a>
           </div>
         </div>
 
