@@ -120,12 +120,12 @@ export default function App() {
       </nav>
 
       {/* Download CV button */}
-      <button className="pdf-btn" onClick={() => window.print()} aria-label="Download CV">
+      <a className="pdf-btn" href="/cv.pdf" download="Tingxi-Li-CV.pdf" aria-label="Download CV">
         <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
           <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
           <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
         </svg>
-      </button>
+      </a>
 
       {/* Header */}
       <header className="cv-header">
@@ -134,9 +134,7 @@ export default function App() {
           <h1 className="cv-name">Tingxi Li</h1>
           <p className="cv-address">800 W Campbell Rd, Richardson, TX 75080</p>
           <p className="cv-contact">
-            <a href="tel:+12137955275">(213) 795-5275</a>
-            <span className="cv-sep">|</span>
-            <a href="mailto:tingxi.li@utdallas.edu">tingxi.li@utdallas.edu</a>
+            <span className="cv-email">tingxi.li[at]utdallas.edu</span>
             <span className="cv-sep">|</span>
             <a href="https://www.linkedin.com/in/tingxi-li-352a45297/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <span className="cv-sep">|</span>
@@ -313,7 +311,7 @@ export default function App() {
             </span>
             <span className="cv-entry-date">Sep. 2024 – Present</span>
           </div>
-          <div className="cv-entry-sub">Doctor of Philosophy in Computer Science</div>
+          <div className="cv-entry-sub">Doctor of Philosophy</div>
         </div>
 
         <div className="cv-entry">
@@ -390,7 +388,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="cv-footer">
-        <p>Last modified: April 2026 · <a href="mailto:tingxi.li@utdallas.edu">tingxi.li@utdallas.edu</a></p>
+        <p>Last modified: April 2026 · <span className="cv-email">tingxi.li[at]utdallas.edu</span></p>
       </footer>
     </>
   );

@@ -55,6 +55,7 @@ a:hover { text-decoration: underline; }
 
 .cv-contact { font-size: 10pt; }
 .cv-contact a { color: var(--fg2); }
+.cv-email { color: var(--fg2); }
 .cv-contact a:hover { color: var(--accent); text-decoration: none; }
 .cv-sep { margin: 0 5px; color: var(--fg2); opacity: 0.5; }
 
@@ -225,6 +226,12 @@ a:hover { text-decoration: underline; }
   .cv-entry:hover .pub-abstract {
     transform: translateY(0);
   }
+  .pub-abstract::after {
+    top: -8px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+  }
 }
 .pub-abstract::before {
   content: "TL;DR";
@@ -235,6 +242,15 @@ a:hover { text-decoration: underline; }
   letter-spacing: 0.08em;
   color: var(--accent);
   margin-bottom: 6px;
+}
+/* Invisible bridge over the gap so the cursor can reach the card */
+.pub-abstract::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -22px;
+  width: 22px;
+  height: 100%;
 }
 .pub-abstract-link {
   display: block;
