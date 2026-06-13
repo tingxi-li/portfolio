@@ -1,0 +1,243 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% Publication entry: long titles wrap; authors and venue share the next line.
+\newcommand{\pubSubheading}[3]{
+  \vspace{-2pt}\item
+    \textbf{#1}\\[-3pt]
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textit{\small #2} & \textit{\small #3} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+\begin{center}
+    {\Huge \scshape Tingxi Li} \\ \vspace{1pt}
+      800 W Campbell Rd, Richardson, TX 75080\\ \vspace{1pt}
+    \small \raisebox{-0.1\height}\faPhone\ (213)-795-5275 ~ \href{mailto:tingxi.li@utdallas.edu}{\raisebox{-0.2\height}\faEnvelope\  \underline{tingxi.li@utdallas.edu}} ~
+    \href{https://www.linkedin.com/in/tingxi-li-352a45297/}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin}}  ~
+    \href{https://tingxi.li}{\raisebox{-0.2\height}\faGithub\ \underline{homepage}} ~
+    \href{https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=a_XpeY0AAAAJ} ~{\raisebox{-0.2\height}\faGraduationCap\ \underline{Google Scholar}}
+    \vspace{-8pt}
+\end{center}
+
+\section{Research Interests}
+
+I am broadly interested in the \textbf{inference-time efficiency} of deep learning systems across two levels: (i) kernel and subgraph-level efficiency, and (ii) model-level dynamicity. My primary research interests lie in \textbf{deep learning compilation}, targeting compiler infrastructure and AI-driven kernel generation. I also investigate dynamic behavior vulnerabilities in deep learning models and develop defenses against efficiency exploitation.
+
+\section{Publications}
+\resumeSubHeadingListStart
+
+\pubSubheading
+    {Characterizing Real-World Bugs in Tile Programs for Automated Bug Detection}
+    {R. Rathnasuriya, Z. Song, N. Majoju, \textbf{T. Li}, A. Moharir, W. Yang, T. Xie}{ISSTA'26}
+
+\vspace{2mm}
+
+\pubSubheading
+    {SoK: Efficiency Robustness of Dynamic Deep Learning Systems}
+    {R. Rathnasuriya, \textbf{T. Li}, Z. Xu, Z. Song, M. Haque, S. Chen, W. Yang}{USENIX Sec'25}
+
+\vspace{2mm}
+
+\pubSubheading
+    {COMET: Closed-loop Orchestration for Malicious Elicitation Techniques in Code Models}
+    {Z. Xu, \textbf{T. Li}, R. Rathnasuriya, Z. Song, J. Ren, B. Mandalapu, S. Setayeshpour, X. Du, W. Yang}{Technical Report}
+
+\vspace{2mm}
+
+\pubSubheading
+    {Practical: Retargeting AI Kernel DSLs Beyond GPUs: An Experience Report on Refactoring TileLang to Sophgo TPUs}
+    {T. Ren, \textbf{T. Li}, X. Xiang, C. Xu, W. Yang, T. Xie}{Under Review}
+
+\vspace{2mm}
+
+\pubSubheading
+    {An Empirical Study of GPU Kernel Performance Gaps in Modern Domain-Specific Languages}
+    {\textbf{T. Li}, R. Rathnasuriya, W. Yang}{Under Review}
+
+\vspace{2mm}
+
+
+\pubSubheading
+    {AESOP: Adversarial Execution-path Selection to Overload Deep Learning Pipelines}
+    {\textbf{T. Li}, M. Ji, R. Rathnasuriya, S. Chen, Y. Hu, W. Yang}{arXiv Preprint}
+    % \resumeItemListStart
+        % \resumeItem{Proposed a system-level efficiency attack on vision DNNs that inflates FLOPs and inference latency by up to 50$\times$ and 10$\times$ under black-box conditions.}
+    % \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+\section{Research Projects}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {A Survey of Automation in Kernel Generalization and Optimization}{Jan. 2026 -- Present}
+      {}{}
+      \vspace{-5mm}
+      \resumeItemListStart
+        \resumeItem{Systematized DL compilation research into AI-driven kernel generation and compiler infrastructure, with subcategories on search space pruning, auto-tuning, cost modeling, and candidate validation.}
+        \resumeItem{Analyzed IR evolution from loop-based to tile-based abstractions and its downstream impact on the compilation ecosystem.}
+      \resumeItemListEnd
+
+    \vspace{2mm}
+
+    \resumeSubheading
+    {Amazon Trusted AI Competition}{Nov. 2024 -- Jul. 2025}
+    {}{}
+    \vspace{-5mm}
+    \resumeItemListStart
+        \resumeItem{Finalist team (\$250K prize) targeting black-box jailbreaking of CodeLLMs.}
+        \resumeItem{Fine-tuned surrogate models for adversarial prompt guidance, achieving 0.80+ recall and 0.75+ F1 in malicious intent detection.}
+    \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Texas at Dallas}{Sep. 2024 -- Present}
+      {Doctor of Philosophy}{}
+
+          \vspace{2mm}
+
+    \resumeSubheading
+      {Dalian University of Technology}{Sep. 2019 -- May 2024}
+      {Bachelor of Science}{}
+  \resumeSubHeadingListEnd
+
+      \vspace{2mm}
+
+\section{Internship Experience}
+    \resumeSubHeadingListStart
+    \resumeSubheading
+      {Sophgo}{Jun. 2024 -- Aug. 2024}
+      {Research Intern}{Shenzhen, China}
+      \resumeItemListStart
+        \resumeItem{Developed C++ API code for models on RISC-V processors and authored deployment documentation.}
+        \resumeItem{Fine-tuned models on private datasets, identified failure cases, and applied data augmentation to improve robustness.}
+      \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+\vspace{2mm}
+
+\section{Teaching}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {CS 4365 -- Artificial Intelligence}{Spring 2026}
+      {Teaching Assistant, UT Dallas}{}
+
+      \vspace{2mm}
+
+    \resumeSubheading
+      {CS 4375 -- Introduction to Machine Learning}{Fall 2025; Fall 2024}
+      {Teaching Assistant, UT Dallas}{}
+
+      \vspace{2mm}
+
+    \resumeSubheading
+      {CS 4337 -- Programming Language Paradigms}{Spring 2025}
+      {Teaching Assistant, UT Dallas}{}
+  \resumeSubHeadingListEnd
+
+\vspace{2mm}
+
+\section{Miscellaneous}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Tech Stack}{: Python; C; C++; Java; PyTorch; \LaTeX; SQL} \\
+    }}
+ \end{itemize}
+
+\end{document}

@@ -6,8 +6,9 @@ const PUB_ABSTRACTS = {
   issta26: "Tile-based programming models such as Triton and TileLang are increasingly used to write high-performance GPU kernels, yet the reliability of programs in these DSLs remains understudied. We present a systematic characterization of real-world bugs in tile programs and develop automated detection techniques targeting common bug patterns found in production kernel code.",
   usenix25: "A taxonomy of efficiency vulnerabilities in dynamic deep learning systems, along with a comprehensive evaluation of attack techniques and defenses across multiple dimensions (e.g., attack surface, model type, etc.) to identify key factors influencing efficiency robustness and guide future research in this area.",
   comet: "Large language models trained on code are increasingly integrated into software development workflows, raising concerns about their susceptibility to adversarial prompts that elicit malicious outputs. COMET introduces a closed-loop orchestration framework that automatically generates, evaluates, and refines malicious elicitation techniques against black-box code models, achieving high attack success rates through iterative feedback.",
-  tilelangTPU: "Tile-level DSLs make AI kernels easier to write, but mapping them to commercial DSAs like SOPHGO TPUs is hard due to constrained local memory and decoupled DMA/compute engines. We build a compiler+runtime that preserves the tile abstraction while redesigning its internals around TPU resource orchestration — achieving a 1.10× average speedup over vendor-optimized kernels on Matmul, RMSNorm, RoPE, SwiGLU, and more.",
+  tilelangTPU: "Tile-level DSLs like Triton and TileLang ease AI kernel writing on GPUs, but whether the abstraction transfers to commercial DSAs — with constrained local memory, DMA-based data movement, and decoupled transfer/compute engines — remains an open question. We build TileLang-TPU, a compiler and runtime that preserves the tile-level interface while redesigning its internals around SOPHGO TPU resource orchestration — reaching 1.05×–1.23× over vendor-optimized kernels on standalone operators and a 12.5× average speedup on FlashAttention.",
   aesop: "ML inference pipelines have a new attack surface single-model attacks miss: which path inputs take through the pipeline. Our attack, AESOP, exploits this — achieving 58× FLOPs / 17× latency inflation even in gray-box settings. Defenses don't stop it; they force pipelines to choose between throughput collapse or dropping 96.7% of inputs.",
+  dslPerfGap: "Modern GPU DSLs like Triton and TileLang promise high-performance kernels without CUDA expertise, but how close they get to vendor libraries — and what limits them — is unclear. We benchmark 22 kernels across five operator categories and find performance is highly uneven: Triton reaches 32–58% of cuBLAS on GEMM and 103% on element-wise kernels, but only 35% on convolution; TileLang exhibits a 314× LayerNorm slowdown vs. PyTorch. Hardware-counter analysis identifies four recurring convolution bottlenecks, and targeted fixes recover 98% of PyTorch throughput on LayerNorm/RMSNorm and push Triton convolution to 80% of cuDNN.",
 };
 
 const ICONS = {
@@ -45,7 +46,29 @@ const SECTION_LABELS = {
 
 export default function App() {
   const [activeSection, setActiveSection] = useState(SECTIONS[0]);
+  const [tilelangTpuPdfNote, setTilelangTpuPdfNote] = useState(false);
+  const [dslPerfGapPdfNote, setDslPerfGapPdfNote] = useState(false);
+  const [cvMenuOpen, setCvMenuOpen] = useState(false);
   const countFetched = useRef(false);
+  const cvMenuRef = useRef(null);
+
+  useEffect(() => {
+    if (!cvMenuOpen) return;
+    const onDocClick = (e) => {
+      if (cvMenuRef.current && !cvMenuRef.current.contains(e.target)) {
+        setCvMenuOpen(false);
+      }
+    };
+    const onEsc = (e) => {
+      if (e.key === "Escape") setCvMenuOpen(false);
+    };
+    document.addEventListener("mousedown", onDocClick);
+    document.addEventListener("keydown", onEsc);
+    return () => {
+      document.removeEventListener("mousedown", onDocClick);
+      document.removeEventListener("keydown", onEsc);
+    };
+  }, [cvMenuOpen]);
 
   useEffect(() => {
     const visible = new Set();
@@ -119,13 +142,50 @@ export default function App() {
         ))}
       </nav>
 
-      {/* Download CV button */}
-      <a className="pdf-btn" href="/cv.pdf" download="Tingxi-Li-CV.pdf" aria-label="Download CV">
-        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor">
-          <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-          <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-        </svg>
-      </a>
+      {/* CV button with preview / download menu */}
+      <div className="pdf-wrap" ref={cvMenuRef}>
+        <button
+          type="button"
+          className="pdf-btn"
+          onClick={() => setCvMenuOpen((o) => !o)}
+          aria-haspopup="menu"
+          aria-expanded={cvMenuOpen}
+          aria-label="CV options"
+        >
+          résumé
+        </button>
+        {cvMenuOpen && (
+          <div className="pdf-menu" role="menu">
+            <a
+              className="pdf-menu-item"
+              href="/cv.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              role="menuitem"
+              onClick={() => setCvMenuOpen(false)}
+            >
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+              </svg>
+              Preview
+            </a>
+            <a
+              className="pdf-menu-item"
+              href="/cv.pdf"
+              download="Tingxi-Li-CV.pdf"
+              role="menuitem"
+              onClick={() => setCvMenuOpen(false)}
+            >
+              <svg width="12" height="12" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
+                <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
+              </svg>
+              Download
+            </a>
+          </div>
+        )}
+      </div>
 
       {/* Header */}
       <header className="cv-header">
@@ -183,7 +243,7 @@ export default function App() {
             R. Rathnasuriya, Z. Song, N. Majoju, <b>T. Li</b>, A. Moharir, W. Yang, T. Xie
           </div>
           <div className="cv-pub-links">
-            <a href="https://arxiv.org/pdf/2605.19652v1" target="_blank" rel="noopener noreferrer" className="cv-pub-link">{ICONS.pdf}arXiv</a>
+            <a href="https://arxiv.org/pdf/2605.19652v1" target="_blank" rel="noopener noreferrer" className="cv-pub-link">{ICONS.pdf}PDF</a>
           </div>
           <div className="pub-abstract">
             {PUB_ABSTRACTS.issta26}
@@ -228,17 +288,54 @@ export default function App() {
 
         <div className="cv-entry">
           <div className="cv-entry-row">
-            <span className="cv-entry-title">TileLang-TPU: A High-Performance Tiled Programming Framework for SOPHGO TPU Acceleration</span>
-            <span className="venue venue-report">Technical Report</span>
+            <span className="cv-entry-title">Practical: Retargeting AI Kernel DSLs Beyond GPUs: An Experience Report on Refactoring TileLang to Sophgo TPUs</span>
+            <span className="venue venue-report">Under Review</span>
           </div>
           <div className="cv-entry-authors">
-            Sophgo Infra Team
+            T. Ren, <b>T. Li</b>, X. Xiang, C. Xu, W. Yang, T. Xie
           </div>
           <div className="cv-pub-links">
+            <button
+              type="button"
+              onClick={() => setTilelangTpuPdfNote((v) => !v)}
+              className="cv-pub-link cv-pub-link-button"
+              aria-expanded={tilelangTpuPdfNote}
+            >
+              {ICONS.pdf}PDF
+            </button>
             <a href="https://github.com/xwhzz/tilelang-tpu" target="_blank" rel="noopener noreferrer" className="cv-pub-link">{ICONS.github}Code</a>
+            {tilelangTpuPdfNote && (
+              <span className="cv-pub-note">PDF available upon request.</span>
+            )}
           </div>
           <div className="pub-abstract">
             {PUB_ABSTRACTS.tilelangTPU}
+          </div>
+        </div>
+
+        <div className="cv-entry">
+          <div className="cv-entry-row">
+            <span className="cv-entry-title">An Empirical Study of GPU Kernel Performance Gaps in Modern Domain-Specific Languages</span>
+            <span className="venue venue-report">Under Review</span>
+          </div>
+          <div className="cv-entry-authors">
+            <b>T. Li</b>, R. Rathnasuriya, W. Yang
+          </div>
+          <div className="cv-pub-links">
+            <button
+              type="button"
+              onClick={() => setDslPerfGapPdfNote((v) => !v)}
+              className="cv-pub-link cv-pub-link-button"
+              aria-expanded={dslPerfGapPdfNote}
+            >
+              {ICONS.pdf}PDF
+            </button>
+            {dslPerfGapPdfNote && (
+              <span className="cv-pub-note">PDF available upon request.</span>
+            )}
+          </div>
+          <div className="pub-abstract">
+            {PUB_ABSTRACTS.dslPerfGap}
           </div>
         </div>
 
@@ -251,7 +348,7 @@ export default function App() {
             <b>T. Li</b>, M. Ji, R. Rathnasuriya, S. Chen, Y. Hu, W. Yang
           </div>
           <div className="cv-pub-links">
-            <a href="https://arxiv.org/abs/2605.10987" target="_blank" rel="noopener noreferrer" className="cv-pub-link">{ICONS.pdf}arXiv</a>
+            <a href="https://arxiv.org/abs/2605.10987" target="_blank" rel="noopener noreferrer" className="cv-pub-link">{ICONS.pdf}PDF</a>
           </div>
           <div className="pub-abstract">
             {PUB_ABSTRACTS.aesop}
@@ -272,20 +369,6 @@ export default function App() {
           <ul className="cv-entry-bullets">
             <li>Systematized DL compilation research into AI-driven kernel generation and compiler infrastructure, with subcategories on search space pruning, auto-tuning, cost modeling, and candidate validation.</li>
             <li>Analyzed IR evolution from loop-based to tile-based abstractions and its downstream impact on the compilation ecosystem.</li>
-          </ul>
-        </div>
-
-        <div className="cv-entry">
-          <div className="cv-entry-row">
-            <span className="cv-entry-title">TileBench: A Comprehensive Benchmark for Tile-Based DSLs</span>
-            <span className="cv-entry-date">Mar. 2026 – Present</span>
-          </div>
-          <div className="cv-pub-links">
-            <a href="https://github.com/tingxi-li/DSLPerfGap" target="_blank" rel="noopener noreferrer" className="cv-pub-link">{ICONS.github}Code</a>
-          </div>
-          <ul className="cv-entry-bullets">
-            <li>Built a benchmark covering PyTorch Eager/Compile and Triton/TileLang across diverse hardware and workloads.</li>
-            <li>Merged KernelBench and TritonBench into a unified dataset with verified correctness and a multi-dimensional kernel taxonomy (functionality, complexity, etc.).</li>
           </ul>
         </div>
 
@@ -392,7 +475,7 @@ export default function App() {
 
       {/* Footer */}
       <footer className="cv-footer">
-        <p>Last modified: April 2026 · <span className="cv-email">tingxi.li[at]utdallas.edu</span></p>
+        <p>Last modified: June 2026 · <span className="cv-email">tingxi.li[at]utdallas.edu</span></p>
       </footer>
     </>
   );
