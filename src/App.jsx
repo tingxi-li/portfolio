@@ -33,7 +33,69 @@ const ICONS = {
       <path d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"/>
     </svg>
   ),
+  cite: (
+    <svg width="10" height="10" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style={{verticalAlign:"middle",marginRight:4,flexShrink:0}}>
+      <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+      <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+    </svg>
+  ),
+  tldr: (
+    <svg width="10" height="10" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true" style={{verticalAlign:"middle",marginRight:4,flexShrink:0}}>
+      <path d="M14 2a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h12zM2 1a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2H2z"/>
+      <path d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
+    </svg>
+  ),
 };
+
+const PUB_FILES = {
+  issta26: "tile-bugs.md",
+  usenix25: "sok-efficiency.md",
+  comet: "comet.md",
+  tilelangTPU: "tilelang-tpu.md",
+  dslPerfGap: "dsl-perf-gap.md",
+  aesop: "aesop.md",
+};
+
+const BIBTEX = {
+  issta26: `@inproceedings{rathnasuriya2026tilebugs,
+  title     = {Characterizing Real-World Bugs in Tile Programs for Automated Bug Detection},
+  author    = {Rathnasuriya, R. and Song, Z. and Majoju, N. and Li, T. and Moharir, A. and Yang, W. and Xie, T.},
+  booktitle = {Proceedings of the ACM SIGSOFT International Symposium on Software Testing and Analysis (ISSTA)},
+  year      = {2026}
+}`,
+  usenix25: `@inproceedings{rathnasuriya2025sok,
+  title     = {SoK: Efficiency Robustness of Dynamic Deep Learning Systems},
+  author    = {Rathnasuriya, R. and Li, T. and Xu, Z. and Song, Z. and Haque, M. and Chen, S. and Yang, W.},
+  booktitle = {34th USENIX Security Symposium (USENIX Security)},
+  year      = {2025}
+}`,
+  comet: `@techreport{xu2025comet,
+  title       = {COMET: Closed-loop Orchestration for Malicious Elicitation Techniques in Code Models},
+  author      = {Xu, Z. and Li, T. and Rathnasuriya, R. and Song, Z. and Ren, J. and Mandalapu, B. and Setayeshpour, S. and Du, X. and Yang, W.},
+  institution = {Amazon Science},
+  year        = {2025}
+}`,
+  tilelangTPU: `@misc{ren2026tilelangtpu,
+  title  = {Retargeting AI Kernel DSLs Beyond GPUs: An Experience Report on Refactoring TileLang to Sophgo TPUs},
+  author = {Ren, T. and Li, T. and Xiang, X. and Xu, C. and Yang, W. and Xie, T.},
+  note   = {Under review},
+  year   = {2026}
+}`,
+  dslPerfGap: `@misc{li2026dslperfgap,
+  title  = {An Empirical Study of GPU Kernel Performance Gaps in Modern Domain-Specific Languages},
+  author = {Li, T. and Rathnasuriya, R. and Yang, W.},
+  note   = {Under review},
+  year   = {2026}
+}`,
+  aesop: `@article{li2026aesop,
+  title   = {AESOP: Adversarial Execution-path Selection to Overload Deep Learning Pipelines},
+  author  = {Li, T. and Ji, M. and Rathnasuriya, R. and Chen, S. and Hu, Y. and Yang, W.},
+  journal = {arXiv preprint arXiv:2605.10987},
+  year    = {2026}
+}`,
+};
+
+const EMAIL = "tingxi.li@utdallas.edu";
 
 const SECTION_LABELS = {
   research: "Research",
@@ -49,8 +111,60 @@ export default function App() {
   const [tilelangTpuPdfNote, setTilelangTpuPdfNote] = useState(false);
   const [dslPerfGapPdfNote, setDslPerfGapPdfNote] = useState(false);
   const [cvMenuOpen, setCvMenuOpen] = useState(false);
+  const [theme, setTheme] = useState(
+    () => document.documentElement.getAttribute("data-theme") || "light"
+  );
+  const [openAbstracts, setOpenAbstracts] = useState(() => new Set());
+  const [toast, setToast] = useState(null);
+  const [progress, setProgress] = useState(0);
   const countFetched = useRef(false);
   const cvMenuRef = useRef(null);
+  const toastTimer = useRef(null);
+
+  const toggleTheme = useCallback(() => {
+    setTheme((prev) => {
+      const next = prev === "dark" ? "light" : "dark";
+      document.documentElement.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) { /* private mode */ }
+      return next;
+    });
+  }, []);
+
+  const toggleAbstract = useCallback((id) => {
+    setOpenAbstracts((prev) => {
+      const next = new Set(prev);
+      if (next.has(id)) next.delete(id); else next.add(id);
+      return next;
+    });
+  }, []);
+
+  const showToast = useCallback((msg) => {
+    setToast(msg);
+    if (toastTimer.current) clearTimeout(toastTimer.current);
+    toastTimer.current = setTimeout(() => setToast(null), 1800);
+  }, []);
+
+  const copy = useCallback(async (text, label) => {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        ta.remove();
+      }
+      showToast(label);
+    } catch (e) {
+      showToast("Copy failed — select manually");
+    }
+  }, [showToast]);
+
+  useEffect(() => () => { if (toastTimer.current) clearTimeout(toastTimer.current); }, []);
 
   useEffect(() => {
     if (!cvMenuOpen) return;
@@ -91,6 +205,49 @@ export default function App() {
   }, []);
 
   useEffect(() => {
+    let raf = null;
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = null;
+        const el = document.documentElement;
+        const max = el.scrollHeight - el.clientHeight;
+        setProgress(max > 0 ? Math.min(1, Math.max(0, el.scrollTop / max)) : 0);
+      });
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll, { passive: true });
+    onScroll();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
+  }, []);
+
+  useEffect(() => {
+    const els = Array.from(document.querySelectorAll(".reveal"));
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce || !("IntersectionObserver" in window)) {
+      els.forEach((el) => el.classList.add("in"));
+      return;
+    }
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.06 }
+    );
+    els.forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
     if (countFetched.current) return;
     countFetched.current = true;
     import("./firebase")
@@ -127,8 +284,45 @@ export default function App() {
     return () => window.removeEventListener("keydown", onKey);
   }, [scrollToSection]);
 
+  const renderAbstract = (id, body) => (
+    <div className={`pub-abstract${openAbstracts.has(id) ? " is-open" : ""}`}>
+      <div className="pa-bar">
+        <span className="pa-dot" /><span className="pa-dot" /><span className="pa-dot" />
+        <span className="pa-fn">{PUB_FILES[id]}</span>
+      </div>
+      <div className="pa-body">{body}</div>
+    </div>
+  );
+
+  const renderTldr = (id) => (
+    <button
+      type="button"
+      className="cv-pub-link cv-pub-link-button cv-pub-link--tldr"
+      aria-expanded={openAbstracts.has(id)}
+      onClick={() => toggleAbstract(id)}
+    >
+      {ICONS.tldr}{openAbstracts.has(id) ? "hide" : "TL;DR"}
+    </button>
+  );
+
+  const renderCite = (id) => (
+    <button
+      type="button"
+      className="cv-pub-link cv-pub-link-button cv-pub-link--cite"
+      onClick={() => copy(BIBTEX[id], "BibTeX copied ✓")}
+      aria-label="Copy BibTeX citation"
+    >
+      {ICONS.cite}cite
+    </button>
+  );
+
   return (
     <>
+      {/* Reading progress */}
+      <div className="progress-bar" aria-hidden="true">
+        <div className="progress-fill" style={{ transform: `scaleX(${progress})` }} />
+      </div>
+
       {/* Nav dots */}
       <nav className="section-dots" aria-label="Page sections">
         {SECTIONS.map((id) => (
@@ -142,8 +336,26 @@ export default function App() {
         ))}
       </nav>
 
-      {/* CV button with preview / download menu */}
-      <div className="pdf-wrap" ref={cvMenuRef}>
+      {/* Top-right controls: theme toggle + CV menu */}
+      <div className="controls">
+        <button
+          type="button"
+          className="theme-toggle"
+          onClick={toggleTheme}
+          aria-label={theme === "dark" ? "Switch to light theme" : "Switch to dark theme"}
+          title={theme === "dark" ? "Light theme" : "Dark theme"}
+        >
+          {theme === "dark" ? (
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6m0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8M8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0m0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13m8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5M3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8m10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0m-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0m9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707M4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.708l1.414 1.415a.5.5 0 0 1 0 .707"/>
+            </svg>
+          ) : (
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
+            </svg>
+          )}
+        </button>
+        <div className="pdf-wrap" ref={cvMenuRef}>
         <button
           type="button"
           className="pdf-btn"
@@ -185,16 +397,17 @@ export default function App() {
             </a>
           </div>
         )}
+        </div>
       </div>
 
       {/* Header */}
-      <header className="cv-header">
+      <header className="cv-header reveal">
         <div className="cv-header-spacer" />
         <div className="cv-header-text">
           <h1 className="cv-name">Tingxi Li</h1>
           <p className="cv-address">800 W Campbell Rd, Richardson, TX 75080</p>
           <p className="cv-contact">
-            <span className="cv-email">tingxi.li[at]utdallas.edu</span>
+            <button type="button" className="cv-email" onClick={() => copy(EMAIL, "Email copied ✓")} title="Copy email">tingxi.li[at]utdallas.edu</button>
             <span className="cv-sep">|</span>
             <a href="https://www.linkedin.com/in/tingxi-li-352a45297/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
             <span className="cv-sep">|</span>
@@ -218,7 +431,7 @@ export default function App() {
       </header>
 
       {/* Research Interests */}
-      <section className="cv-section" id="research">
+      <section className="cv-section reveal" id="research">
         <h2 className="cv-section-title">Research Interests</h2>
         <p>
           I am broadly interested in the <strong>inference-time efficiency</strong> of deep learning
@@ -231,7 +444,7 @@ export default function App() {
       </section>
 
       {/* Publications */}
-      <section className="cv-section" id="publications">
+      <section className="cv-section reveal" id="publications">
         <h2 className="cv-section-title">Publications</h2>
 
         <div className="cv-entry">
@@ -243,12 +456,16 @@ export default function App() {
             R. Rathnasuriya, Z. Song, N. Majoju, <b>T. Li</b>, A. Moharir, W. Yang, T. Xie
           </div>
           <div className="cv-pub-links">
-            <a href="https://arxiv.org/pdf/2605.19652v1" target="_blank" rel="noopener noreferrer" className="cv-pub-link">{ICONS.pdf}PDF</a>
+            <a href="https://arxiv.org/pdf/2605.19652v1" target="_blank" rel="noopener noreferrer" className="cv-pub-link cv-pub-link--pdf">{ICONS.pdf}PDF</a>
+            {renderTldr("issta26")}
+            {renderCite("issta26")}
           </div>
-          <div className="pub-abstract">
-            {PUB_ABSTRACTS.issta26}
-            <a href="https://arxiv.org/pdf/2605.19652v1" target="_blank" rel="noopener noreferrer" className="pub-abstract-link">{ICONS.pdf}view full paper →</a>
-          </div>
+          {renderAbstract("issta26", (
+            <>
+              {PUB_ABSTRACTS.issta26}
+              <a href="https://arxiv.org/pdf/2605.19652v1" target="_blank" rel="noopener noreferrer" className="pub-abstract-link">{ICONS.pdf}view full paper →</a>
+            </>
+          ))}
         </div>
 
         <div className="cv-entry">
@@ -260,13 +477,17 @@ export default function App() {
             R. Rathnasuriya, <b>T. Li</b>, Z. Xu, Z. Song, M. Haque, S. Chen, W. Yang
           </div>
           <div className="cv-pub-links">
-            <a href="https://www.usenix.org/system/files/usenixsecurity25-rathnasuriya.pdf" target="_blank" rel="noopener noreferrer" className="cv-pub-link">{ICONS.pdf}PDF</a>
-            <a href="https://zenodo.org/records/15649771" target="_blank" rel="noopener noreferrer" className="cv-pub-link">{ICONS.github}Code</a>
+            <a href="https://www.usenix.org/system/files/usenixsecurity25-rathnasuriya.pdf" target="_blank" rel="noopener noreferrer" className="cv-pub-link cv-pub-link--pdf">{ICONS.pdf}PDF</a>
+            <a href="https://zenodo.org/records/15649771" target="_blank" rel="noopener noreferrer" className="cv-pub-link cv-pub-link--code">{ICONS.github}Code</a>
+            {renderTldr("usenix25")}
+            {renderCite("usenix25")}
           </div>
-          <div className="pub-abstract">
-            {PUB_ABSTRACTS.usenix25}
-            <a href="https://www.usenix.org/system/files/usenixsecurity25-rathnasuriya.pdf" target="_blank" rel="noopener noreferrer" className="pub-abstract-link">{ICONS.pdf}view full paper →</a>
-          </div>
+          {renderAbstract("usenix25", (
+            <>
+              {PUB_ABSTRACTS.usenix25}
+              <a href="https://www.usenix.org/system/files/usenixsecurity25-rathnasuriya.pdf" target="_blank" rel="noopener noreferrer" className="pub-abstract-link">{ICONS.pdf}view full paper →</a>
+            </>
+          ))}
         </div>
 
         <div className="cv-entry">
@@ -278,12 +499,16 @@ export default function App() {
             Z. Xu, <b>T. Li</b>, R. Rathnasuriya, Z. Song, J. Ren, B. Mandalapu, S. Setayeshpour, X. Du, W. Yang
           </div>
           <div className="cv-pub-links">
-            <a href="https://assets.amazon.science/6f/16/076dff834864823e4f09322d1495/astro-comet-closed-loop-orchestration-for-malicious-elicitation-techniques-in-code-models.pdf" target="_blank" rel="noopener noreferrer" className="cv-pub-link">{ICONS.pdf}PDF</a>
+            <a href="https://assets.amazon.science/6f/16/076dff834864823e4f09322d1495/astro-comet-closed-loop-orchestration-for-malicious-elicitation-techniques-in-code-models.pdf" target="_blank" rel="noopener noreferrer" className="cv-pub-link cv-pub-link--pdf">{ICONS.pdf}PDF</a>
+            {renderTldr("comet")}
+            {renderCite("comet")}
           </div>
-          <div className="pub-abstract">
-            {PUB_ABSTRACTS.comet}
-            <a href="https://assets.amazon.science/6f/16/076dff834864823e4f09322d1495/astro-comet-closed-loop-orchestration-for-malicious-elicitation-techniques-in-code-models.pdf" target="_blank" rel="noopener noreferrer" className="pub-abstract-link">{ICONS.pdf}view full paper →</a>
-          </div>
+          {renderAbstract("comet", (
+            <>
+              {PUB_ABSTRACTS.comet}
+              <a href="https://assets.amazon.science/6f/16/076dff834864823e4f09322d1495/astro-comet-closed-loop-orchestration-for-malicious-elicitation-techniques-in-code-models.pdf" target="_blank" rel="noopener noreferrer" className="pub-abstract-link">{ICONS.pdf}view full paper →</a>
+            </>
+          ))}
         </div>
 
         <div className="cv-entry">
@@ -303,14 +528,14 @@ export default function App() {
             >
               {ICONS.pdf}PDF
             </button>
-            <a href="https://github.com/xwhzz/tilelang-tpu" target="_blank" rel="noopener noreferrer" className="cv-pub-link">{ICONS.github}Code</a>
+            <a href="https://github.com/xwhzz/tilelang-tpu" target="_blank" rel="noopener noreferrer" className="cv-pub-link cv-pub-link--code">{ICONS.github}Code</a>
+            {renderTldr("tilelangTPU")}
+            {renderCite("tilelangTPU")}
             {tilelangTpuPdfNote && (
               <span className="cv-pub-note">PDF available upon request.</span>
             )}
           </div>
-          <div className="pub-abstract">
-            {PUB_ABSTRACTS.tilelangTPU}
-          </div>
+          {renderAbstract("tilelangTPU", PUB_ABSTRACTS.tilelangTPU)}
         </div>
 
         <div className="cv-entry">
@@ -330,13 +555,13 @@ export default function App() {
             >
               {ICONS.pdf}PDF
             </button>
+            {renderTldr("dslPerfGap")}
+            {renderCite("dslPerfGap")}
             {dslPerfGapPdfNote && (
               <span className="cv-pub-note">PDF available upon request.</span>
             )}
           </div>
-          <div className="pub-abstract">
-            {PUB_ABSTRACTS.dslPerfGap}
-          </div>
+          {renderAbstract("dslPerfGap", PUB_ABSTRACTS.dslPerfGap)}
         </div>
 
         <div className="cv-entry">
@@ -348,17 +573,21 @@ export default function App() {
             <b>T. Li</b>, M. Ji, R. Rathnasuriya, S. Chen, Y. Hu, W. Yang
           </div>
           <div className="cv-pub-links">
-            <a href="https://arxiv.org/abs/2605.10987" target="_blank" rel="noopener noreferrer" className="cv-pub-link">{ICONS.pdf}PDF</a>
+            <a href="https://arxiv.org/abs/2605.10987" target="_blank" rel="noopener noreferrer" className="cv-pub-link cv-pub-link--pdf">{ICONS.pdf}PDF</a>
+            {renderTldr("aesop")}
+            {renderCite("aesop")}
           </div>
-          <div className="pub-abstract">
-            {PUB_ABSTRACTS.aesop}
-            <a href="https://arxiv.org/abs/2605.10987" target="_blank" rel="noopener noreferrer" className="pub-abstract-link">{ICONS.pdf}view full paper →</a>
-          </div>
+          {renderAbstract("aesop", (
+            <>
+              {PUB_ABSTRACTS.aesop}
+              <a href="https://arxiv.org/abs/2605.10987" target="_blank" rel="noopener noreferrer" className="pub-abstract-link">{ICONS.pdf}view full paper →</a>
+            </>
+          ))}
         </div>
       </section>
 
       {/* Research Projects */}
-      <section className="cv-section" id="projects">
+      <section className="cv-section reveal" id="projects">
         <h2 className="cv-section-title">Research Projects</h2>
 
         <div className="cv-entry">
@@ -378,7 +607,7 @@ export default function App() {
             <span className="cv-entry-date">Nov. 2024 – Jul. 2025</span>
           </div>
           <div className="cv-pub-links">
-            <a href="https://www.amazon.science/nova-ai-challenge/finalist-teams-advance-in-the-amazon-nova-ai-challenge-trusted-ai-track" target="_blank" rel="noopener noreferrer" className="cv-pub-link">{ICONS.link}Link</a>
+            <a href="https://www.amazon.science/nova-ai-challenge/finalist-teams-advance-in-the-amazon-nova-ai-challenge-trusted-ai-track" target="_blank" rel="noopener noreferrer" className="cv-pub-link cv-pub-link--link">{ICONS.link}Link</a>
           </div>
           <ul className="cv-entry-bullets">
             <li>Finalist team ($250K prize) targeting black-box jailbreaking of CodeLLMs.</li>
@@ -388,7 +617,7 @@ export default function App() {
       </section>
 
       {/* Education */}
-      <section className="cv-section" id="education">
+      <section className="cv-section reveal" id="education">
         <h2 className="cv-section-title">Education</h2>
 
         <div className="cv-entry">
@@ -413,7 +642,7 @@ export default function App() {
       </section>
 
       {/* Internship Experience */}
-      <section className="cv-section" id="experience">
+      <section className="cv-section reveal" id="experience">
         <h2 className="cv-section-title">Internship Experience</h2>
 
         <div className="cv-entry">
@@ -423,48 +652,33 @@ export default function App() {
           </div>
           <div className="cv-entry-sub">Shenzhen, China</div>
           <ul className="cv-entry-bullets">
-            <li>Developed C++ API code for models on RISC-V processors and authored deployment documentation.</li>
+            <li>Refactored C++ model deployment interfaces for RISC-V architecture and authored comprehensive technical documentation.</li>
             <li>Fine-tuned models on private datasets, identified failure cases, and applied data augmentation to improve robustness.</li>
           </ul>
         </div>
       </section>
 
       {/* Teaching */}
-      <section className="cv-section" id="teaching">
+      <section className="cv-section reveal" id="teaching">
         <h2 className="cv-section-title">Teaching</h2>
 
         <div className="cv-entry">
           <div className="cv-entry-row">
-            <span className="cv-entry-title">CS 4365 — Artificial Intelligence</span>
-            <span className="cv-entry-date">Spring 2026</span>
+            <span className="cv-entry-title">Teaching Assistant, UT Dallas</span>
+            <span className="cv-entry-date">Fall 2024 – Spring 2026</span>
           </div>
-          <div className="cv-entry-sub">Teaching Assistant, UT Dallas</div>
-        </div>
-
-        <div className="cv-entry">
-          <div className="cv-entry-row">
-            <span className="cv-entry-title">CS 4375 — Introduction to Machine Learning</span>
-            <span className="cv-entry-date">Fall 2025; Fall 2024</span>
-          </div>
-          <div className="cv-entry-sub">Teaching Assistant, UT Dallas</div>
-          <div className="cv-pub-links">
-            <a href="https://github.com/tingxi-li/portfolio/releases/download/v1.0/ml-compilation-triton.pdf" target="_blank" rel="noopener noreferrer" className="cv-pub-link">{ICONS.slides}Slides</a>
-          </div>
-        </div>
-
-        <div className="cv-entry">
-          <div className="cv-entry-row">
-            <span className="cv-entry-title">CS 4337 — Programming Language Paradigms</span>
-            <span className="cv-entry-date">Spring 2025</span>
-          </div>
-          <div className="cv-entry-sub">Teaching Assistant, UT Dallas</div>
+          <ul className="cv-entry-bullets">
+            <li>CS 4365 — Artificial Intelligence (Spring 2026)</li>
+            <li>CS 4375 — Introduction to Machine Learning (Fall 2024, Fall 2025)</li>
+            <li>CS 4337 — Programming Language Paradigms (Spring 2025)</li>
+          </ul>
         </div>
       </section>
 
       {/* Miscellaneous */}
-      <section className="cv-section" id="misc">
+      <section className="cv-section reveal" id="misc">
         <h2 className="cv-section-title">Miscellaneous</h2>
-        <p><strong>Tech Stack:</strong> Python; C; C++; Java; PyTorch; LaTeX; SQL</p>
+        <p><strong>Tech Stack:</strong> Steering agentic coding tools for efficient implementation through specifications, contracts, and test suites, without maximizing token usage; PyTorch; C++</p>
         <p style={{ marginTop: "10px" }}>My two cats:</p>
         <img
           src="https://ik.imagekit.io/tingxi/SDIM0107.jpg"
@@ -475,8 +689,11 @@ export default function App() {
 
       {/* Footer */}
       <footer className="cv-footer">
-        <p>Last modified: June 2026 · <span className="cv-email">tingxi.li[at]utdallas.edu</span></p>
+        <p>Last modified: June 2026 · <button type="button" className="cv-email" onClick={() => copy(EMAIL, "Email copied ✓")} title="Copy email">tingxi.li[at]utdallas.edu</button></p>
       </footer>
+
+      {/* Toast */}
+      {toast && <div className="toast" role="status" aria-live="polite">{toast}</div>}
     </>
   );
 }

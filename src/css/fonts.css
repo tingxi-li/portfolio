@@ -1,1 +1,19 @@
-/* No custom fonts — system defaults only */
+/* IBM Plex Mono — used for chrome only (venue pills, link buttons, dot
+   labels, résumé button, statusline). Body prose stays system serif.
+   Self-hosted from public/IBM_Plex_Mono/. */
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/IBM_Plex_Mono/IBMPlexMono-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "IBM Plex Mono";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("/IBM_Plex_Mono/IBMPlexMono-SemiBold.woff2") format("woff2");
+}

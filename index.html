@@ -6,7 +6,11 @@
     <title>Tingxi Li</title>
     <link rel="icon" href="/favicon.ico" />
     <script>
-      document.documentElement.setAttribute('data-theme', 'light');
+      (function () {
+        var t;
+        try { t = localStorage.getItem('theme'); } catch (e) {}
+        document.documentElement.setAttribute('data-theme', t === 'dark' ? 'dark' : 'light');
+      })();
     </script>
     <!-- Google Analytics (GA4) -->
     <script>
