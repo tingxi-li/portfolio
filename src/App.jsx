@@ -6,7 +6,6 @@ const PUB_ABSTRACTS = {
   issta26: "Tile-based programming models such as Triton and TileLang are increasingly used to write high-performance GPU kernels, yet the reliability of programs in these DSLs remains understudied. We present a systematic characterization of real-world bugs in tile programs and develop automated detection techniques targeting common bug patterns found in production kernel code.",
   usenix25: "A taxonomy of efficiency vulnerabilities in dynamic deep learning systems, along with a comprehensive evaluation of attack techniques and defenses across multiple dimensions (e.g., attack surface, model type, etc.) to identify key factors influencing efficiency robustness and guide future research in this area.",
   comet: "Large language models trained on code are increasingly integrated into software development workflows, raising concerns about their susceptibility to adversarial prompts that elicit malicious outputs. COMET introduces a closed-loop orchestration framework that automatically generates, evaluates, and refines malicious elicitation techniques against black-box code models, achieving high attack success rates through iterative feedback.",
-  tilelangTPU: "Tile-level DSLs like Triton and TileLang ease AI kernel writing on GPUs, but whether the abstraction transfers to commercial DSAs — with constrained local memory, DMA-based data movement, and decoupled transfer/compute engines — remains an open question. We build TileLang-TPU, a compiler and runtime that preserves the tile-level interface while redesigning its internals around SOPHGO TPU resource orchestration — reaching 1.05×–1.23× over vendor-optimized kernels on standalone operators and a 12.5× average speedup on FlashAttention.",
   aesop: "ML inference pipelines have a new attack surface single-model attacks miss: which path inputs take through the pipeline. Our attack, AESOP, exploits this — achieving 58× FLOPs / 17× latency inflation even in gray-box settings. Defenses don't stop it; they force pipelines to choose between throughput collapse or dropping 96.7% of inputs.",
   dslPerfGap: "Modern GPU DSLs like Triton and TileLang promise high-performance kernels without CUDA expertise, but how close they get to vendor libraries — and what limits them — is unclear. We benchmark 22 kernels across five operator categories and find performance is highly uneven: Triton reaches 32–58% of cuBLAS on GEMM and 103% on element-wise kernels, but only 35% on convolution; TileLang exhibits a 314× LayerNorm slowdown vs. PyTorch. Hardware-counter analysis identifies four recurring convolution bottlenecks, and targeted fixes recover 98% of PyTorch throughput on LayerNorm/RMSNorm and push Triton convolution to 80% of cuDNN.",
 };
@@ -51,7 +50,6 @@ const PUB_FILES = {
   issta26: "tile-bugs.md",
   usenix25: "sok-efficiency.md",
   comet: "comet.md",
-  tilelangTPU: "tilelang-tpu.md",
   dslPerfGap: "dsl-perf-gap.md",
   aesop: "aesop.md",
 };
@@ -74,12 +72,6 @@ const BIBTEX = {
   author      = {Xu, Z. and Li, T. and Rathnasuriya, R. and Song, Z. and Ren, J. and Mandalapu, B. and Setayeshpour, S. and Du, X. and Yang, W.},
   institution = {Amazon Science},
   year        = {2025}
-}`,
-  tilelangTPU: `@misc{ren2026tilelangtpu,
-  title  = {Retargeting AI Kernel DSLs Beyond GPUs: An Experience Report on Refactoring TileLang to Sophgo TPUs},
-  author = {Ren, T. and Li, T. and Xiang, X. and Xu, C. and Yang, W. and Xie, T.},
-  note   = {Under review},
-  year   = {2026}
 }`,
   dslPerfGap: `@misc{li2026dslperfgap,
   title  = {An Empirical Study of GPU Kernel Performance Gaps in Modern Domain-Specific Languages},
@@ -108,7 +100,6 @@ const SECTION_LABELS = {
 
 export default function App() {
   const [activeSection, setActiveSection] = useState(SECTIONS[0]);
-  const [tilelangTpuPdfNote, setTilelangTpuPdfNote] = useState(false);
   const [dslPerfGapPdfNote, setDslPerfGapPdfNote] = useState(false);
   const [cvMenuOpen, setCvMenuOpen] = useState(false);
   const [theme, setTheme] = useState(
@@ -455,6 +446,7 @@ export default function App() {
           <div className="cv-entry-authors">
             R. Rathnasuriya, Z. Song, N. Majoju, <b>T. Li</b>, A. Moharir, W. Yang, T. Xie
           </div>
+          <div className="cv-entry-sub"><strong>Distinguished Paper</strong></div>
           <div className="cv-pub-links">
             <a href="https://arxiv.org/pdf/2605.19652v1" target="_blank" rel="noopener noreferrer" className="cv-pub-link cv-pub-link--pdf">{ICONS.pdf}PDF</a>
             {renderTldr("issta26")}
@@ -509,33 +501,6 @@ export default function App() {
               <a href="https://assets.amazon.science/6f/16/076dff834864823e4f09322d1495/astro-comet-closed-loop-orchestration-for-malicious-elicitation-techniques-in-code-models.pdf" target="_blank" rel="noopener noreferrer" className="pub-abstract-link">{ICONS.pdf}view full paper →</a>
             </>
           ))}
-        </div>
-
-        <div className="cv-entry">
-          <div className="cv-entry-row">
-            <span className="cv-entry-title">Practical: Retargeting AI Kernel DSLs Beyond GPUs: An Experience Report on Refactoring TileLang to Sophgo TPUs</span>
-            <span className="venue venue-report">Under Review</span>
-          </div>
-          <div className="cv-entry-authors">
-            T. Ren, <b>T. Li</b>, X. Xiang, C. Xu, W. Yang, T. Xie
-          </div>
-          <div className="cv-pub-links">
-            <button
-              type="button"
-              onClick={() => setTilelangTpuPdfNote((v) => !v)}
-              className="cv-pub-link cv-pub-link-button"
-              aria-expanded={tilelangTpuPdfNote}
-            >
-              {ICONS.pdf}PDF
-            </button>
-            <a href="https://github.com/xwhzz/tilelang-tpu" target="_blank" rel="noopener noreferrer" className="cv-pub-link cv-pub-link--code">{ICONS.github}Code</a>
-            {renderTldr("tilelangTPU")}
-            {renderCite("tilelangTPU")}
-            {tilelangTpuPdfNote && (
-              <span className="cv-pub-note">PDF available upon request.</span>
-            )}
-          </div>
-          {renderAbstract("tilelangTPU", PUB_ABSTRACTS.tilelangTPU)}
         </div>
 
         <div className="cv-entry">
